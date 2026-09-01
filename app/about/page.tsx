@@ -1,4 +1,4 @@
-﻿import { Placeholder } from "@/components/ui/Placeholder";
+import { Placeholder } from "@/components/ui/Placeholder";
 import { Section } from "@/components/layout/Section";
 import Link from "next/link";
 
@@ -7,19 +7,49 @@ export default function AboutPage() {
     <div className="flex flex-col w-full overflow-x-hidden">
       
       {/* 1. PAGE HERO */}
-      <Section className="bg-[var(--color-brand-panel)]" withFluidVertical>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-[var(--fluid-gap)] items-center w-full">
-          <div>
-            <h1 className="text-[length:var(--fluid-h1)] leading-tight font-bold tracking-tight text-[var(--color-brand-graphite)] mb-6 uppercase">
-              Built On Precision.<br />Grown Through Relationships.
+      <section className="relative w-full lg:min-h-[85vh] flex flex-col lg:flex-row border-b border-[var(--color-brand-line)]">
+        
+        {/* Left Dark Panel */}
+        <div className="w-full lg:w-[45%] bg-[var(--color-brand-graphite)] flex flex-col justify-center relative px-[var(--fluid-px)] py-20 lg:py-24">
+          
+          {/* Subtle Grid Pattern Overlay */}
+          <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(90deg, #ffffff 1px, transparent 1px)', backgroundSize: '4rem 4rem' }} />
+
+          <div className="relative z-10 w-full max-w-xl">
+            <div className="flex items-center gap-4 mb-8">
+              <div className="h-[1px] w-12 bg-white/30" />
+              <span className="text-xs uppercase tracking-widest font-bold text-white/50">01 // The Foundation</span>
+            </div>
+
+            <h1 className="text-[clamp(2rem,4vw,4.5rem)] font-bold uppercase tracking-tight leading-[1.05] text-white mb-6 break-words">
+              Built On Precision.<br />
+              <span className="text-white/40">
+                Grown Through <br className="hidden sm:block" />
+                Relationships.
+              </span>
             </h1>
-            <p className="text-xl md:text-2xl font-light text-[var(--color-brand-text-secondary)]">
+            
+            <p className="text-lg md:text-xl font-light text-white/70 leading-relaxed">
               Divine Star is a B2B round-diamond manufacturer built around consistency, technical process and long-term trade relationships.
             </p>
           </div>
-          <Placeholder className="aspect-[4/3] w-full" label="[Facility/Building image pending]" />
         </div>
-      </Section>
+
+        {/* Right Image Panel */}
+        <div className="w-full lg:w-[55%] h-[60vh] lg:h-auto relative bg-[var(--color-brand-panel)]">
+          <Placeholder 
+            className="absolute inset-0 w-full h-full object-cover" 
+            label="[Facility/Building image pending]" 
+          />
+          
+          {/* Floating 'Bridge' Card */}
+          <div className="absolute -bottom-8 lg:bottom-16 left-[var(--fluid-px)] lg:-left-24 bg-[var(--color-brand-white)] p-6 lg:p-8 shadow-[0_20px_50px_rgba(0,0,0,0.1)] z-20 w-[calc(100%-calc(var(--fluid-px)*2))] lg:w-[28rem] border border-[var(--color-brand-line)] flex flex-col gap-3">
+             <p className="text-sm lg:text-base text-[var(--color-brand-text-secondary)] leading-relaxed">
+               State-of-the-art manufacturing facilities engineered for absolute consistency at scale.
+             </p>
+          </div>
+        </div>
+      </section>
 
       {/* 2. COMPANY OVERVIEW */}
       <Section className="bg-[var(--color-brand-white)]" withFluidVertical>
@@ -33,16 +63,70 @@ export default function AboutPage() {
       {/* 3. TIMELINE */}
       <Section className="bg-[var(--color-brand-warm-white)]" withFluidVertical>
         <div className="w-full">
-          <h2 className="text-[length:var(--fluid-h2)] font-bold tracking-tight text-[var(--color-brand-graphite)] mb-[var(--fluid-gap)] leading-tight">
+          <h2 className="text-[length:var(--fluid-h2)] font-bold tracking-tight text-[var(--color-brand-graphite)] mb-[var(--fluid-gap)] leading-tight text-center lg:text-left">
             Our Journey
           </h2>
-          <div className="flex flex-col lg:flex-row gap-8 lg:gap-4 w-full">
+          
+          {/* DESKTOP (1024px+): Horizontal Alternating Timeline */}
+          <div className="hidden lg:grid grid-cols-5 w-full relative mt-16 xl:mt-24">
+            {/* Continuous horizontal rail */}
+            <div className="absolute top-1/2 left-0 right-0 h-[1px] bg-[var(--color-brand-line)] -translate-y-1/2" />
+            
+            {[1, 2, 3, 4, 5].map((_, idx) => {
+              const isAbove = idx % 2 === 0;
+              return (
+                <div key={idx} className="flex flex-col relative h-[280px] xl:h-[320px]">
+                  {/* Top Content Area */}
+                  <div className={`flex-1 flex flex-col justify-end px-4 pb-6 lg:pb-8 text-center items-center ${isAbove ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
+                    {isAbove && (
+                      <>
+                        <span className="block text-xl xl:text-2xl font-bold tracking-tight text-[var(--color-brand-graphite)] mb-2">
+                          [Pending]
+                        </span>
+                        <h3 className="text-sm xl:text-base font-medium text-[var(--color-brand-text-secondary)] leading-relaxed max-w-[200px]">
+                          [Milestone — pending client confirmation]
+                        </h3>
+                      </>
+                    )}
+                  </div>
+
+                  {/* Tick mark */}
+                  <div className="relative w-full h-0 flex justify-center items-center">
+                    <div className="w-[1px] h-4 bg-[var(--color-brand-graphite)] absolute -translate-y-1/2 top-0" />
+                  </div>
+
+                  {/* Bottom Content Area */}
+                  <div className={`flex-1 flex flex-col justify-start px-4 pt-6 lg:pt-8 text-center items-center ${!isAbove ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
+                    {!isAbove && (
+                      <>
+                        <span className="block text-xl xl:text-2xl font-bold tracking-tight text-[var(--color-brand-graphite)] mb-2">
+                          [Pending]
+                        </span>
+                        <h3 className="text-sm xl:text-base font-medium text-[var(--color-brand-text-secondary)] leading-relaxed max-w-[200px]">
+                          [Milestone — pending client confirmation]
+                        </h3>
+                      </>
+                    )}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* MOBILE (Below 1024px): Vertical Stacked Timeline */}
+          <div className="flex flex-col lg:hidden w-full relative mt-8 pl-4 sm:pl-8">
+            {/* Continuous vertical rail */}
+            <div className="absolute top-2 bottom-4 left-4 sm:left-8 w-[1px] bg-[var(--color-brand-line)]" />
+
             {[1, 2, 3, 4, 5].map((_, idx) => (
-              <div key={idx} className="flex-1 border-l-2 lg:border-l-0 lg:border-t-2 border-[var(--color-brand-line)] pl-6 lg:pl-0 lg:pt-6">
-                <span className="block text-sm font-bold tracking-wider uppercase text-[var(--color-brand-text-secondary)] mb-2">
+              <div key={idx} className="relative pb-10 last:pb-0 pl-8 sm:pl-10">
+                {/* Horizontal Tick mark */}
+                <div className="absolute top-2.5 left-0 w-4 h-[1px] bg-[var(--color-brand-graphite)]" />
+                
+                <span className="block text-lg font-bold tracking-tight text-[var(--color-brand-graphite)] mb-1">
                   [Pending]
                 </span>
-                <h3 className="text-lg font-medium text-[var(--color-brand-graphite)]">
+                <h3 className="text-base font-medium text-[var(--color-brand-text-secondary)] leading-relaxed">
                   [Milestone — pending client confirmation]
                 </h3>
               </div>
