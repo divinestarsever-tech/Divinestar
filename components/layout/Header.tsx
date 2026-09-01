@@ -55,7 +55,7 @@ export function Header() {
           <div className="flex items-center md:hidden">
             <button
               type="button"
-              className="inline-flex items-center justify-center rounded-md p-2 text-[var(--color-brand-graphite)] hover:bg-[var(--color-brand-warm-white)] hover:text-black focus:outline-none"
+              className="inline-flex items-center justify-center rounded-md p-2 text-[var(--color-brand-graphite)] hover:bg-[var(--color-brand-warm-white)] hover:text-black focus:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2"
               onClick={() => setIsMobileMenuOpen(true)}
               aria-expanded={isMobileMenuOpen}
             >
@@ -79,7 +79,7 @@ export function Header() {
             </Link>
             <button
               type="button"
-              className="inline-flex items-center justify-center rounded-md p-2 text-[var(--color-brand-graphite)] hover:bg-[var(--color-brand-warm-white)] hover:text-black focus:outline-none"
+              className="inline-flex items-center justify-center rounded-md p-2 text-[var(--color-brand-graphite)] hover:bg-[var(--color-brand-warm-white)] hover:text-black focus:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               <span className="sr-only">Close menu</span>

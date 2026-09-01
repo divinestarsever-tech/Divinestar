@@ -1,4 +1,4 @@
-﻿import { Placeholder } from "@/components/ui/Placeholder";
+import { Placeholder } from "@/components/ui/Placeholder";
 import { Section } from "@/components/layout/Section";
 import Link from "next/link";
 
@@ -38,6 +38,9 @@ export default function ManufacturingPage() {
       {/* 3. PROCESS NAVIGATOR */}
       <Section className="bg-[var(--color-brand-warm-white)]" withFluidVertical>
         <div className="w-full">
+          <h2 className="text-[length:var(--fluid-h2)] font-bold tracking-tight text-[var(--color-brand-graphite)] mb-[var(--fluid-gap)] leading-tight text-center">
+            The Process
+          </h2>
           <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-4 md:gap-6">
             {[
               { title: "Rough Procurement", desc: "Structured intake and preliminary sorting." },

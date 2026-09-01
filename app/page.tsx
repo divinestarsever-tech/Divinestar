@@ -19,7 +19,7 @@ export default function Home() {
             <Link href="/contact" className="inline-flex items-center justify-center bg-[var(--color-brand-white)] text-[var(--color-brand-graphite)] px-8 py-4 text-base font-medium hover:bg-[var(--color-brand-panel)] transition-colors rounded-none w-full sm:w-auto text-center">
               Discuss Your Requirement
             </Link>
-            <Link href="#" className="inline-flex items-center justify-center text-[var(--color-brand-white)] text-base font-medium hover:text-[var(--color-brand-warm-white)] transition-colors underline underline-offset-4">
+            <Link href="/manufacturing" className="inline-flex items-center justify-center text-[var(--color-brand-white)] text-base font-medium hover:text-[var(--color-brand-warm-white)] transition-colors underline underline-offset-4">
               Explore Manufacturing &rarr;
             </Link>
           </div>
@@ -47,7 +47,7 @@ export default function Home() {
             <p className="text-lg md:text-xl text-[var(--color-brand-text-secondary)] leading-relaxed mb-8">
               Divine Star is a B2B diamond manufacturer built around precision, consistency and long-term trade relationships. Our focus is round-diamond expertise, disciplined assortment and dependable global supply for jewellery manufacturers, brands and wholesalers.
             </p>
-            <Link href="#" className="inline-flex font-medium text-[var(--color-brand-graphite)] underline underline-offset-4 hover:text-[var(--color-brand-text-secondary)] transition-colors">
+            <Link href="/about" className="inline-flex font-medium text-[var(--color-brand-graphite)] underline underline-offset-4 hover:text-[var(--color-brand-text-secondary)] transition-colors">
               Learn About Us &rarr;
             </Link>
           </div>
@@ -72,7 +72,7 @@ export default function Home() {
             ))}
           </div>
           <div className="text-center">
-            <Link href="#" className="inline-flex font-medium text-[var(--color-brand-graphite)] underline underline-offset-4 hover:text-[var(--color-brand-text-secondary)] transition-colors">
+            <Link href="/manufacturing" className="inline-flex font-medium text-[var(--color-brand-graphite)] underline underline-offset-4 hover:text-[var(--color-brand-text-secondary)] transition-colors">
               Explore Manufacturing &rarr;
             </Link>
           </div>
@@ -139,7 +139,7 @@ export default function Home() {
               </div>
             ))}
           </div>
-          <Link href="#" className="inline-flex font-medium text-[var(--color-brand-graphite)] underline underline-offset-4 hover:text-[var(--color-brand-text-secondary)] transition-colors">
+          <Link href="/services" className="inline-flex font-medium text-[var(--color-brand-graphite)] underline underline-offset-4 hover:text-[var(--color-brand-text-secondary)] transition-colors">
             View All Services &rarr;
           </Link>
         </div>
@@ -171,7 +171,7 @@ export default function Home() {
           <p className="text-lg text-[var(--color-brand-text-secondary)] leading-relaxed mb-8 max-w-3xl">
             Responsible sourcing and resource efficiency are part of how Divine Star operates. Detailed policies and documentation are available on request.
           </p>
-          <Link href="#" className="inline-flex font-medium text-[var(--color-brand-graphite)] underline underline-offset-4 hover:text-[var(--color-brand-text-secondary)] transition-colors">
+          <Link href="/responsibility" className="inline-flex font-medium text-[var(--color-brand-graphite)] underline underline-offset-4 hover:text-[var(--color-brand-text-secondary)] transition-colors">
             Learn More &rarr;
           </Link>
         </div>
@@ -241,4 +241,5 @@ export default function Home() {
     </div>
   );
 }
+
 
