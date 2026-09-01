@@ -1,4 +1,4 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 import { Section } from "@/components/layout/Section";
 
 export function Footer() {
@@ -24,18 +24,23 @@ export function Footer() {
             </h4>
             <ul className="space-y-3 text-sm text-[var(--color-brand-text-secondary)]">
               <li>
-                <Link href="#" className="hover:text-[var(--color-brand-graphite)] transition-colors">
+                <Link href="/manufacturing" className="hover:text-[var(--color-brand-graphite)] transition-colors">
                   Manufacturing
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-[var(--color-brand-graphite)] transition-colors">
+                <Link href="/diamonds" className="hover:text-[var(--color-brand-graphite)] transition-colors">
                   Diamonds
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-[var(--color-brand-graphite)] transition-colors">
+                <Link href="/services" className="hover:text-[var(--color-brand-graphite)] transition-colors">
                   Client Services
+                </Link>
+              </li>
+              <li>
+                <Link href="/global-reach" className="hover:text-[var(--color-brand-graphite)] transition-colors">
+                  Global Reach
                 </Link>
               </li>
             </ul>
@@ -48,12 +53,12 @@ export function Footer() {
             </h4>
             <ul className="space-y-3 text-sm text-[var(--color-brand-text-secondary)]">
               <li>
-                <Link href="#" className="hover:text-[var(--color-brand-graphite)] transition-colors">
+                <Link href="/responsibility" className="hover:text-[var(--color-brand-graphite)] transition-colors">
                   Responsibility
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-[var(--color-brand-graphite)] transition-colors">
+                <Link href="/contact" className="hover:text-[var(--color-brand-graphite)] transition-colors">
                   Contact
                 </Link>
               </li>
@@ -79,10 +84,10 @@ export function Footer() {
               </p>
             </address>
             <div className="pt-4 flex flex-col space-y-3 text-sm text-[var(--color-brand-text-secondary)]">
-              <Link href="#" className="hover:text-[var(--color-brand-graphite)] transition-colors">
+              <Link href="/privacy" className="hover:text-[var(--color-brand-graphite)] transition-colors">
                 Privacy Policy
               </Link>
-              <Link href="#" className="hover:text-[var(--color-brand-graphite)] transition-colors">
+              <Link href="/terms" className="hover:text-[var(--color-brand-graphite)] transition-colors">
                 Terms of Use
               </Link>
             </div>

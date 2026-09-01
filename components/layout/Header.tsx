@@ -12,9 +12,9 @@ export function Header() {
     { name: "About", href: "/about" },
     { name: "Manufacturing", href: "/manufacturing" },
     { name: "Diamonds", href: "/diamonds" },
-    { name: "Services", href: "#" },
-    { name: "Responsibility", href: "#" },
-    { name: "Contact", href: "#" },
+    { name: "Services", href: "/services" },
+    { name: "Responsibility", href: "/responsibility" },
+    { name: "Contact", href: "/contact" },
   ];
 
   return (
@@ -44,7 +44,7 @@ export function Header() {
           {/* Desktop CTA */}
           <div className="hidden md:flex md:items-center">
             <Link
-              href="#"
+              href="/contact"
               className="inline-flex items-center justify-center rounded-none bg-[var(--color-brand-graphite)] px-5 py-2 text-sm font-medium text-[var(--color-brand-white)] hover:bg-black transition-colors"
             >
               Discuss Your Requirement
@@ -99,7 +99,7 @@ export function Header() {
             ))}
             <div className="pt-6 border-t border-[var(--color-brand-line)]">
               <Link
-                href="#"
+                href="/contact"
                 className="flex w-full items-center justify-center rounded-none bg-[var(--color-brand-graphite)] px-5 py-3 text-base font-medium text-[var(--color-brand-white)] hover:bg-black transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >

@@ -133,7 +133,7 @@ export default function DiamondsPage() {
           <p className="text-lg md:text-xl text-[var(--color-brand-warm-white)] font-light mb-10 opacity-90 max-w-2xl">
             Public pages do not display confidential trade prices. Serious buyers can discuss specific requirements directly with our sales team.
           </p>
-          <Link href="#contact" className="inline-flex items-center justify-center bg-[var(--color-brand-white)] text-[var(--color-brand-graphite)] px-8 py-4 text-base font-medium hover:bg-[var(--color-brand-panel)] transition-colors rounded-none w-full sm:w-auto text-center">
+          <Link href="/contact" className="inline-flex items-center justify-center bg-[var(--color-brand-white)] text-[var(--color-brand-graphite)] px-8 py-4 text-base font-medium hover:bg-[var(--color-brand-panel)] transition-colors rounded-none w-full sm:w-auto text-center">
             Send Your Requirement
           </Link>
         </div>
@@ -142,3 +142,4 @@ export default function DiamondsPage() {
     </div>
   );
 }
+

@@ -16,7 +16,7 @@ export default function Home() {
             Precision manufacturing, disciplined assortment and dependable B2B supply for jewellery manufacturers and trade partners.
           </p>
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
-            <Link href="#contact" className="inline-flex items-center justify-center bg-[var(--color-brand-white)] text-[var(--color-brand-graphite)] px-8 py-4 text-base font-medium hover:bg-[var(--color-brand-panel)] transition-colors rounded-none w-full sm:w-auto text-center">
+            <Link href="/contact" className="inline-flex items-center justify-center bg-[var(--color-brand-white)] text-[var(--color-brand-graphite)] px-8 py-4 text-base font-medium hover:bg-[var(--color-brand-panel)] transition-colors rounded-none w-full sm:w-auto text-center">
               Discuss Your Requirement
             </Link>
             <Link href="#" className="inline-flex items-center justify-center text-[var(--color-brand-white)] text-base font-medium hover:text-[var(--color-brand-warm-white)] transition-colors underline underline-offset-4">
@@ -156,7 +156,7 @@ export default function Home() {
           </p>
           <div className="bg-[var(--color-brand-white)] border border-[var(--color-brand-line)] px-6 py-4 w-full md:w-auto">
             <p className="text-sm font-medium text-[var(--color-brand-graphite)]">
-              [Verified markets and office locations — pending client confirmation]
+              [Verified markets and office locations â€” pending client confirmation]
             </p>
           </div>
         </div>
@@ -185,14 +185,14 @@ export default function Home() {
               <div key={idx} className="flex flex-col gap-6 text-center">
                 <Placeholder className="aspect-[3/4] w-full" label="[Image pending]" />
                 <div>
-                  <h3 className="text-lg font-bold text-[var(--color-brand-graphite)]">[Leadership name — pending client confirmation]</h3>
-                  <p className="text-sm text-[var(--color-brand-text-secondary)] uppercase tracking-widest mt-1">[Title — pending confirmation]</p>
+                  <h3 className="text-lg font-bold text-[var(--color-brand-graphite)]">[Leadership name â€” pending client confirmation]</h3>
+                  <p className="text-sm text-[var(--color-brand-text-secondary)] uppercase tracking-widest mt-1">[Title â€” pending confirmation]</p>
                 </div>
               </div>
             ))}
           </div>
           <div className="text-center">
-            <Link href="#" className="inline-flex font-medium text-[var(--color-brand-graphite)] underline underline-offset-4 hover:text-[var(--color-brand-text-secondary)] transition-colors">
+            <Link href="/leadership" className="inline-flex font-medium text-[var(--color-brand-graphite)] underline underline-offset-4 hover:text-[var(--color-brand-text-secondary)] transition-colors">
               Meet Our Leadership &rarr;
             </Link>
           </div>
@@ -229,7 +229,7 @@ export default function Home() {
             Start a conversation about your requirement, assortment needs, or export enquiry.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 w-full sm:w-auto">
-            <Link href="#contact" className="inline-flex items-center justify-center bg-[var(--color-brand-white)] text-[var(--color-brand-graphite)] px-8 py-4 text-base font-medium hover:bg-[var(--color-brand-panel)] transition-colors rounded-none w-full sm:w-auto text-center">
+            <Link href="/contact" className="inline-flex items-center justify-center bg-[var(--color-brand-white)] text-[var(--color-brand-graphite)] px-8 py-4 text-base font-medium hover:bg-[var(--color-brand-panel)] transition-colors rounded-none w-full sm:w-auto text-center">
               Discuss Your Requirement
             </Link>
             <Link href="#" className="inline-flex items-center justify-center text-[var(--color-brand-white)] text-base font-medium hover:text-[var(--color-brand-warm-white)] transition-colors underline underline-offset-4 w-full sm:w-auto text-center mt-4 sm:mt-0">
@@ -241,3 +241,4 @@ export default function Home() {
     </div>
   );
 }
+
