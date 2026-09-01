@@ -29,7 +29,7 @@ export function Header() {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex md:gap-x-8">
+          <nav className="hidden lg:flex lg:gap-x-8">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
@@ -42,7 +42,7 @@ export function Header() {
           </nav>
 
           {/* Desktop CTA */}
-          <div className="hidden md:flex md:items-center">
+          <div className="hidden lg:flex lg:items-center">
             <Link
               href="/contact"
               className="inline-flex items-center justify-center rounded-none bg-[var(--color-brand-graphite)] px-5 py-2 text-sm font-medium text-[var(--color-brand-white)] hover:bg-black transition-colors"
@@ -52,7 +52,7 @@ export function Header() {
           </div>
 
           {/* Mobile menu button */}
-          <div className="flex items-center md:hidden">
+          <div className="flex items-center lg:hidden">
             <button
               type="button"
               className="inline-flex items-center justify-center rounded-md p-2 text-[var(--color-brand-graphite)] hover:bg-[var(--color-brand-warm-white)] hover:text-black focus:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2"
@@ -68,7 +68,7 @@ export function Header() {
 
       {/* Mobile Menu (Full Screen) */}
       {isMobileMenuOpen && (
-        <div className="fixed inset-0 z-[100] bg-[var(--color-brand-white)] md:hidden flex flex-col overflow-y-auto">
+        <div className="fixed inset-0 z-[100] bg-[var(--color-brand-white)] lg:hidden flex flex-col overflow-y-auto">
           <div className="flex h-16 items-center justify-between px-[var(--fluid-px)] border-b border-[var(--color-brand-line)] shrink-0">
             <Link 
               href="/" 
