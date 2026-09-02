@@ -1,13 +1,19 @@
 "use client";
 
 import React, { useRef, useState } from 'react';
-import { Canvas, useFrame } from '@react-three/fiber';
+import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { Float } from '@react-three/drei';
 import * as THREE from 'three';
 
 function WireframeGlobe({ hovered }: { hovered: boolean }) {
   const meshRef = useRef<THREE.Mesh>(null);
+  const { viewport } = useThree();
   
+  // If viewport is narrow (mobile), scale down the sphere to prevent it from being too big
+  const isMobile = viewport.width < 6;
+  const baseScale = isMobile ? 0.65 : 1.0;
+  const hoverScale = isMobile ? 0.7 : 1.05;
+
   useFrame((state, delta) => {
     if (meshRef.current) {
       // Gentle continuous rotation to simulate a living global node
@@ -19,14 +25,14 @@ function WireframeGlobe({ hovered }: { hovered: boolean }) {
       const targetY = (state.pointer.x * Math.PI) / 4;
       
       if (hovered) {
-        // Shift towards mouse
+        // Shift towards mouse/touch
         meshRef.current.rotation.x = THREE.MathUtils.lerp(meshRef.current.rotation.x, targetX, 0.05);
         meshRef.current.rotation.y = THREE.MathUtils.lerp(meshRef.current.rotation.y, targetY, 0.05);
         // Slightly scale up for interactivity
-        meshRef.current.scale.lerp(new THREE.Vector3(1.05, 1.05, 1.05), 0.05);
+        meshRef.current.scale.lerp(new THREE.Vector3(hoverScale, hoverScale, hoverScale), 0.05);
       } else {
         // Return to natural scale
-        meshRef.current.scale.lerp(new THREE.Vector3(1, 1, 1), 0.05);
+        meshRef.current.scale.lerp(new THREE.Vector3(baseScale, baseScale, baseScale), 0.05);
       }
     }
   });
@@ -54,8 +60,11 @@ export default function InteractiveGlobeGraphic() {
       style={{ backgroundColor: isHovered ? 'var(--color-brand-white)' : 'transparent' }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      onTouchStart={() => setIsHovered(true)}
+      onTouchEnd={() => setIsHovered(false)}
+      onTouchCancel={() => setIsHovered(false)}
     >
-      <Canvas camera={{ position: [0, 0, 7], fov: 45 }} className="w-full h-full">
+      <Canvas camera={{ position: [0, 0, 7], fov: 45 }} className="w-full h-full touch-none">
         <ambientLight intensity={1} />
         <Float speed={1} rotationIntensity={0.2} floatIntensity={0.5}>
           <WireframeGlobe hovered={isHovered} />
