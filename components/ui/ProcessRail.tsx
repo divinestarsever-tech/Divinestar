@@ -190,55 +190,22 @@ export function ProcessRail() {
     <section className="bg-[var(--color-brand-graphite)] text-[var(--color-brand-white)] px-0 relative">
       
       {/* =========================================
-          MOBILE VIEW (Stacked Sequence)
-          Visible only below 1024px
+          UNIFIED PINNED SCROLL VIEW
+          Responsive across all devices
       ========================================= */}
-      <div className="lg:hidden w-full flex flex-col py-16 px-[var(--fluid-px)]">
-        <div className="flex items-center gap-4 mb-12">
-          <div className="w-8 h-[1px] bg-white/30" />
-          <span className="text-xs font-bold tracking-[0.3em] text-white/50 uppercase">
-            The Process
-          </span>
-        </div>
-        
-        <div className="flex flex-col gap-16">
-          {stages.map((stage, idx) => (
-            <div key={idx} className="flex flex-col gap-6">
-              <div className="w-full aspect-[4/3] relative border border-white/10 bg-black">
-                <img src={stage.imageUrl} alt={stage.title} className="absolute inset-0 w-full h-full object-cover opacity-90 mix-blend-luminosity" />
-                <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                <div className="absolute inset-0 flex items-center justify-center p-8 text-[var(--color-brand-warm-white)]">
-                  {stage.premiumDrawing}
-                </div>
-              </div>
-              <div className="flex flex-col gap-2">
-                <span className="text-xs font-mono text-white/40 tracking-[0.2em]">STEP 0{idx + 1}</span>
-                <h3 className="text-2xl font-bold text-white">{stage.title}</h3>
-                <p className="text-base text-white/70 leading-relaxed">{stage.desc}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-
-      {/* =========================================
-          DESKTOP VIEW (Pinned Scroll)
-          Visible only 1024px and above
-      ========================================= */}
-      <div className="hidden lg:block relative w-full h-[600vh]">
+      <div className="relative w-full h-[600vh]">
         {/* THE PINNED VIEW */}
-        <div className="sticky top-0 w-full h-screen overflow-hidden flex flex-col justify-center">
+        <div className="sticky top-0 w-full h-[100svh] overflow-hidden flex flex-col justify-center">
           
           <div className="absolute inset-0 opacity-[0.02] pointer-events-none" style={{ backgroundImage: 'linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px)', backgroundSize: '4rem 4rem' }} />
 
-          <div className="w-full max-w-[1600px] mx-auto px-[var(--fluid-px)] relative z-10 flex flex-row items-center gap-24 h-full py-24">
+          <div className="w-full max-w-[1600px] mx-auto px-[var(--fluid-px)] relative z-10 flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-24 h-full py-16 lg:py-24">
             
-            <div className="w-[45%] flex flex-col relative h-[40vh] justify-center">
+            <div className="w-full lg:w-[45%] flex flex-col relative h-[35vh] lg:h-[40vh] justify-center mt-4 lg:mt-0">
               
-              <div className="flex items-center gap-4 mb-16 absolute -top-16 left-0">
-                <div className="w-12 h-[1px] bg-white/30" />
-                <span className="text-xs font-bold tracking-[0.3em] text-white/50 uppercase">
+              <div className="flex items-center gap-4 mb-8 lg:mb-16 absolute -top-8 lg:-top-16 left-0">
+                <div className="w-8 lg:w-12 h-[1px] bg-white/30" />
+                <span className="text-[10px] lg:text-xs font-bold tracking-[0.3em] text-white/50 uppercase">
                   03 / Methodology
                 </span>
               </div>
@@ -251,13 +218,13 @@ export function ProcessRail() {
                       key={idx} 
                       className={`absolute inset-0 flex flex-col justify-center transition-all duration-1000 ease-[cubic-bezier(0.22,1,0.36,1)] ${isActive ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 translate-y-12 pointer-events-none"}`}
                     >
-                      <span className="text-sm font-mono text-white/40 tracking-[0.2em] mb-6">
+                      <span className="text-xs lg:text-sm font-mono text-white/40 tracking-[0.2em] mb-4 lg:mb-6">
                         STAGE 0{idx + 1}
                       </span>
-                      <h3 className="text-5xl lg:text-7xl font-bold tracking-tighter text-white leading-[0.9] mb-6">
+                      <h3 className="text-3xl md:text-5xl lg:text-7xl font-bold tracking-tighter text-white leading-[0.9] mb-4 lg:mb-6">
                         {stage.title}
                       </h3>
-                      <p className="text-xl lg:text-2xl text-white/70 leading-relaxed max-w-lg font-light">
+                      <p className="text-base md:text-lg lg:text-2xl text-white/70 leading-relaxed max-w-lg font-light">
                         {stage.desc}
                       </p>
                     </div>
@@ -267,7 +234,7 @@ export function ProcessRail() {
             </div>
 
             <div 
-              className="w-[55%] h-[70vh] relative border border-white/10 p-4 bg-[var(--color-brand-graphite)] shadow-2xl shrink-0 cursor-crosshair"
+              className="w-full lg:w-[55%] h-[40vh] lg:h-[70vh] relative border border-white/10 p-2 lg:p-4 bg-[var(--color-brand-graphite)] shadow-2xl shrink-0 cursor-crosshair"
               onMouseMove={handleMouseMove}
               onMouseEnter={() => setIsHovering(true)}
               onMouseLeave={() => { setIsHovering(false); setMousePos({ x: 0, y: 0 }); }}
