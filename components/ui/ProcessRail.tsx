@@ -146,6 +146,18 @@ const stages: Stage[] = [
 
 export function ProcessRail() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const [isHovering, setIsHovering] = useState(false);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+    // Normalized distance from center (-1 to 1)
+    const x = (e.clientX - rect.left - centerX) / centerX;
+    const y = (e.clientY - rect.top - centerY) / centerY;
+    setMousePos({ x, y });
+  };
   // Optional client-side only check to avoid hydration mismatches with JS measurements
   const [mounted, setMounted] = useState(false);
 
@@ -254,7 +266,12 @@ export function ProcessRail() {
               </div>
             </div>
 
-            <div className="w-[55%] h-[70vh] relative border border-white/10 p-4 bg-[var(--color-brand-graphite)] shadow-2xl shrink-0">
+            <div 
+              className="w-[55%] h-[70vh] relative border border-white/10 p-4 bg-[var(--color-brand-graphite)] shadow-2xl shrink-0 cursor-crosshair"
+              onMouseMove={handleMouseMove}
+              onMouseEnter={() => setIsHovering(true)}
+              onMouseLeave={() => { setIsHovering(false); setMousePos({ x: 0, y: 0 }); }}
+            >
               <div className="w-full h-full relative overflow-hidden bg-black">
                 {stages.map((stage, idx) => {
                   const isActive = activeIndex === idx;
@@ -269,7 +286,16 @@ export function ProcessRail() {
                          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                          
                          <div className={`absolute bottom-0 right-0 w-[70%] aspect-square flex items-center justify-center p-12 text-[var(--color-brand-warm-white)] transition-all duration-1000 delay-300 ${isActive ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
-                           {stage.premiumDrawing}
+                           <div 
+                             className="w-full h-full transition-transform duration-700 ease-out"
+                             style={{ 
+                               transform: isActive && isHovering 
+                                 ? `translate(${mousePos.x * 25}px, ${mousePos.y * 25}px) scale(1.05)` 
+                                 : 'translate(0px, 0px) scale(1)' 
+                             }}
+                           >
+                             {stage.premiumDrawing}
+                           </div>
                          </div>
                       </div>
                       
