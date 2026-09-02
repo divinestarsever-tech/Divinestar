@@ -7,6 +7,7 @@ import { Section } from "@/components/layout/Section";
 interface Stage {
   title: string;
   desc: string;
+  imageUrl: string;
   premiumDrawing: React.ReactNode;
 }
 
@@ -14,6 +15,7 @@ const stages: Stage[] = [
   { 
     title: "Rough Procurement", 
     desc: "Structured intake and preliminary sorting of raw geological material. Assessing structural integrity before processing.",
+    imageUrl: "/images/process/procurement.jpg",
     premiumDrawing: (
       <svg viewBox="0 0 200 200" fill="none" stroke="currentColor" strokeWidth="0.5" className="w-full h-full opacity-80" style={{ transform: "rotate(15deg)" }}>
         <path d="M100 20 L160 60 L140 140 L60 160 L20 80 Z" strokeDasharray="4 6" />
@@ -30,6 +32,7 @@ const stages: Stage[] = [
   { 
     title: "Planning", 
     desc: "Mapping the optimal yield and geometric structure via advanced topographical laser scanning.",
+    imageUrl: "/images/process/planning.jpg",
     premiumDrawing: (
       <svg viewBox="0 0 200 200" fill="none" stroke="currentColor" strokeWidth="0.5" className="w-full h-full opacity-80">
         <rect x="40" y="40" width="120" height="120" strokeWidth="0.25" />
@@ -44,6 +47,7 @@ const stages: Stage[] = [
   { 
     title: "Laser Cutting", 
     desc: "Precision sectioning of the rough stone with micron-level thermal accuracy to eliminate stress fractures.",
+    imageUrl: "/images/process/lasercutting.jpg",
     premiumDrawing: (
       <svg viewBox="0 0 200 200" fill="none" stroke="currentColor" strokeWidth="0.5" className="w-full h-full opacity-80">
         <circle cx="100" cy="100" r="60" strokeDasharray="1 3" />
@@ -58,6 +62,7 @@ const stages: Stage[] = [
   { 
     title: "Bruting", 
     desc: "Forming the foundational girdle shape and establishing the maximum mathematical diameter.",
+    imageUrl: "/images/process/bruting.jpg",
     premiumDrawing: (
       <svg viewBox="0 0 200 200" fill="none" stroke="currentColor" strokeWidth="0.5" className="w-full h-full opacity-80">
         <circle cx="100" cy="100" r="70" strokeWidth="1" />
@@ -73,6 +78,7 @@ const stages: Stage[] = [
   { 
     title: "Polishing", 
     desc: "Faceting to exact mathematical proportions to ensure ultimate internal light return and brilliance.",
+    imageUrl: "/images/process/polishing.jpg",
     premiumDrawing: (
       <svg viewBox="0 0 200 200" fill="none" stroke="currentColor" strokeWidth="0.5" className="w-full h-full opacity-80">
         <polygon points="100,20 170,70 140,160 60,160 30,70" strokeWidth="1" />
@@ -90,6 +96,7 @@ const stages: Stage[] = [
   { 
     title: "Grading & Assortment", 
     desc: "Categorising against strict parameters using advanced optics and expert gemological assessment.",
+    imageUrl: "/images/process/grading.jpg",
     premiumDrawing: (
       <svg viewBox="0 0 200 200" fill="none" stroke="currentColor" strokeWidth="0.5" className="w-full h-full opacity-80">
         <rect x="40" y="30" width="120" height="140" strokeWidth="0.5" />
@@ -106,6 +113,7 @@ const stages: Stage[] = [
   { 
     title: "Quality Control", 
     desc: "Final verification and strict consistency check across all parameters before dispatch approval.",
+    imageUrl: "/images/process/quality.jpg",
     premiumDrawing: (
       <svg viewBox="0 0 200 200" fill="none" stroke="currentColor" strokeWidth="0.5" className="w-full h-full opacity-80">
         <circle cx="100" cy="100" r="50" strokeWidth="1" />
@@ -122,6 +130,7 @@ const stages: Stage[] = [
   { 
     title: "Packing & Dispatch", 
     desc: "Secure structural preparation and comprehensive documentation for international shipping.",
+    imageUrl: "/images/process/packing.jpg",
     premiumDrawing: (
       <svg viewBox="0 0 200 200" fill="none" stroke="currentColor" strokeWidth="0.5" className="w-full h-full opacity-80">
         <polygon points="100,40 160,70 160,130 100,160 40,130 40,70" strokeWidth="1" />
@@ -184,7 +193,7 @@ export function ProcessRail() {
           {stages.map((stage, idx) => (
             <div key={idx} className="flex flex-col gap-6">
               <div className="w-full aspect-[4/3] relative border border-white/10 bg-black">
-                <Placeholder className="absolute inset-0 w-full h-full object-cover opacity-90 mix-blend-luminosity" label={`[${stage.title}]`} />
+                <img src={stage.imageUrl} alt={stage.title} className="absolute inset-0 w-full h-full object-cover opacity-90 mix-blend-luminosity" />
                 <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                 <div className="absolute inset-0 flex items-center justify-center p-8 text-[var(--color-brand-warm-white)]">
                   {stage.premiumDrawing}
@@ -205,7 +214,7 @@ export function ProcessRail() {
           DESKTOP VIEW (Pinned Scroll)
           Visible only 1024px and above
       ========================================= */}
-      <div className="hidden lg:block relative w-full h-[500vh]">
+      <div className="hidden lg:block relative w-full h-[600vh]">
         {/* THE PINNED VIEW */}
         <div className="sticky top-0 w-full h-screen overflow-hidden flex flex-col justify-center">
           
@@ -254,7 +263,7 @@ export function ProcessRail() {
                       key={idx}
                       className={`absolute inset-0 w-full h-full transition-all duration-1000 ease-[cubic-bezier(0.22,1,0.36,1)] ${isActive ? "opacity-100 scale-100 z-10" : "opacity-0 scale-105 z-0"}`}
                     >
-                      <Placeholder className="absolute inset-0 w-full h-full object-cover opacity-90 mix-blend-luminosity" label={`[${stage.title} facility view]`} />
+                      <img src={stage.imageUrl} alt={stage.title} className="absolute inset-0 w-full h-full object-cover opacity-90 mix-blend-luminosity" />
                       
                       <div className="absolute inset-0 pointer-events-none">
                          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
@@ -278,9 +287,11 @@ export function ProcessRail() {
         {/* 
           THE INVISIBLE SCROLL TRACKERS
           8 stages * 50vh = 400vh.
-          Parent is 500vh, so the last stage holds for exactly 100vh of scroll before unpinning seamlessly.
+          Container is 600vh. Trackers start at 100vh.
+          This guarantees Stage 1 holds for 100vh before scrolling past, 
+          and Stage 8 holds for 100vh before unpinning.
         */}
-        <div className="absolute top-0 left-0 w-full flex flex-col pointer-events-none">
+        <div className="absolute top-[100vh] left-0 w-full flex flex-col pointer-events-none">
           {stages.map((_, idx) => (
             <div key={idx} data-index={idx} className="process-tracker w-full h-[50vh]" />
           ))}
