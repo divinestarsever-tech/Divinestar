@@ -98,14 +98,14 @@ export default function ManufacturingPage() {
           <div className="flex flex-col lg:flex-row gap-12 lg:gap-24">
             
             {/* COLUMN 1: TECHNOLOGY */}
-            <div className="w-full lg:w-1/2 flex flex-col group cursor-pointer">
+            <div className="w-full lg:w-1/2 flex flex-col group cursor-pointer outline-none" tabIndex={0}>
               <div className="w-full aspect-[4/5] md:aspect-[3/4] overflow-hidden mb-8 lg:mb-12 relative shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-[var(--color-brand-graphite)]/5 bg-[var(--color-brand-graphite)] rounded-sm">
-                <img src="/images/manufacturing/tech_laser.jpg" alt="Technology" className="absolute inset-0 w-full h-full object-cover transition-all duration-[1500ms] group-hover:scale-105 opacity-80 mix-blend-luminosity group-hover:mix-blend-normal group-hover:opacity-100" />
+                <img src="/images/manufacturing/tech_laser.jpg" alt="Technology" className="absolute inset-0 w-full h-full object-cover transition-all duration-[1500ms] group-hover:scale-105 group-active:scale-105 group-focus:scale-105 opacity-80 mix-blend-luminosity group-hover:mix-blend-normal group-active:mix-blend-normal group-focus:mix-blend-normal group-hover:opacity-100 group-active:opacity-100 group-focus:opacity-100" />
               </div>
               
               <div className="w-full flex flex-col">
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="w-8 h-[1px] bg-[var(--color-brand-graphite)]/30 transition-all duration-700 group-hover:w-16 group-hover:bg-[var(--color-brand-graphite)]" />
+                  <div className="w-8 h-[1px] bg-[var(--color-brand-graphite)]/30 transition-all duration-700 group-hover:w-16 group-active:w-16 group-focus:w-16 group-hover:bg-[var(--color-brand-graphite)] group-active:bg-[var(--color-brand-graphite)] group-focus:bg-[var(--color-brand-graphite)]" />
                   <span className="text-xs font-mono text-[var(--color-brand-graphite)]/50 tracking-[0.3em] uppercase">
                     01 / Precision
                   </span>
@@ -114,7 +114,7 @@ export default function ManufacturingPage() {
                   Technology
                 </h2>
                 
-                <div className="grid grid-rows-[1fr] lg:grid-rows-[0fr] lg:group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-[1000ms] ease-[cubic-bezier(0.22,1,0.36,1)]">
+                <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] group-active:grid-rows-[1fr] group-focus:grid-rows-[1fr] transition-[grid-template-rows] duration-[1000ms] ease-[cubic-bezier(0.22,1,0.36,1)]">
                   <div className="overflow-hidden">
                     <p className="text-lg md:text-xl text-[var(--color-brand-text-secondary)] leading-relaxed font-light pt-4 lg:pt-6">
                       [Machinery and technology details - pending client confirmation]
@@ -125,14 +125,14 @@ export default function ManufacturingPage() {
             </div>
 
             {/* COLUMN 2: CRAFTSMANSHIP */}
-            <div className="w-full lg:w-1/2 flex flex-col group cursor-pointer lg:mt-32">
+            <div className="w-full lg:w-1/2 flex flex-col group cursor-pointer lg:mt-32 outline-none" tabIndex={0}>
               <div className="w-full aspect-[4/5] md:aspect-[3/4] overflow-hidden mb-8 lg:mb-12 relative shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-[var(--color-brand-graphite)]/5 bg-[var(--color-brand-graphite)] rounded-sm">
-                <img src="/images/manufacturing/craft_hands.jpg" alt="Craftsmanship" className="absolute inset-0 w-full h-full object-cover transition-all duration-[1500ms] group-hover:scale-105 opacity-80 mix-blend-luminosity group-hover:mix-blend-normal group-hover:opacity-100" />
+                <img src="/images/manufacturing/craft_hands.jpg" alt="Craftsmanship" className="absolute inset-0 w-full h-full object-cover transition-all duration-[1500ms] group-hover:scale-105 group-active:scale-105 group-focus:scale-105 opacity-80 mix-blend-luminosity group-hover:mix-blend-normal group-active:mix-blend-normal group-focus:mix-blend-normal group-hover:opacity-100 group-active:opacity-100 group-focus:opacity-100" />
               </div>
               
               <div className="w-full flex flex-col">
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="w-8 h-[1px] bg-[var(--color-brand-graphite)]/30 transition-all duration-700 group-hover:w-16 group-hover:bg-[var(--color-brand-graphite)]" />
+                  <div className="w-8 h-[1px] bg-[var(--color-brand-graphite)]/30 transition-all duration-700 group-hover:w-16 group-active:w-16 group-focus:w-16 group-hover:bg-[var(--color-brand-graphite)] group-active:bg-[var(--color-brand-graphite)] group-focus:bg-[var(--color-brand-graphite)]" />
                   <span className="text-xs font-mono text-[var(--color-brand-graphite)]/50 tracking-[0.3em] uppercase">
                     02 / Heritage
                   </span>
@@ -141,7 +141,7 @@ export default function ManufacturingPage() {
                   Craftsmanship
                 </h2>
                 
-                <div className="grid grid-rows-[1fr] lg:grid-rows-[0fr] lg:group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-[1000ms] ease-[cubic-bezier(0.22,1,0.36,1)]">
+                <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] group-active:grid-rows-[1fr] group-focus:grid-rows-[1fr] transition-[grid-template-rows] duration-[1000ms] ease-[cubic-bezier(0.22,1,0.36,1)]">
                   <div className="overflow-hidden">
                     <p className="text-lg md:text-xl text-[var(--color-brand-text-secondary)] leading-relaxed font-light pt-4 lg:pt-6">
                       Skilled professionals oversee every stage, combining technical training with hands-on expertise.
@@ -168,11 +168,11 @@ export default function ManufacturingPage() {
         <div className="w-full max-w-[1600px] mx-auto px-[var(--fluid-px)] relative z-10 flex flex-col pt-8 lg:pt-24 pb-8 lg:pb-24">
           
           {/* IMAGE BLOCK (Right-aligned, massive) */}
-          <div className="peer w-full lg:w-[85%] lg:ml-auto relative z-10">
+          <div className="peer w-full lg:w-[85%] lg:ml-auto relative z-10 outline-none cursor-pointer" tabIndex={0}>
             <div className="w-full aspect-[4/5] md:aspect-square lg:aspect-[16/9] shadow-[0_30px_100px_rgba(0,0,0,0.6)] bg-black relative border border-white/5 group overflow-hidden">
               
               {/* Actual Image */}
-              <img src="/images/manufacturing/quality_inspection.jpg" alt="Diamond Quality Inspection" className="absolute inset-0 w-full h-full object-cover opacity-80 mix-blend-luminosity transition-transform duration-1000 group-hover:scale-105" />
+              <img src="/images/manufacturing/quality_inspection.jpg" alt="Diamond Quality Inspection" className="absolute inset-0 w-full h-full object-cover opacity-80 mix-blend-luminosity transition-transform duration-1000 group-hover:scale-105 group-active:scale-105 group-focus:scale-105" />
               
               {/* The Target Mark (Exactly as specified: + with circle) */}
               <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-20">
@@ -196,8 +196,8 @@ export default function ManufacturingPage() {
           </div>
 
           {/* TEXT BLOCK (Interactive Bottom-Left Card) */}
-          <div className="w-[90%] md:w-[80%] lg:w-[35%] mx-auto lg:mx-0 lg:absolute lg:bottom-16 lg:left-[var(--fluid-px)] relative z-20 -mt-24 md:-mt-32 lg:mt-0 origin-bottom-left transition-all duration-1000 ease-[cubic-bezier(0.22,1,0.36,1)] peer-hover:lg:scale-75 peer-hover:lg:-translate-x-8 peer-hover:lg:translate-y-8 peer-hover:opacity-40">
-            <div className="bg-[var(--color-brand-warm-white)] p-6 md:p-12 shadow-[0_30px_80px_rgba(0,0,0,0.5)] border-l-2 border-[var(--color-brand-graphite)] transition-shadow duration-1000 peer-hover:shadow-none">
+          <div className="w-[90%] md:w-[80%] lg:w-[35%] mx-auto lg:mx-0 lg:absolute lg:bottom-16 lg:left-[var(--fluid-px)] relative z-20 -mt-24 md:-mt-32 lg:mt-0 origin-bottom-left transition-all duration-1000 ease-[cubic-bezier(0.22,1,0.36,1)] peer-hover:scale-75 peer-active:scale-75 peer-focus:scale-75 peer-hover:lg:-translate-x-8 peer-active:lg:-translate-x-8 peer-focus:lg:-translate-x-8 peer-hover:translate-y-8 peer-active:translate-y-8 peer-focus:translate-y-8 peer-hover:opacity-40 peer-active:opacity-40 peer-focus:opacity-40">
+            <div className="bg-[var(--color-brand-warm-white)] p-6 md:p-12 shadow-[0_30px_80px_rgba(0,0,0,0.5)] border-l-2 border-[var(--color-brand-graphite)] transition-shadow duration-1000 peer-hover:shadow-none peer-active:shadow-none peer-focus:shadow-none">
               <div className="w-12 h-[2px] bg-[var(--color-brand-graphite)] mb-6 md:mb-8" />
               <h2 className="text-3xl md:text-5xl font-bold tracking-tighter text-[var(--color-brand-graphite)] mb-4 md:mb-8 leading-[1.05]">
                 Where Quality<br />Is Checked
