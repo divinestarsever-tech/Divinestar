@@ -2,6 +2,7 @@ import { Placeholder } from "@/components/ui/Placeholder";
 import { Section } from "@/components/layout/Section";
 import Link from "next/link";
 import { ProcessRail } from "@/components/ui/ProcessRail";
+import { ManufacturingGallery } from "@/components/ui/ManufacturingGallery";
 
 export default function ManufacturingPage() {
   return (
@@ -224,15 +225,9 @@ export default function ManufacturingPage() {
       </Section>
 
       {/* 7. GALLERY */}
-      <Section className="bg-[var(--color-brand-panel)]" withFluidVertical>
-        <div className="w-full">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-            {[1, 2, 3, 4, 5, 6].map((_, idx) => (
-              <Placeholder key={idx} className="aspect-square w-full" label="[Facility photo pending]" />
-            ))}
-          </div>
-        </div>
-      </Section>
+      <section className="w-full bg-[var(--color-brand-graphite)]">
+        <ManufacturingGallery />
+      </section>
 
       {/* 8. CTA */}
       <Section id="contact" className="bg-[var(--color-brand-graphite)] text-center" withFluidVertical>
