@@ -1,4 +1,4 @@
-﻿import { Placeholder } from "@/components/ui/Placeholder";
+import { Placeholder } from "@/components/ui/Placeholder";
 import { Section } from "@/components/layout/Section";
 import Link from "next/link";
 
@@ -15,20 +15,54 @@ export default function DiamondsPage() {
   return (
     <div className="flex flex-col w-full overflow-x-hidden">
       
-      {/* 1. PAGE HERO */}
-      <Section className="bg-[var(--color-brand-panel)]" withFluidVertical>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-[var(--fluid-gap)] items-center w-full">
-          <div>
-            <h1 className="text-[length:var(--fluid-h1)] leading-tight font-bold tracking-tight text-[var(--color-brand-graphite)] mb-6 uppercase">
+      {/* 1. PAGE HERO - LOUPE INSPECTION */}
+      <section className="relative w-full h-[85vh] lg:h-[90vh] flex flex-col justify-end bg-black overflow-hidden">
+        
+        {/* Full-bleed background */}
+        <div className="absolute inset-0 w-full h-full z-0">
+          <Placeholder isHero className="w-full h-full" label="[Macro diamond image/video pending]" />
+          {/* Subtle gradient for text legibility at bottom left */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-transparent lg:w-2/3 pointer-events-none" />
+        </div>
+
+        {/* The Loupe Element (Desktop: Top Right, Mobile: Omitted for clarity) */}
+        <div className="hidden lg:flex absolute top-32 right-[var(--fluid-px)] z-20 flex-col items-center gap-4">
+          <div className="w-32 h-32 lg:w-40 lg:h-40 rounded-full border border-white/30 overflow-hidden relative shadow-[0_20px_50px_rgba(0,0,0,0.5)] bg-[#111] flex items-center justify-center backdrop-blur-md cursor-crosshair group">
+            {/* Simulating a magnified view */}
+            <div className="absolute inset-0 opacity-40 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.3)_0%,transparent_70%)] transition-opacity duration-700 group-hover:opacity-80" />
+            <div className="relative z-10 text-center">
+              <span className="block text-white/50 text-[10px] tracking-[0.2em] uppercase font-mono leading-relaxed group-hover:text-white/80 transition-colors duration-500">
+                [Detail<br/>View<br/>Pending]
+              </span>
+            </div>
+            
+            {/* Loupe crosshair accent */}
+            <div className="absolute top-0 bottom-0 left-1/2 w-[1px] bg-white/20 transition-all duration-700 group-hover:bg-white/40" />
+            <div className="absolute left-0 right-0 top-1/2 h-[1px] bg-white/20 transition-all duration-700 group-hover:bg-white/40" />
+            
+            {/* Inner rim */}
+            <div className="absolute inset-2 border border-white/10 rounded-full" />
+          </div>
+          <span className="text-white/40 text-[9px] uppercase tracking-[0.3em] font-mono">10x Magnification</span>
+        </div>
+
+        {/* Text Block (Bottom Left) */}
+        <div className="relative z-10 w-full max-w-[1600px] mx-auto px-[var(--fluid-px)] pb-12 lg:pb-24 pointer-events-none">
+          <div className="max-w-xl">
+            {/* Tiny accent line to anchor it */}
+            <div className="w-12 h-[2px] bg-[var(--color-brand-warm-white)] mb-6 opacity-80" />
+            
+            <h1 className="text-4xl md:text-5xl lg:text-[4rem] leading-[1.05] font-bold tracking-tighter text-white mb-6 uppercase">
               Round Expertise.<br />Commercial Consistency.
             </h1>
-            <p className="text-xl md:text-2xl font-light text-[var(--color-brand-text-secondary)] max-w-2xl">
+            <p className="text-lg md:text-xl font-light text-white/70 leading-relaxed max-w-lg">
               Natural round diamonds, melee sizes, dedicated assortments and packing formats for professional buyers.
             </p>
           </div>
-          <Placeholder className="aspect-[4/3] w-full" label="[Macro diamond image/video pending]" />
         </div>
-      </Section>
+
+      </section>
 
       {/* 2. PRODUCT MATRIX */}
       <Section className="bg-[var(--color-brand-white)]" withFluidVertical>
