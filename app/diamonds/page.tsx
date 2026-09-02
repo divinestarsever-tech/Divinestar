@@ -170,38 +170,156 @@ export default function DiamondsPage() {
         </div>
       </section>
 
-      {/* 4. PACKAGING */}
-      <Section className="bg-[var(--color-brand-white)]" withFluidVertical>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-[var(--fluid-gap)] items-center w-full">
-          <div className="order-2 md:order-1">
-            <Placeholder className="aspect-[4/3] w-full" label="[Packaging image pending]" />
+      {/* 4. PACKAGING (Premium Offset Layout) */}
+      <section className="relative w-full bg-[var(--color-brand-white)] py-20 lg:py-32 overflow-hidden">
+        <div className="w-full max-w-[1920px] mx-auto px-0 lg:px-[var(--fluid-px)] flex flex-col lg:flex-row items-center relative">
+          
+          {/* Left: Dramatic Image */}
+          <div className="w-full lg:w-7/12 relative h-[50vh] lg:h-[80vh] shrink-0 z-0">
+            <img 
+              src="/images/process/packing.jpg" 
+              alt="Premium Diamond Packaging" 
+              className="absolute inset-0 w-full h-full object-cover lg:rounded-r-sm"
+            />
+            {/* Elegant inner gradient */}
+            <div className="absolute inset-0 bg-gradient-to-r from-black/30 to-transparent pointer-events-none" />
           </div>
-          <div className="order-1 md:order-2">
-            <h2 className="text-[length:var(--fluid-h2)] font-bold tracking-tight text-[var(--color-brand-graphite)] mb-6 leading-tight">
-              Packing & Parcel Formats
-            </h2>
-            <p className="text-lg text-[var(--color-brand-text-secondary)] leading-relaxed">
-              [Bagging and pack size options — pending client confirmation]
-            </p>
-          </div>
-        </div>
-      </Section>
 
-      {/* 5. QUALITY TERMINOLOGY */}
-      <Section className="bg-[var(--color-brand-panel)]" withFluidVertical>
-        <div className="w-full">
-          <h2 className="text-[length:var(--fluid-h2)] font-bold tracking-tight text-[var(--color-brand-graphite)] mb-6 leading-tight">
-            How We Grade
-          </h2>
-          <p className="text-lg md:text-xl text-[var(--color-brand-text-secondary)] leading-relaxed max-w-4xl">
-            Divine Star uses structured internal grading and assortment terminology to maintain consistency across every requirement. [Detailed terminology glossary — pending client confirmation]
-          </p>
+          {/* Right: Floating Content Card */}
+          <div className="w-full lg:w-5/12 relative z-10 -mt-16 lg:mt-0 lg:-ml-24 px-4 md:px-12 lg:px-0">
+            <div className="bg-[var(--color-brand-panel)]/95 backdrop-blur-xl p-8 md:p-16 lg:p-20 shadow-[0_30px_80px_rgba(0,0,0,0.07)] border border-white/50">
+              
+              <div className="flex items-center gap-4 mb-6 md:mb-8">
+                <div className="w-12 h-[1px] bg-[var(--color-brand-graphite)]/30" />
+                <span className="font-mono text-[10px] md:text-xs tracking-[0.2em] uppercase text-[var(--color-brand-graphite)]/60">
+                  Secure Delivery
+                </span>
+              </div>
+
+              <h2 className="text-4xl md:text-5xl lg:text-[4rem] font-light tracking-tighter text-[var(--color-brand-graphite)] mb-6 md:mb-8 leading-[1.05]">
+                Packing &<br />
+                <span className="font-bold">Parcel Formats</span>
+              </h2>
+              
+              <p className="text-base md:text-xl text-[var(--color-brand-text-secondary)] font-light leading-relaxed mb-8">
+                Secure, tamper-evident parcel formats customized by carat weight and client specifications. Every parcel is hermetically sealed, uniquely barcoded, and accompanied by a detailed digital manifest ensuring absolute traceability from our facility directly to your vault.
+              </p>
+
+              <div className="grid grid-cols-2 gap-8 pt-8 border-t border-[var(--color-brand-line)]">
+                <div>
+                  <span className="block font-mono text-[10px] tracking-widest uppercase text-[var(--color-brand-graphite)]/50 mb-2">Primary</span>
+                  <span className="text-[var(--color-brand-graphite)] font-medium text-sm md:text-base">Bespoke Flutes</span>
+                </div>
+                <div>
+                  <span className="block font-mono text-[10px] tracking-widest uppercase text-[var(--color-brand-graphite)]/50 mb-2">Secondary</span>
+                  <span className="text-[var(--color-brand-graphite)] font-medium text-sm md:text-base">Vault-Ready Parcels</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
         </div>
-      </Section>
+      </section>
+
+      {/* 5. QUALITY TERMINOLOGY (Premium Bento Grid) */}
+      <section className="relative w-full bg-[var(--color-brand-panel)] py-24 lg:py-40">
+        <div className="w-full max-w-[1920px] mx-auto px-[var(--fluid-px)]">
+          
+          <div className="flex flex-col lg:flex-row justify-between items-start mb-16 lg:mb-24 gap-12">
+            <h2 className="text-5xl md:text-6xl lg:text-[7rem] font-light tracking-tighter text-[var(--color-brand-graphite)] leading-[0.9] uppercase">
+              How We<br />
+              <span className="font-bold">Grade.</span>
+            </h2>
+            <div className="w-full lg:w-1/3 lg:pt-4">
+              <div className="w-12 h-[2px] bg-[var(--color-brand-graphite)] mb-6" />
+              <p className="text-lg md:text-xl text-[var(--color-brand-text-secondary)] leading-relaxed font-light">
+                Divine Star uses structured internal grading and assortment terminology to maintain consistency across every requirement.
+              </p>
+            </div>
+          </div>
+
+          {/* Interactive Bento Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-[var(--color-brand-line)] border border-[var(--color-brand-line)]">
+            {[
+              {
+                term: "Make &<br/>Cut Precision",
+                def: "A strict evaluation of facet symmetry and proportions, ensuring absolute uniformity across bulk assortments for seamless setting."
+              },
+              {
+                term: "Clarity<br/>Banding",
+                def: "Our proprietary sorting methodology categorizing inclusions by size, position, and nature to guarantee consistent visual purity."
+              },
+              {
+                term: "Color<br/>Calibration",
+                def: "Advanced colorimetric sorting that narrows standard grading brackets into ultra-precise micro-bands for perfectly matched parcels."
+              },
+              {
+                term: "Diameter<br/>Tolerance",
+                def: "Rigorous dimensional screening ensuring all stones in a calibrated parcel fall within microscopic millimeter tolerances."
+              }
+            ].map((item, idx) => (
+              <div 
+                key={idx} 
+                tabIndex={0}
+                className="group relative w-full h-[320px] md:h-[400px] lg:h-auto lg:aspect-square bg-[var(--color-brand-white)] hover:bg-[var(--color-brand-graphite)] active:bg-[var(--color-brand-graphite)] focus:bg-[var(--color-brand-graphite)] focus:outline-none transition-colors duration-700 overflow-hidden flex flex-col p-8 md:p-10 cursor-pointer"
+              >
+                
+                {/* Top: Number */}
+                <div className="flex justify-between items-start">
+                  <span className="font-mono text-[10px] tracking-widest text-[var(--color-brand-graphite)]/40 group-hover:text-white/40 group-active:text-white/40 group-focus:text-white/40 transition-colors duration-700">
+                    REF.0{idx + 1}
+                  </span>
+                  {/* Subtle decorative dot indicating interactivity */}
+                  <div className="w-1.5 h-1.5 rounded-full bg-[var(--color-brand-graphite)]/20 group-hover:bg-[var(--color-brand-warm-white)] group-active:bg-[var(--color-brand-warm-white)] group-focus:bg-[var(--color-brand-warm-white)] transition-colors duration-700" />
+                </div>
+
+                {/* Center: Term */}
+                <div className="flex-grow flex flex-col justify-center">
+                  <h3 
+                    className="text-2xl md:text-3xl lg:text-4xl font-medium tracking-tight text-[var(--color-brand-graphite)] group-hover:text-white group-active:text-white group-focus:text-white transition-all duration-700 transform group-hover:-translate-y-2 lg:group-hover:-translate-y-4 group-active:-translate-y-2 lg:group-active:-translate-y-4 group-focus:-translate-y-2 lg:group-focus:-translate-y-4"
+                    dangerouslySetInnerHTML={{ __html: item.term }}
+                  />
+                </div>
+
+                {/* Bottom: Definition (Expands on Hover/Tap) */}
+                <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] group-active:grid-rows-[1fr] group-focus:grid-rows-[1fr] transition-[grid-template-rows] duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]">
+                  <div className="overflow-hidden">
+                    <div className="pt-6 border-t border-white/20 transform translate-y-4 group-hover:translate-y-0 group-active:translate-y-0 group-focus:translate-y-0 opacity-0 group-hover:opacity-100 group-active:opacity-100 group-focus:opacity-100 transition-all duration-700 delay-[50ms]">
+                      <p className="font-light text-white/80 text-sm md:text-base leading-relaxed">
+                        {item.def}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            ))}
+          </div>
+
+        </div>
+      </section>
 
       {/* 6. PRIVATE PRICING NOTICE */}
-      <Section id="contact" className="bg-[var(--color-brand-graphite)] text-center text-[var(--color-brand-white)]" withFluidVertical>
-        <div className="flex flex-col items-center w-full">
+      <Section id="contact" className="relative bg-[var(--color-brand-graphite)] text-center text-[var(--color-brand-white)] overflow-hidden" withFluidVertical>
+        
+        {/* Background Facet Graphic */}
+        <svg viewBox="0 0 600 600" fill="none" stroke="currentColor" strokeWidth="1" className="absolute -bottom-24 -right-24 w-[400px] md:w-[700px] h-[400px] md:h-[700px] text-[var(--color-brand-white)] opacity-[0.08] pointer-events-none z-0" aria-hidden="true">
+          <path d="M300 0 L600 300 L300 600 L0 300 Z" />
+          <path d="M150 150 L450 150 L450 450 L150 450 Z" />
+          <path d="M300 0 L450 150" />
+          <path d="M600 300 L450 450" />
+          <path d="M300 600 L150 450" />
+          <path d="M0 300 L150 150" />
+          <path d="M300 0 L300 150" />
+          <path d="M600 300 L450 300" />
+          <path d="M300 600 L300 450" />
+          <path d="M0 300 L150 300" />
+          <path d="M150 150 L300 300 L450 150" />
+          <path d="M450 450 L300 300 L150 450" />
+        </svg>
+
+        <div className="relative z-10 flex flex-col items-center w-full">
           <h2 className="text-[length:var(--fluid-h2)] font-bold tracking-tight text-[var(--color-brand-white)] mb-6 leading-tight">
             Private Prices. Professional Tools.
           </h2>
