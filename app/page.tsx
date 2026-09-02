@@ -1,6 +1,8 @@
 import { Placeholder } from "@/components/ui/Placeholder";
 import { Section } from "@/components/layout/Section";
 import Link from "next/link";
+import WhoWeAreInteractive from "@/components/ui/WhoWeAreInteractive";
+import ManufacturingCurtainStory from "@/components/ui/ManufacturingCurtainStory";
 
 export default function Home() {
   return (
@@ -45,86 +47,10 @@ export default function Home() {
       </Section>
 
       {/* 3. WHO WE ARE */}
-      <Section className="bg-[var(--color-brand-white)]" withFluidVertical>
-        <div className="flex flex-col lg:flex-row lg:items-start w-full">
-          
-          {/* MOBILE IMAGE */}
-          <div className="lg:hidden self-stretch w-auto -mx-[var(--fluid-px)] mb-[var(--fluid-gap)] shrink-0">
-            <Placeholder className="aspect-[4/3] w-full" label="[Image pending]" />
-          </div>
-
-          {/* TEXT (45%) */}
-          <div className="w-full lg:w-[45%] pr-0 lg:pr-12 xl:pr-16 z-10 shrink-0">
-            <h2 className="text-[length:var(--fluid-h2)] font-bold tracking-tight text-[var(--color-brand-graphite)] mb-6 leading-tight">Who We Are</h2>
-            <p className="text-lg md:text-xl text-[var(--color-brand-text-secondary)] leading-relaxed mb-8">
-              Divine Star is a B2B diamond manufacturer built around precision, consistency and long-term trade relationships. Our focus is round-diamond expertise, disciplined assortment and dependable global supply for jewellery manufacturers, brands and wholesalers.
-            </p>
-            <Link href="/about" className="inline-flex font-medium text-[var(--color-brand-graphite)] underline underline-offset-4 hover:text-[var(--color-brand-text-secondary)] transition-colors">
-              Learn About Us &rarr;
-            </Link>
-          </div>
-
-          {/* DESKTOP IMAGE (55%) */}
-          <div 
-            className="hidden lg:block shrink-0 lg:mt-12 h-[540px]" 
-            style={{ 
-              width: "calc(55% + var(--fluid-px))", 
-              marginRight: "calc(var(--fluid-px) * -1)" 
-            }}
-          >
-            <Placeholder className="h-full w-full object-cover" label="[Image pending]" />
-          </div>
-
-        </div>
-      </Section>
+      <WhoWeAreInteractive />
 
       {/* 4. MANUFACTURING STORY */}
-      <Section className="bg-[var(--color-brand-warm-white)]" withFluidVertical>
-        <div className="w-full">
-          <h2 className="text-[length:var(--fluid-h2)] font-bold tracking-tight text-[var(--color-brand-graphite)] mb-[var(--fluid-gap)] text-center leading-tight">
-            Manufacturing Story
-          </h2>
-          <div className="relative flex flex-col lg:flex-row w-full gap-8 lg:gap-4 mb-[var(--fluid-gap)] lg:pt-8 lg:pb-8">
-            <div id="manufacturing-line" className="absolute left-[11px] lg:left-0 top-0 bottom-0 lg:top-[50%] lg:bottom-auto w-[1px] lg:w-full h-auto lg:h-[1px] bg-[var(--color-brand-line)] z-0" />
-            
-            {[
-              "Planning", "Laser Cutting", "Polishing", "Grading & Assortment", "Quality Control", "Packing"
-            ].map((step, idx) => {
-              const isOdd = (idx + 1) % 2 !== 0; // 1, 3, 5
-              const number = `0${idx + 1}`;
-              
-              return (
-                <div key={idx} className="relative flex flex-row lg:flex-col items-center lg:items-stretch lg:justify-center w-full lg:w-1/6 gap-6 lg:gap-0 z-10">
-                  
-                  {/* Mobile Marker */}
-                  <div className="flex lg:hidden flex-col items-center justify-center shrink-0 w-6">
-                    <span className="text-xs font-mono text-[var(--color-brand-text-secondary)] mb-1">{number}</span>
-                    <div className="w-2 h-2 rounded-full bg-[var(--color-brand-graphite)] ring-4 ring-[var(--color-brand-warm-white)]" />
-                  </div>
-
-                  {/* Desktop Dot */}
-                  <div className="hidden lg:flex absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center shrink-0 z-20">
-                    <span className="absolute bottom-full mb-2 text-xs font-mono text-[var(--color-brand-text-secondary)] bg-[var(--color-brand-warm-white)] px-1">{number}</span>
-                    <div className="w-2 h-2 rounded-full bg-[var(--color-brand-graphite)] ring-4 ring-[var(--color-brand-warm-white)]" />
-                  </div>
-
-                  {/* Content translated, dot stays fixed */}
-                  <div className={`flex flex-col gap-4 w-full max-w-[280px] sm:max-w-[320px] lg:max-w-none ${isOdd ? 'lg:-translate-y-6' : 'lg:translate-y-6'}`}>
-                    <Placeholder className={`w-full ${isOdd ? 'aspect-[3/4]' : 'aspect-square'}`} label="[Image pending]" />
-                    <span className="step-caption text-sm font-semibold text-[var(--color-brand-graphite)] tracking-wide uppercase text-left lg:text-center px-1 break-words">{step}</span>
-                  </div>
-                  
-                </div>
-              );
-            })}
-          </div>
-          <div className="text-center">
-            <Link href="/manufacturing" className="inline-flex font-medium text-[var(--color-brand-graphite)] underline underline-offset-4 hover:text-[var(--color-brand-text-secondary)] transition-colors">
-              Explore Manufacturing &rarr;
-            </Link>
-          </div>
-        </div>
-      </Section>
+      <ManufacturingCurtainStory />
 
       {/* 5. ROUND DIAMOND SPECIALISATION */}
       <Section className="bg-[var(--color-brand-white)]" withFluidVertical>
