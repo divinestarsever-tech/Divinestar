@@ -1,22 +1,93 @@
-﻿import { Section } from "@/components/layout/Section";
+import { Section } from "@/components/layout/Section";
 import { Placeholder } from "@/components/ui/Placeholder";
 import Link from "next/link";
+import InteractiveDiamondGraphic from "@/components/ui/InteractiveDiamondGraphic";
 
 export default function LeadershipPage() {
   return (
     <div className="flex flex-col w-full overflow-x-hidden">
       
-      {/* 1. PAGE HERO */}
-      <Section className="bg-[var(--color-brand-panel)]" withFluidVertical>
-        <div className="w-full flex flex-col justify-center max-w-4xl">
-          <h1 className="text-[length:var(--fluid-h1)] leading-tight font-bold tracking-tight text-[var(--color-brand-graphite)] mb-6 uppercase">
-            Our Leadership.
-          </h1>
-          <p className="text-xl md:text-2xl font-light text-[var(--color-brand-text-secondary)]">
-            The team responsible for Divine Star&apos;s manufacturing quality, client relationships and global operations.
-          </p>
+      {/* 1. PAGE HERO (Intricate Technical Dashboard) */}
+      <section className="w-full min-h-[75vh] md:min-h-[80vh] lg:min-h-[90vh] bg-[var(--color-brand-white)] p-4 md:p-6 lg:p-8 flex flex-col">
+        <div className="w-full flex-grow max-w-[1920px] mx-auto grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-[1px] bg-[var(--color-brand-line)] border-[1px] border-[var(--color-brand-line)] shadow-2xl">
+          
+          {/* Block 01: The Core Title (Dark Mode) */}
+          <div className="relative bg-[var(--color-brand-graphite)] text-white md:col-span-3 p-8 md:p-12 lg:p-16 flex flex-col justify-center overflow-hidden group min-h-[40vh] md:min-h-0">
+            
+            {/* Highly complex diagonal mesh background */}
+            <div className="absolute inset-0 w-full h-full opacity-[0.05] pointer-events-none transition-transform duration-1000 group-hover:scale-105">
+              <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <pattern id="diagonal-mesh" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+                    <rect x="0" y="0" width="40" height="40" fill="none" stroke="currentColor" strokeWidth="0.5" />
+                    <line x1="0" y1="20" x2="40" y2="20" stroke="currentColor" strokeWidth="0.5" />
+                    <line x1="20" y1="0" x2="20" y2="40" stroke="currentColor" strokeWidth="0.5" />
+                  </pattern>
+                </defs>
+                <rect x="0" y="0" width="100%" height="100%" fill="url(#diagonal-mesh)" />
+              </svg>
+            </div>
+
+            <div className="relative z-10 flex flex-col">
+              <span className="font-mono text-[10px] md:text-xs tracking-[0.4em] uppercase text-white/50 mb-6 lg:mb-10 flex items-center">
+                <span className="w-8 h-[1px] bg-white/30 mr-4"></span>
+                The Executive Board
+              </span>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light tracking-tight uppercase leading-[1.1]">
+                Our Leadership.
+              </h1>
+            </div>
+          </div>
+
+          {/* Block 02: Interactive 3D Diamond Graphic */}
+          <InteractiveDiamondGraphic />
+
+          {/* Block 03: The Subhead (Warm Mode) */}
+          <div className="relative bg-[var(--color-brand-warm-white)] md:col-span-2 p-8 md:p-12 lg:p-16 flex items-center group min-h-[35vh] md:min-h-0">
+            <p className="text-lg md:text-xl lg:text-2xl font-light text-[var(--color-brand-graphite)] leading-[1.7] lg:leading-[1.8] max-w-lg relative z-10">
+              The team responsible for Divine Star&apos;s manufacturing quality, client relationships and global operations.
+            </p>
+            
+            {/* Subtle framing corner accents */}
+            <div className="absolute top-6 left-6 lg:top-8 lg:left-8 w-4 h-4 border-t border-l border-[var(--color-brand-graphite)] opacity-10 group-hover:opacity-30 transition-opacity duration-500"></div>
+            <div className="absolute bottom-6 right-6 lg:bottom-8 lg:right-8 w-4 h-4 border-b border-r border-[var(--color-brand-graphite)] opacity-10 group-hover:opacity-30 transition-opacity duration-500"></div>
+          </div>
+
+          {/* Block 04: Architectural Grid Texture (Panel Mode) */}
+          <div className="relative bg-[var(--color-brand-panel)] md:col-span-2 p-8 md:p-12 lg:p-16 flex flex-col justify-end overflow-hidden group min-h-[35vh] md:min-h-0">
+            
+            {/* Blueprint Grid Texture completely filling the space */}
+            <div className="absolute inset-0 opacity-[0.06] transition-opacity duration-700 group-hover:opacity-15">
+              <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <pattern id="blueprint-grid" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                    <rect x="0" y="0" width="20" height="20" fill="none" stroke="var(--color-brand-graphite)" strokeWidth="0.5" />
+                  </pattern>
+                </defs>
+                <rect x="0" y="0" width="100%" height="100%" fill="url(#blueprint-grid)" />
+              </svg>
+            </div>
+
+            <div className="relative z-10 flex flex-col h-full justify-between">
+              <div className="flex justify-between items-start w-full mb-12">
+                 <span className="font-mono text-[9px] lg:text-[10px] tracking-widest uppercase text-[var(--color-brand-text-secondary)]">Data Matrix</span>
+                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="w-5 h-5 text-[var(--color-brand-text-secondary)]">
+                   <rect x="3" y="3" width="18" height="18" />
+                   <path d="M3 12L21 12" />
+                   <path d="M12 3L12 21" />
+                 </svg>
+              </div>
+              
+              <div className="flex justify-between items-end w-full">
+                 <span className="font-mono text-[9px] lg:text-[10px] tracking-widest uppercase text-[var(--color-brand-text-secondary)]">Global Operations</span>
+                 <span className="font-mono text-[9px] lg:text-[10px] tracking-widest uppercase text-[var(--color-brand-text-secondary)]">EST. 2024</span>
+              </div>
+            </div>
+
+          </div>
+          
         </div>
-      </Section>
+      </section>
 
       {/* 2. LEADERSHIP GRID */}
       <Section className="bg-[var(--color-brand-white)]" withFluidVertical>

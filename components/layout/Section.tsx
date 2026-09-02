@@ -4,7 +4,7 @@ interface SectionProps {
   children: React.ReactNode;
   className?: string;
   id?: string;
-  as?: React.ElementType;
+  as?: any;
   withFluidVertical?: boolean;
 }
 
