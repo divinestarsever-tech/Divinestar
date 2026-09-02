@@ -89,36 +89,99 @@ export default function LeadershipPage() {
         </div>
       </section>
 
-      {/* 2. LEADERSHIP GRID */}
-      <Section className="bg-[var(--color-brand-white)]" withFluidVertical>
-        <div className="w-full">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[var(--fluid-gap)]">
+      {/* 2. LEADERSHIP DIRECTORY (Premium Cinematic Cards) */}
+      <section className="w-full bg-[var(--color-brand-graphite)] pt-[var(--fluid-py)] pb-0">
+        <div className="w-full max-w-[1920px] mx-auto px-4 md:px-8">
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-6">
             {[1, 2, 3, 4].map((idx) => (
-              <div key={idx} className="flex flex-col gap-6">
-                <Placeholder className="aspect-[3/4] w-full" label="[Portrait pending]" />
-                <div className="flex flex-col">
-                  <h2 className="text-xl font-bold tracking-tight text-[var(--color-brand-graphite)]">
-                    [Name &mdash; pending client confirmation]
-                  </h2>
-                  <p className="text-sm font-semibold text-[var(--color-brand-text-secondary)] uppercase tracking-wide mt-1 mb-4">
-                    [Title &mdash; pending confirmation]
-                  </p>
-                  <p className="text-base text-[var(--color-brand-text-secondary)] leading-relaxed mb-4">
-                    [Bio &mdash; pending client confirmation. Final bio will be 80-140 words focused on expertise and functional responsibility.]
-                  </p>
-                  <Link href="#" className="text-sm text-[var(--color-brand-graphite)] hover:text-[var(--color-brand-text-secondary)] underline underline-offset-4 transition-colors">
-                    [LinkedIn &mdash; pending leader approval]
-                  </Link>
+              <div key={idx} className="group relative w-full aspect-[3/4] overflow-hidden cursor-crosshair bg-neutral-900 shadow-2xl">
+                
+                {/* Full-Bleed Portrait Background */}
+                <div className="absolute inset-0 w-full h-full">
+                  <Placeholder className="w-full h-full object-cover transition-transform duration-[2s] ease-out group-hover:scale-110 opacity-70 group-hover:opacity-100 grayscale group-hover:grayscale-0" label={`[Portrait 0${idx}]`} />
                 </div>
+
+                {/* Always-on subtle gradient to ensure text readability even before hover */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-700"></div>
+
+                {/* Index Marker */}
+                <div className="absolute top-6 left-6 z-10 overflow-hidden">
+                  <span className="block font-mono text-[10px] tracking-[0.3em] uppercase text-white/50 transform transition-transform duration-700 group-hover:-translate-y-[200%] opacity-100 group-hover:opacity-0">
+                    0{idx}
+                  </span>
+                </div>
+
+                {/* Premium Glass Reveal Panel at Bottom */}
+                <div className="absolute bottom-4 left-4 right-4 bg-black/40 backdrop-blur-md border border-white/10 p-6 lg:p-8 flex flex-col transform transition-all duration-700 group-hover:bg-black/70 group-hover:border-white/20">
+                  
+                  {/* Name & Title (Always Visible) */}
+                  <div className="flex flex-col">
+                    <h2 className="text-2xl lg:text-3xl font-light tracking-tighter uppercase text-white mb-2 drop-shadow-md">
+                      [Name Pending]
+                    </h2>
+                    <p className="font-mono text-[9px] tracking-[0.3em] uppercase text-[var(--color-brand-warm-white)]/80">
+                      [Title &mdash; pending]
+                    </p>
+                  </div>
+
+                  {/* Expandable Bio & Link (Revealed on Hover) */}
+                  <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]">
+                    <div className="overflow-hidden">
+                      <div className="pt-6 flex flex-col gap-6 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-700 delay-100">
+                        <p className="text-xs lg:text-sm text-white/80 leading-relaxed font-light">
+                          [Bio &mdash; pending client confirmation. Final bio will be 80-140 words focused on expertise and functional responsibility.]
+                        </p>
+                        <Link href="#" className="inline-flex items-center gap-3 text-[9px] font-mono uppercase tracking-[0.2em] text-white hover:text-[var(--color-brand-warm-white)] border border-white/20 px-5 py-3 transition-colors hover:bg-white/10 w-max">
+                          LinkedIn Profile
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="w-3 h-3">
+                            <path d="M7 17L17 7M17 7H7M17 7V17" />
+                          </svg>
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
               </div>
             ))}
           </div>
+
         </div>
-      </Section>
+
+        {/* Section Boundary Divider (Touches bottom edge) */}
+        <div className="w-full mt-[var(--fluid-py)] relative z-20">
+          <div className="w-full max-w-[1920px] mx-auto flex items-center gap-4 px-4 md:px-8 opacity-20">
+            <div className="h-[1px] flex-grow bg-white"></div>
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1" className="w-3 h-3 flex-shrink-0">
+              <rect x="3" y="3" width="18" height="18" transform="rotate(45 12 12)" />
+            </svg>
+            <div className="h-[1px] flex-grow bg-white"></div>
+          </div>
+        </div>
+      </section>
 
       {/* 3. CTA */}
-      <Section id="contact" className="bg-[var(--color-brand-graphite)] text-center text-[var(--color-brand-white)]" withFluidVertical>
-        <div className="flex flex-col items-center w-full">
+      <Section id="contact" className="relative bg-[var(--color-brand-graphite)] text-center text-[var(--color-brand-white)] overflow-hidden" withFluidVertical>
+        
+        {/* Background Facet Graphic */}
+        <svg viewBox="0 0 600 600" fill="none" stroke="currentColor" strokeWidth="1" className="absolute -bottom-24 -right-24 w-[400px] md:w-[700px] h-[400px] md:h-[700px] text-[var(--color-brand-white)] opacity-[0.08] pointer-events-none z-0" aria-hidden="true">
+          <path d="M300 0 L600 300 L300 600 L0 300 Z" />
+          <path d="M150 150 L450 150 L450 450 L150 450 Z" />
+          <path d="M300 0 L450 150" />
+          <path d="M600 300 L450 450" />
+          <path d="M300 600 L150 450" />
+          <path d="M0 300 L150 150" />
+          <path d="M300 0 L300 150" />
+          <path d="M600 300 L450 300" />
+          <path d="M300 600 L300 450" />
+          <path d="M0 300 L150 300" />
+          <path d="M150 150 L300 300 L450 150" />
+          <path d="M450 450 L300 300 L150 450" />
+        </svg>
+
+        <div className="relative z-10 flex flex-col items-center w-full">
           <h2 className="text-[length:var(--fluid-h2)] font-bold tracking-tight text-[var(--color-brand-white)] mb-6 leading-tight">
             Tell Us What You Need.
           </h2>
