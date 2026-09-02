@@ -91,40 +91,123 @@ export default function ManufacturingPage() {
       {/* 3. PROCESS NAVIGATOR */}
       <ProcessRail />
 
-      {/* 4. TECHNOLOGY & CRAFTSMANSHIP */}
-      <Section className="bg-[var(--color-brand-white)]" withFluidVertical>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-[var(--fluid-gap)] w-full">
-          <div className="bg-[var(--color-brand-panel)] p-8 md:p-12 border border-[var(--color-brand-line)] flex flex-col justify-center">
-            <h2 className="text-[length:var(--fluid-h2)] font-bold tracking-tight text-[var(--color-brand-graphite)] mb-6 leading-tight">
-              Technology
-            </h2>
-            <p className="text-lg text-[var(--color-brand-text-secondary)] leading-relaxed">
-              [Machinery and technology details — pending client confirmation]
-            </p>
-          </div>
-          <div className="bg-[var(--color-brand-panel)] p-8 md:p-12 border border-[var(--color-brand-line)] flex flex-col justify-center">
-            <h2 className="text-[length:var(--fluid-h2)] font-bold tracking-tight text-[var(--color-brand-graphite)] mb-6 leading-tight">
-              Craftsmanship
-            </h2>
-            <p className="text-lg text-[var(--color-brand-text-secondary)] leading-relaxed">
-              Skilled professionals oversee every stage, combining technical training with hands-on expertise.
-            </p>
+      {/* 4. TECHNOLOGY & CRAFTSMANSHIP - LIGHT EDITORIAL COLUMNS */}
+      <section className="w-full bg-[var(--color-brand-white)] py-16 lg:py-40">
+        <div className="w-full max-w-[1600px] mx-auto px-[var(--fluid-px)]">
+          
+          <div className="flex flex-col lg:flex-row gap-12 lg:gap-24">
+            
+            {/* COLUMN 1: TECHNOLOGY */}
+            <div className="w-full lg:w-1/2 flex flex-col group cursor-pointer">
+              <div className="w-full aspect-[4/5] md:aspect-[3/4] overflow-hidden mb-8 lg:mb-12 relative shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-[var(--color-brand-graphite)]/5 bg-[var(--color-brand-graphite)] rounded-sm">
+                <img src="/images/manufacturing/tech_laser.jpg" alt="Technology" className="absolute inset-0 w-full h-full object-cover transition-all duration-[1500ms] group-hover:scale-105 opacity-80 mix-blend-luminosity group-hover:mix-blend-normal group-hover:opacity-100" />
+              </div>
+              
+              <div className="w-full flex flex-col">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-8 h-[1px] bg-[var(--color-brand-graphite)]/30 transition-all duration-700 group-hover:w-16 group-hover:bg-[var(--color-brand-graphite)]" />
+                  <span className="text-xs font-mono text-[var(--color-brand-graphite)]/50 tracking-[0.3em] uppercase">
+                    01 / Precision
+                  </span>
+                </div>
+                <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter text-[var(--color-brand-graphite)] transition-transform duration-700">
+                  Technology
+                </h2>
+                
+                <div className="grid grid-rows-[1fr] lg:grid-rows-[0fr] lg:group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-[1000ms] ease-[cubic-bezier(0.22,1,0.36,1)]">
+                  <div className="overflow-hidden">
+                    <p className="text-lg md:text-xl text-[var(--color-brand-text-secondary)] leading-relaxed font-light pt-4 lg:pt-6">
+                      [Machinery and technology details - pending client confirmation]
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* COLUMN 2: CRAFTSMANSHIP */}
+            <div className="w-full lg:w-1/2 flex flex-col group cursor-pointer lg:mt-32">
+              <div className="w-full aspect-[4/5] md:aspect-[3/4] overflow-hidden mb-8 lg:mb-12 relative shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-[var(--color-brand-graphite)]/5 bg-[var(--color-brand-graphite)] rounded-sm">
+                <img src="/images/manufacturing/craft_hands.jpg" alt="Craftsmanship" className="absolute inset-0 w-full h-full object-cover transition-all duration-[1500ms] group-hover:scale-105 opacity-80 mix-blend-luminosity group-hover:mix-blend-normal group-hover:opacity-100" />
+              </div>
+              
+              <div className="w-full flex flex-col">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-8 h-[1px] bg-[var(--color-brand-graphite)]/30 transition-all duration-700 group-hover:w-16 group-hover:bg-[var(--color-brand-graphite)]" />
+                  <span className="text-xs font-mono text-[var(--color-brand-graphite)]/50 tracking-[0.3em] uppercase">
+                    02 / Heritage
+                  </span>
+                </div>
+                <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter text-[var(--color-brand-graphite)] transition-transform duration-700">
+                  Craftsmanship
+                </h2>
+                
+                <div className="grid grid-rows-[1fr] lg:grid-rows-[0fr] lg:group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-[1000ms] ease-[cubic-bezier(0.22,1,0.36,1)]">
+                  <div className="overflow-hidden">
+                    <p className="text-lg md:text-xl text-[var(--color-brand-text-secondary)] leading-relaxed font-light pt-4 lg:pt-6">
+                      Skilled professionals oversee every stage, combining technical training with hands-on expertise.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
-      </Section>
+      </section>
 
-      {/* 5. QUALITY GATES */}
-      <Section className="bg-[var(--color-brand-warm-white)]" withFluidVertical>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-[var(--fluid-gap)] items-center w-full">
-          <div>
-            <h2 className="text-[length:var(--fluid-h2)] font-bold tracking-tight text-[var(--color-brand-graphite)] mb-6 leading-tight">
-              Where Quality Is Checked
-            </h2>
-            <p className="text-lg text-[var(--color-brand-text-secondary)] leading-relaxed mb-8">
-              Quality checks are built into each stage of the process, from planning through to final packing, to maintain consistency across every requirement.
-            </p>
+      {/* 5. QUALITY GATES - LUXURY EDITORIAL OVERLAP */}
+      <Section className="bg-[var(--color-brand-graphite)] relative overflow-hidden" withFluidVertical>
+        {/* Massive Background Typography Texture */}
+        <div className="absolute -left-[5%] top-[5%] text-[20vw] font-black text-white/[0.015] leading-none pointer-events-none select-none tracking-tighter mix-blend-overlay">
+          INSPECTION
+        </div>
+        <div className="absolute -right-[5%] bottom-[5%] text-[20vw] font-black text-white/[0.015] leading-none pointer-events-none select-none tracking-tighter mix-blend-overlay">
+          ASSURANCE
+        </div>
+
+        <div className="w-full max-w-[1600px] mx-auto px-[var(--fluid-px)] relative z-10 flex flex-col pt-8 lg:pt-24 pb-8 lg:pb-24">
+          
+          {/* IMAGE BLOCK (Right-aligned, massive) */}
+          <div className="peer w-full lg:w-[85%] lg:ml-auto relative z-10">
+            <div className="w-full aspect-[4/5] md:aspect-square lg:aspect-[16/9] shadow-[0_30px_100px_rgba(0,0,0,0.6)] bg-black relative border border-white/5 group overflow-hidden">
+              
+              {/* Actual Image */}
+              <img src="/images/manufacturing/quality_inspection.jpg" alt="Diamond Quality Inspection" className="absolute inset-0 w-full h-full object-cover opacity-80 mix-blend-luminosity transition-transform duration-1000 group-hover:scale-105" />
+              
+              {/* The Target Mark (Exactly as specified: + with circle) */}
+              <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-20">
+                <div className="relative text-white/40 mix-blend-screen drop-shadow-lg">
+                  <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="0.5" className="w-16 h-16 md:w-20 md:h-20">
+                    <circle cx="50" cy="50" r="10" />
+                    <line x1="50" y1="0" x2="50" y2="40" />
+                    <line x1="50" y1="60" x2="50" y2="100" />
+                    <line x1="0" y1="50" x2="40" y2="50" />
+                    <line x1="60" y1="50" x2="100" y2="50" />
+                  </svg>
+                </div>
+              </div>
+
+              {/* Gradient to darken the left edge where the text box overlaps on desktop */}
+              <div className="hidden lg:block absolute inset-0 bg-gradient-to-r from-black/80 via-black/20 to-transparent pointer-events-none" />
+            </div>
+
+            {/* Architectural Grid Accents */}
+            <div className="absolute -bottom-6 -right-6 md:-bottom-12 md:-right-12 w-12 h-12 md:w-24 md:h-24 border-b border-r border-white/10" />
           </div>
-          <Placeholder className="aspect-[16/9] w-full" label="[Diagram/Image pending]" />
+
+          {/* TEXT BLOCK (Interactive Bottom-Left Card) */}
+          <div className="w-[90%] md:w-[80%] lg:w-[35%] mx-auto lg:mx-0 lg:absolute lg:bottom-16 lg:left-[var(--fluid-px)] relative z-20 -mt-24 md:-mt-32 lg:mt-0 origin-bottom-left transition-all duration-1000 ease-[cubic-bezier(0.22,1,0.36,1)] peer-hover:lg:scale-75 peer-hover:lg:-translate-x-8 peer-hover:lg:translate-y-8 peer-hover:opacity-40">
+            <div className="bg-[var(--color-brand-warm-white)] p-6 md:p-12 shadow-[0_30px_80px_rgba(0,0,0,0.5)] border-l-2 border-[var(--color-brand-graphite)] transition-shadow duration-1000 peer-hover:shadow-none">
+              <div className="w-12 h-[2px] bg-[var(--color-brand-graphite)] mb-6 md:mb-8" />
+              <h2 className="text-3xl md:text-5xl font-bold tracking-tighter text-[var(--color-brand-graphite)] mb-4 md:mb-8 leading-[1.05]">
+                Where Quality<br />Is Checked
+              </h2>
+              <p className="text-base md:text-xl text-[var(--color-brand-text-secondary)] leading-relaxed font-light">
+                Quality checks are built into each stage of the process, from planning through to final packing, to maintain consistency across every requirement.
+              </p>
+            </div>
+          </div>
+
         </div>
       </Section>
 
