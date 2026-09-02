@@ -44,7 +44,6 @@ export default function DiamondsPage() {
             {/* Inner rim */}
             <div className="absolute inset-2 border border-white/10 rounded-full" />
           </div>
-          <span className="text-white/40 text-[9px] uppercase tracking-[0.3em] font-mono">10x Magnification</span>
         </div>
 
         {/* Text Block (Bottom Left) */}
@@ -65,69 +64,111 @@ export default function DiamondsPage() {
       </section>
 
       {/* 2. PRODUCT MATRIX */}
-      <Section className="bg-[var(--color-brand-white)]" withFluidVertical>
+      <Section className="bg-[var(--color-brand-panel)]" withFluidVertical>
         <div className="w-full">
           <h2 className="text-[length:var(--fluid-h2)] font-bold tracking-tight text-[var(--color-brand-graphite)] mb-[var(--fluid-gap)] leading-tight">
             Product Profile
           </h2>
-          <div className="w-full">
-            <table className="w-full border-collapse block md:table">
-              <thead className="block md:table-header-group hidden md:table-row-group">
-                <tr className="block md:table-row border-b-2 border-[var(--color-brand-graphite)]">
-                  <th className="block md:table-cell text-left py-4 px-2 font-bold text-sm tracking-wider uppercase text-[var(--color-brand-graphite)] w-1/3">
-                    Parameter
-                  </th>
-                  <th className="block md:table-cell text-left py-4 px-2 font-bold text-sm tracking-wider uppercase text-[var(--color-brand-graphite)] w-2/3">
-                    Details
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="block md:table-row-group">
-                {matrixData.map((row, idx) => (
-                  <tr key={idx} className="block md:table-row border-b border-[var(--color-brand-line)] mb-6 md:mb-0 pb-4 md:pb-0 group">
-                    <td className="block md:table-cell py-2 md:py-6 px-2 align-top">
-                      <span className="block md:hidden text-xs font-bold uppercase tracking-wider text-[var(--color-brand-text-secondary)] mb-1">Parameter</span>
-                      <span className="font-semibold text-[var(--color-brand-graphite)]">{row.label}</span>
-                    </td>
-                    <td className="block md:table-cell py-2 md:py-6 px-2 align-top">
-                      <span className="block md:hidden text-xs font-bold uppercase tracking-wider text-[var(--color-brand-text-secondary)] mb-1">Details</span>
-                      <span className="text-[var(--color-brand-text-secondary)]">{row.value}</span>
-                    </td>
+          
+          {/* Document Card Framing */}
+          <div className="w-full border border-[var(--color-brand-line)] bg-[var(--color-brand-white)] shadow-sm">
+            {/* Header Bar */}
+            <div className="w-full bg-[var(--color-brand-graphite)] px-6 py-3 border-b border-[var(--color-brand-line)]">
+              <span className="text-[var(--color-brand-warm-white)] text-xs font-mono tracking-[0.2em] uppercase">
+                Product Specification
+              </span>
+            </div>
+            
+            {/* Table Container */}
+            <div className="p-6 md:p-10 lg:p-16">
+              <table className="w-full border-collapse block md:table">
+                <thead className="block md:table-header-group hidden md:table-row-group">
+                  <tr className="block md:table-row border-b-2 border-[var(--color-brand-line)]">
+                    <th className="block md:table-cell text-left pb-6 px-2 font-mono text-xs tracking-widest uppercase text-[var(--color-brand-text-secondary)] w-1/3">
+                      Parameter
+                    </th>
+                    <th className="block md:table-cell text-left pb-6 px-2 font-mono text-xs tracking-widest uppercase text-[var(--color-brand-text-secondary)] w-2/3">
+                      Details
+                    </th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody className="block md:table-row-group">
+                  {matrixData.map((row, idx) => (
+                    <tr key={idx} className="block md:table-row border-b border-[var(--color-brand-line)] last:border-b-0 mb-10 md:mb-0 pb-6 md:pb-0">
+                      <td className="block md:table-cell py-2 md:py-8 px-2 align-top">
+                        <span className="block md:hidden text-[10px] font-mono uppercase tracking-widest text-[var(--color-brand-text-secondary)] mb-2">Parameter</span>
+                        <span className="font-light text-[var(--color-brand-text-secondary)] text-base md:text-lg">{row.label}</span>
+                      </td>
+                      <td className="block md:table-cell py-2 md:py-8 px-2 align-top">
+                        <span className="block md:hidden text-[10px] font-mono uppercase tracking-widest text-[var(--color-brand-text-secondary)] mb-2">Details</span>
+                        <span className="font-medium text-[var(--color-brand-graphite)] text-lg md:text-xl">{row.value}</span>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </Section>
 
       {/* 3. ASSORTMENTS */}
-      <Section className="bg-[var(--color-brand-warm-white)]" withFluidVertical>
-        <div className="w-full">
-          <h2 className="text-[length:var(--fluid-h2)] font-bold tracking-tight text-[var(--color-brand-graphite)] mb-[var(--fluid-gap)] leading-tight">
-            Assortment Formats
-          </h2>
-          <div className="w-full flex flex-col gap-4">
+      <section className="w-full bg-[var(--color-brand-graphite)] py-24 lg:py-32">
+        <div className="w-full max-w-[1920px] mx-auto px-[var(--fluid-px)]">
+          
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 lg:mb-24 gap-8">
+            <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tighter text-white leading-none">
+              Assortment<br />Formats
+            </h2>
+            <p className="text-white/50 font-mono text-xs tracking-[0.2em] uppercase max-w-xs md:text-right">
+              Precision sorting protocols adapted to varied industrial and luxury requirements.
+            </p>
+          </div>
+
+          {/* 3-Column Architectural Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 border-y border-white/10 divide-y lg:divide-y-0 lg:divide-x divide-white/10">
             {[
               "Standard Assortment",
               "Calibrated Assortment",
               "Client-Specific Assortment"
             ].map((title, idx) => (
-              <details key={idx} className="group bg-[var(--color-brand-white)] border border-[var(--color-brand-line)] w-full">
-                <summary className="flex items-center justify-between p-6 md:p-8 cursor-pointer list-none font-semibold text-lg md:text-xl text-[var(--color-brand-graphite)] hover:bg-[var(--color-brand-panel)] transition-colors">
-                  {title}
-                  <span className="transition group-open:rotate-180">
-                    <svg fill="none" height="24" shapeRendering="geometricPrecision" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
-                  </span>
-                </summary>
-                <div className="p-6 md:p-8 pt-0 md:pt-0 text-[var(--color-brand-text-secondary)] leading-relaxed border-t border-[var(--color-brand-line)] mt-4 pt-6">
-                  [Definition and parameters — pending client confirmation]
+              <div key={idx} className="group relative w-full h-[350px] lg:h-[450px] flex flex-col justify-between p-8 md:p-12 overflow-hidden bg-[var(--color-brand-graphite)] hover:bg-[#1a1a1a] transition-colors duration-700 cursor-default">
+                
+                {/* Background glow effect on hover */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.05)_0%,transparent_60%)] transition-opacity duration-1000 pointer-events-none" />
+
+                {/* Large watermark number */}
+                <div className="absolute -bottom-8 -right-8 text-[180px] lg:text-[240px] font-bold text-white/[0.02] group-hover:text-white/[0.05] group-hover:-translate-y-4 transition-all duration-1000 pointer-events-none tracking-tighter leading-none select-none">
+                  0{idx + 1}
                 </div>
-              </details>
+
+                {/* Number Indicator */}
+                <div className="relative z-10 flex items-center justify-between w-full">
+                  <span className="font-mono text-[10px] tracking-widest uppercase text-white/30 group-hover:text-white/60 transition-colors">
+                    Format 0{idx + 1}
+                  </span>
+                  <div className="w-12 h-[1px] bg-white/10 group-hover:bg-white/40 transition-colors duration-700" />
+                </div>
+
+                {/* Content */}
+                <div className="relative z-10 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]">
+                  <h3 className="text-3xl lg:text-4xl font-light text-white mb-6 group-hover:text-white transition-colors">
+                    {title.replace(" Assortment", "")}
+                    <span className="block text-xl lg:text-2xl text-white/50 mt-1">Assortment</span>
+                  </h3>
+                  
+                  <div className="h-[1px] w-0 group-hover:w-full bg-gradient-to-r from-white/30 to-transparent transition-all duration-1000 ease-out mb-6" />
+                  
+                  <p className="text-base md:text-lg text-white/50 leading-relaxed font-light opacity-80 group-hover:opacity-100 transition-opacity duration-700 delay-100">
+                    [Definition and parameters — pending client confirmation]
+                  </p>
+                </div>
+              </div>
             ))}
           </div>
+
         </div>
-      </Section>
+      </section>
 
       {/* 4. PACKAGING */}
       <Section className="bg-[var(--color-brand-white)]" withFluidVertical>
