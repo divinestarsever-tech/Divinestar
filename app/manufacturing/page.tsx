@@ -1,10 +1,11 @@
 import { Placeholder } from "@/components/ui/Placeholder";
 import { Section } from "@/components/layout/Section";
 import Link from "next/link";
+import { ProcessRail } from "@/components/ui/ProcessRail";
 
 export default function ManufacturingPage() {
   return (
-    <div className="flex flex-col w-full overflow-x-hidden">
+    <div className="flex flex-col w-full relative">
       
       {/* 1. PAGE HERO */}
       <section className="relative w-full min-h-[75vh] md:min-h-[85vh] lg:min-h-[90vh] flex flex-col">
@@ -88,31 +89,7 @@ export default function ManufacturingPage() {
       </Section>
 
       {/* 3. PROCESS NAVIGATOR */}
-      <Section className="bg-[var(--color-brand-warm-white)]" withFluidVertical>
-        <div className="w-full">
-          <h2 className="text-[length:var(--fluid-h2)] font-bold tracking-tight text-[var(--color-brand-graphite)] mb-[var(--fluid-gap)] leading-tight text-center">
-            The Process
-          </h2>
-          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-4 md:gap-6">
-            {[
-              { title: "Rough Procurement", desc: "Structured intake and preliminary sorting." },
-              { title: "Planning", desc: "Mapping the optimal yield and structure." },
-              { title: "Laser Cutting", desc: "Precision sectioning of the rough stone." },
-              { title: "Bruting", desc: "Forming the foundational girdle shape." },
-              { title: "Polishing", desc: "Faceting to exact mathematical proportions." },
-              { title: "Grading & Assortment", desc: "Categorising against strict parameters." },
-              { title: "Quality Control", desc: "Final verification and consistency check." },
-              { title: "Packing & Dispatch", desc: "Secure preparation for international shipping." }
-            ].map((step, idx) => (
-              <div key={idx} className="flex flex-col gap-4 text-center">
-                <Placeholder className="aspect-square w-full" label="[Image pending]" />
-                <h3 className="text-sm font-bold text-[var(--color-brand-graphite)] tracking-wide uppercase mt-2">{step.title}</h3>
-                <p className="text-xs text-[var(--color-brand-text-secondary)] leading-snug">{step.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </Section>
+      <ProcessRail />
 
       {/* 4. TECHNOLOGY & CRAFTSMANSHIP */}
       <Section className="bg-[var(--color-brand-white)]" withFluidVertical>
