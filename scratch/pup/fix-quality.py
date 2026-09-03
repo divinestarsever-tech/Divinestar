@@ -3,8 +3,8 @@ import re
 with open('app/page.tsx', 'r', encoding='utf-8') as f:
     code = f.read()
 
-if 'GlobalReachInteractive' not in code:
-    import_statement = 'import GlobalReachInteractive from "@/components/ui/GlobalReachInteractive";\n'
+if 'QualityAssortmentInteractive' not in code:
+    import_statement = 'import QualityAssortmentInteractive from "@/components/ui/QualityAssortmentInteractive";\n'
     last_import_idx = code.rfind('import')
     if last_import_idx != -1:
         end_of_line = code.find('\n', last_import_idx)
@@ -12,8 +12,8 @@ if 'GlobalReachInteractive' not in code:
     else:
         code = import_statement + code
 
-start_marker = '{/* 8. GLOBAL SERVICE */}'
-end_marker = '{/* 9. RESPONSIBILITY */}'
+start_marker = '{/* 6. QUALITY & ASSORTMENT */}'
+end_marker = '{/* 7. CLIENT SERVICES */}'
 
 start_idx = code.find(start_marker)
 end_idx = code.find(end_marker)
@@ -22,8 +22,8 @@ if start_idx != -1 and end_idx != -1:
     before = code[:start_idx]
     after = code[end_idx:]
     
-    new_section = '''{/* 8. GLOBAL SERVICE */}
-      <GlobalReachInteractive />
+    new_section = '''{/* 6. QUALITY & ASSORTMENT */}
+      <QualityAssortmentInteractive />
 
       '''
     

@@ -3,6 +3,13 @@ import { Section } from "@/components/layout/Section";
 import Link from "next/link";
 import WhoWeAreInteractive from "@/components/ui/WhoWeAreInteractive";
 import ManufacturingCurtainStory from "@/components/ui/ManufacturingCurtainStory";
+import RoundSpecialisation from "@/components/ui/RoundSpecialisation";
+import QualityAssortmentInteractive from "@/components/ui/QualityAssortmentInteractive";
+import ClientServicesStack from "@/components/ui/ClientServicesStack";
+import GlobalReachInteractive from "@/components/ui/GlobalReachInteractive";
+import ResponsibilityAccordion from "@/components/ui/ResponsibilityAccordion";
+import LeadershipTeaser from "@/components/ui/LeadershipTeaser";
+import ClientVoiceInteractive from "@/components/ui/ClientVoiceInteractive";
 
 export default function Home() {
   return (
@@ -53,214 +60,25 @@ export default function Home() {
       <ManufacturingCurtainStory />
 
       {/* 5. ROUND DIAMOND SPECIALISATION */}
-      <Section className="bg-[var(--color-brand-white)]" withFluidVertical>
-        <div className="flex flex-col lg:flex-row w-full justify-between gap-12 lg:gap-8">
-          
-          {/* TEXT CONTENT (~40%) */}
-          <div className="w-full lg:w-[40%] shrink-0">
-            <h2 className="text-[length:var(--fluid-h2)] font-bold tracking-tight text-[var(--color-brand-graphite)] mb-6 leading-tight">
-              Built Around Round-Diamond Expertise
-            </h2>
-            <p className="text-lg text-[var(--color-brand-text-secondary)] leading-relaxed">
-              Divine Star specialises in round diamonds across melee and calibrated sizes, with assortment and quality control built for repeat B2B requirements.
-            </p>
-          </div>
-          
-          {/* DATA READOUT (~55-60%) */}
-          <div id="data-readout-col" className="w-full lg:w-[55%] shrink-0 flex flex-col">
-            {[
-              "Size Range", "Colour Range", "Clarity Range", "Assortment Formats"
-            ].map((title, idx) => (
-              <div key={idx} className={`flex flex-col justify-center py-6 border-b border-[var(--color-brand-line)] ${idx === 0 ? 'border-t lg:border-t-0' : ''}`}>
-                <span className="text-sm text-[var(--color-brand-text-secondary)] mb-2">{title}</span>
-                <span className="text-2xl md:text-3xl font-light text-[var(--color-brand-graphite)] tracking-tight">[pending confirmation]</span>
-              </div>
-            ))}
-          </div>
-
-        </div>
-      </Section>
+      <RoundSpecialisation />
 
       {/* 6. QUALITY & ASSORTMENT */}
-      <Section className="bg-[var(--color-brand-warm-white)]" withFluidVertical>
-        <div className="flex flex-col items-center w-full">
-          
-          {/* TEXT */}
-          <div className="w-full max-w-3xl text-center mb-[var(--fluid-gap)]">
-            <h2 className="text-[length:var(--fluid-h2)] font-bold tracking-tight text-[var(--color-brand-graphite)] mb-6 leading-tight">
-              Consistency, Verified at Every Stage
-            </h2>
-            <p className="text-lg md:text-xl text-[var(--color-brand-text-secondary)] leading-relaxed max-w-[65ch] mx-auto">
-              Every parcel is reviewed under microscope and loupe grading to maintain consistent colour, clarity and make within agreed parameters.
-            </p>
-          </div>
-          
-          {/* PANORAMIC IMAGE */}
-          <div id="panoramic-container" className="relative w-full aspect-[21/9]">
-            {/* Viewfinder reticles */}
-            <div className="absolute top-4 left-4 w-4 md:w-8 h-4 md:h-8 border-t border-l border-[var(--color-brand-text-secondary)]/30 pointer-events-none z-10" />
-            <div className="absolute top-4 right-4 w-4 md:w-8 h-4 md:h-8 border-t border-r border-[var(--color-brand-text-secondary)]/30 pointer-events-none z-10" />
-            <div className="absolute bottom-4 left-4 w-4 md:w-8 h-4 md:h-8 border-b border-l border-[var(--color-brand-text-secondary)]/30 pointer-events-none z-10" />
-            <div className="absolute bottom-4 right-4 w-4 md:w-8 h-4 md:h-8 border-b border-r border-[var(--color-brand-text-secondary)]/30 pointer-events-none z-10" />
-
-            <Placeholder className="h-full border-none" label="[Grading/inspection image pending]" />
-          </div>
-
-        </div>
-      </Section>
+      <QualityAssortmentInteractive />
 
       {/* 7. CLIENT SERVICES */}
-      <Section className="bg-[var(--color-brand-white)]" withFluidVertical>
-        <div className="w-full">
-          <h2 className="text-[length:var(--fluid-h2)] font-bold tracking-tight text-[var(--color-brand-graphite)] mb-[var(--fluid-gap)] leading-tight">
-            Client Services
-          </h2>
-          <div className="flex flex-col lg:flex-row w-full gap-12 lg:gap-16 mb-12">
-            
-            {/* FLAGSHIP BLOCK (~55-60%) */}
-            <div id="flagship-block" className="w-full lg:w-[55%] flex flex-col justify-center bg-[var(--color-brand-warm-white)] p-8 md:p-12 lg:p-16">
-              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[var(--color-brand-graphite)] mb-6 leading-tight">
-                Dedicated Assortment
-              </h3>
-              <p className="text-lg md:text-xl text-[var(--color-brand-text-secondary)] leading-relaxed">
-                Consistent colour and clarity matching to your specified parameters.
-              </p>
-            </div>
-
-            {/* COMPACT STACK (~40-45%) */}
-            <div id="compact-stack" className="w-full flex-1 flex flex-col justify-center gap-12 lg:py-8">
-              {[
-                { title: "Bagging & Parcel Services", desc: "Packing formats structured around your operational needs." },
-                { title: "Export & Logistics", desc: "Documentation and delivery coordination for international requirements." },
-                { title: "Client-Specific Requirements", desc: "Custom sorting and coding available on request." }
-              ].map((service, idx) => (
-                <div key={idx} className="flex flex-col gap-2">
-                  <h3 className="text-base md:text-lg font-bold text-[var(--color-brand-graphite)]">{service.title}</h3>
-                  <p className="text-sm md:text-base text-[var(--color-brand-text-secondary)] leading-relaxed">{service.desc}</p>
-                </div>
-              ))}
-            </div>
-
-          </div>
-          <Link href="/services" className="inline-flex font-medium text-[var(--color-brand-graphite)] underline underline-offset-4 hover:text-[var(--color-brand-text-secondary)] transition-colors">
-            View All Services &rarr;
-          </Link>
-        </div>
-      </Section>
+      <ClientServicesStack />
 
       {/* 8. GLOBAL SERVICE */}
-      <Section className="relative bg-[var(--color-brand-panel)] overflow-hidden" withFluidVertical>
-        {/* Background Network Graphic */}
-        <svg width="100%" height="100%" viewBox="0 0 1200 400" preserveAspectRatio="xMidYMid slice" className="absolute inset-0 z-0 opacity-[0.12] pointer-events-none text-[var(--color-brand-graphite)]" aria-hidden="true">
-          <g stroke="currentColor" strokeWidth="1" fill="none">
-            <path d="M150 200 L280 140 L420 250 L600 160 L780 280 L950 180 L1100 220" />
-            <path d="M280 140 L350 80 L600 160" />
-            <path d="M420 250 L500 350 L780 280" />
-            <path d="M780 280 L880 340 L1100 220" />
-            <path d="M600 160 L750 90 L950 180" />
-            <path d="M150 200 L200 300 L420 250" />
-            <path d="M950 180 L1020 120 L1100 220" />
-            
-            <circle cx="150" cy="200" r="3" fill="currentColor" />
-            <circle cx="200" cy="300" r="2" fill="currentColor" />
-            <circle cx="280" cy="140" r="4" fill="currentColor" />
-            <circle cx="350" cy="80" r="2.5" fill="currentColor" />
-            <circle cx="420" cy="250" r="5" fill="currentColor" />
-            <circle cx="500" cy="350" r="2" fill="currentColor" />
-            <circle cx="600" cy="160" r="4.5" fill="currentColor" />
-            <circle cx="750" cy="90" r="3" fill="currentColor" />
-            <circle cx="780" cy="280" r="5" fill="currentColor" />
-            <circle cx="880" cy="340" r="2.5" fill="currentColor" />
-            <circle cx="950" cy="180" r="4" fill="currentColor" />
-            <circle cx="1020" cy="120" r="2" fill="currentColor" />
-            <circle cx="1100" cy="220" r="3.5" fill="currentColor" />
-          </g>
-        </svg>
-
-        {/* Content */}
-        <div className="relative z-10 flex flex-col items-start w-full max-w-4xl">
-          <h2 className="text-[length:var(--fluid-h2)] font-bold tracking-tight text-[var(--color-brand-graphite)] mb-6 leading-tight">
-            Direct B2B Relationships, Global Reach
-          </h2>
-          <p className="text-lg md:text-xl text-[var(--color-brand-text-secondary)] leading-relaxed mb-8 max-w-3xl">
-            Divine Star serves B2B clients across international markets with direct sales relationships and export-ready logistics.
-          </p>
-          <div className="border border-[var(--color-brand-line)] px-6 py-4 w-full md:w-auto">
-            <p className="text-sm font-medium text-[var(--color-brand-graphite)]">
-              [Verified markets and office locations — pending client confirmation]
-            </p>
-          </div>
-        </div>
-      </Section>
+      <GlobalReachInteractive />
 
       {/* 9. RESPONSIBILITY */}
-      <Section className="bg-[var(--color-brand-white)]" withFluidVertical>
-        <div className="text-center w-full flex flex-col items-center">
-          <h2 className="text-[length:var(--fluid-h2)] font-bold tracking-tight text-[var(--color-brand-graphite)] mb-6 leading-tight">
-            Progress With Clear Accountability
-          </h2>
-          <p className="text-lg text-[var(--color-brand-text-secondary)] leading-relaxed mb-8 max-w-3xl">
-            Responsible sourcing and resource efficiency are part of how Divine Star operates. Detailed policies and documentation are available on request.
-          </p>
-          <Link href="/responsibility" className="inline-flex font-medium text-[var(--color-brand-graphite)] underline underline-offset-4 hover:text-[var(--color-brand-text-secondary)] transition-colors">
-            Learn More &rarr;
-          </Link>
-        </div>
-      </Section>
+      <ResponsibilityAccordion />
 
       {/* 10. LEADERSHIP TEASER */}
-      <Section className="bg-[var(--color-brand-warm-white)]" withFluidVertical>
-        <div className="w-full">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-[var(--fluid-gap)] mb-12">
-            {[1, 2, 3].map((_, idx) => (
-              <div key={idx} className="flex flex-col gap-6 text-center">
-                <Placeholder className="aspect-[3/4] w-full" label="[Image pending]" />
-                <div>
-                  <h3 className="text-lg font-bold text-[var(--color-brand-graphite)]">[Leadership name â€” pending client confirmation]</h3>
-                  <p className="text-sm text-[var(--color-brand-text-secondary)] uppercase tracking-widest mt-1">[Title â€” pending confirmation]</p>
-                </div>
-              </div>
-            ))}
-          </div>
-          <div className="text-center">
-            <Link href="/leadership" className="inline-flex font-medium text-[var(--color-brand-graphite)] underline underline-offset-4 hover:text-[var(--color-brand-text-secondary)] transition-colors">
-              Meet Our Leadership &rarr;
-            </Link>
-          </div>
-        </div>
-      </Section>
+      <LeadershipTeaser />
 
       {/* 11. TRUST / CLIENT VOICE */}
-      <Section className="bg-[var(--color-brand-white)]" withFluidVertical>
-        <div className="flex flex-col lg:flex-row gap-12 lg:gap-24 w-full">
-          
-          {/* Left: Section Identity */}
-          <div className="lg:w-1/3 shrink-0">
-            <h2 className="text-[length:var(--fluid-h2)] font-bold tracking-tight text-[var(--color-brand-graphite)] leading-tight sticky top-32">
-              How We Work With Clients
-            </h2>
-          </div>
-
-          {/* Right: The Manifesto / Statements */}
-          <div className="flex-1 flex flex-col w-full mt-4 lg:mt-0">
-            {[
-              { num: "01", text: "Clear communication from first enquiry to delivery." },
-              { num: "02", text: "Consistent quality across repeat orders." },
-              { num: "03", text: "Structured documentation for every shipment." }
-            ].map((item, idx) => (
-              <div key={idx} className="flex flex-col sm:flex-row gap-4 sm:gap-12 py-10 lg:py-16 border-b border-[var(--color-brand-line)] first:pt-0">
-                <span className="text-sm md:text-base font-medium text-[var(--color-brand-text-secondary)] tracking-widest shrink-0 sm:pt-3">
-                  {item.num}
-                </span>
-                <p className="text-2xl md:text-3xl lg:text-4xl font-medium text-[var(--color-brand-graphite)] leading-[1.3] tracking-tight max-w-3xl">
-                  {item.text}
-                </p>
-              </div>
-            ))}
-          </div>
-
-        </div>
-      </Section>
+      <ClientVoiceInteractive />
 
       {/* 12. FINAL CTA */}
       <Section id="contact" className="relative bg-[var(--color-brand-graphite)] text-center overflow-hidden" withFluidVertical>
