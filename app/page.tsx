@@ -14,21 +14,40 @@ import ClientVoiceInteractive from "@/components/ui/ClientVoiceInteractive";
 export default function Home() {
   return (
     <div className="flex flex-col w-full">
-      {/* 1. HERO */}
-      <Section className="relative min-h-[90vh] flex flex-col justify-center" withFluidVertical>
-        <Placeholder isHero label="[Hero video pending]" />
-        <div className="relative z-10 w-full text-[var(--color-brand-white)]">
-          <h1 className="text-[length:var(--fluid-h1)] leading-tight font-bold tracking-tight mb-6 uppercase max-w-4xl">
-            ROUND DIAMONDS. ENGINEERED FOR CONSISTENCY.
+      {/* 1. HERO WITH CINEMATIC VIDEO BACKGROUND */}
+      <Section className="relative min-h-[90vh] flex flex-col justify-center overflow-hidden" withFluidVertical>
+        
+        {/* The Cinematic Video Background */}
+        <div className="absolute inset-0 w-full h-full z-0 bg-[var(--color-brand-graphite)]">
+          <video 
+            autoPlay 
+            muted 
+            loop 
+            playsInline
+            poster="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=80"
+            className="absolute inset-0 w-full h-full object-cover opacity-60"
+          >
+            {/* The user will drop their final video into the public folder as hero-video.mp4 */}
+            <source src="/hero-video.mp4" type="video/mp4" />
+          </video>
+          {/* Overlay to ensure text remains perfectly readable */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
+        </div>
+
+        {/* Hero Content */}
+        <div className="relative z-10 w-full text-[var(--color-brand-white)] max-w-7xl mx-auto px-6">
+          <h1 className="text-4xl md:text-5xl lg:text-7xl font-light tracking-tight mb-6 uppercase max-w-4xl leading-[1.1]">
+            ROUND DIAMONDS. <br />
+            <span className="font-bold">ENGINEERED FOR CONSISTENCY.</span>
           </h1>
-          <p className="text-xl md:text-2xl font-light mb-10 max-w-2xl text-[var(--color-brand-warm-white)]">
-            Precision manufacturing, disciplined assortment and dependable B2B supply for jewellery manufacturers and trade partners.
+          <p className="text-lg md:text-2xl font-light mb-10 max-w-2xl text-[var(--color-brand-warm-white)]/90 leading-relaxed">
+            Precision manufacturing, disciplined assortment and dependable B2B supply for the world's finest jewellery manufacturers.
           </p>
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
-            <Link href="/contact" className="inline-flex items-center justify-center bg-[var(--color-brand-white)] text-[var(--color-brand-graphite)] px-8 py-4 text-base font-medium hover:bg-[var(--color-brand-panel)] transition-colors rounded-none w-full sm:w-auto text-center">
+            <Link href="/contact" className="inline-flex items-center justify-center bg-[var(--color-brand-white)] text-[var(--color-brand-graphite)] px-8 py-4 text-sm uppercase tracking-widest font-bold hover:bg-gray-200 transition-colors w-full sm:w-auto text-center">
               Discuss Your Requirement
             </Link>
-            <Link href="/manufacturing" className="inline-flex items-center justify-center text-[var(--color-brand-white)] text-base font-medium hover:text-[var(--color-brand-warm-white)] transition-colors underline underline-offset-4">
+            <Link href="/manufacturing" className="inline-flex items-center justify-center text-[var(--color-brand-white)] text-sm uppercase tracking-widest font-bold hover:text-gray-300 transition-colors underline underline-offset-8 w-full sm:w-auto text-center">
               Explore Manufacturing &rarr;
             </Link>
           </div>
