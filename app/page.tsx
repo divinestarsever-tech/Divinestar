@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <div className="flex flex-col w-full">
       {/* 1. HERO WITH CINEMATIC VIDEO BACKGROUND */}
-      <Section className="relative min-h-[90vh] flex flex-col justify-center overflow-hidden" withFluidVertical>
+      <Section className="relative min-h-[90vh] lg:min-h-screen flex flex-col justify-end overflow-hidden pb-16 lg:pb-32 pt-48" withFluidVertical={false}>
         
         {/* The Cinematic Video Background */}
         <div className="absolute inset-0 w-full h-full z-0 bg-[var(--color-brand-graphite)]">
@@ -25,32 +25,44 @@ export default function Home() {
             loop 
             playsInline
             poster="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=80"
-            className="absolute inset-0 w-full h-full object-cover opacity-60"
+            className="absolute inset-0 w-full h-full object-cover"
           >
             {/* The user will drop their final video into the public folder as hero-video.mp4 */}
             <source src="/hero-video.mp4" type="video/mp4" />
           </video>
-          {/* Overlay to ensure text remains perfectly readable */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
+          {/* Overlay: Darker at the bottom for text readability, clear at the top for video visibility */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent" />
+          <div className="absolute inset-0 bg-black/20 mix-blend-multiply" />
         </div>
 
-        {/* Hero Content */}
-        <div className="relative z-10 w-full text-[var(--color-brand-white)] max-w-7xl mx-auto px-6">
-          <h1 className="text-4xl md:text-5xl lg:text-7xl font-light tracking-tight mb-6 uppercase max-w-4xl leading-[1.1]">
-            ROUND DIAMONDS. <br />
-            <span className="font-bold">ENGINEERED FOR CONSISTENCY.</span>
-          </h1>
-          <p className="text-lg md:text-2xl font-light mb-10 max-w-2xl text-[var(--color-brand-warm-white)]/90 leading-relaxed">
-            Precision manufacturing, disciplined assortment and dependable B2B supply for the world's finest jewellery manufacturers.
-          </p>
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
-            <Link href="/contact" className="inline-flex items-center justify-center bg-[var(--color-brand-white)] text-[var(--color-brand-graphite)] px-8 py-4 text-sm uppercase tracking-widest font-bold hover:bg-gray-200 transition-colors w-full sm:w-auto text-center">
-              Discuss Your Requirement
-            </Link>
-            <Link href="/manufacturing" className="inline-flex items-center justify-center text-[var(--color-brand-white)] text-sm uppercase tracking-widest font-bold hover:text-gray-300 transition-colors underline underline-offset-8 w-full sm:w-auto text-center">
-              Explore Manufacturing &rarr;
-            </Link>
+        {/* Hero Content - Shifted to Bottom Left & Styled */}
+        <div className="relative z-10 w-full text-[var(--color-brand-white)] max-w-7xl mx-auto flex flex-col justify-end">
+          
+          <div className="flex items-stretch gap-6 lg:gap-10">
+            {/* Stylish vertical accent line */}
+            <div className="w-[3px] bg-emerald-500/80 hidden md:block rounded-full shadow-[0_0_15px_rgba(16,185,129,0.4)]" />
+            
+            <div className="flex flex-col justify-end">
+              <h1 className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-light tracking-tight mb-4 uppercase max-w-4xl leading-[1.1] drop-shadow-lg">
+                ROUND DIAMONDS. <br />
+                <span className="font-bold">ENGINEERED FOR CONSISTENCY.</span>
+              </h1>
+              <p className="text-base md:text-xl font-light mb-10 max-w-2xl text-[var(--color-brand-warm-white)]/90 leading-relaxed drop-shadow-md">
+                Precision manufacturing, disciplined assortment and dependable B2B supply for the world's finest jewellery manufacturers.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
+                <Link href="/contact" className="inline-flex items-center justify-center bg-[var(--color-brand-white)]/95 backdrop-blur-sm text-[var(--color-brand-graphite)] px-8 py-4 text-xs md:text-sm uppercase tracking-[0.2em] font-bold hover:bg-white transition-all duration-300 w-full sm:w-auto text-center border border-white/20 shadow-xl hover:-translate-y-1">
+                  Discuss Your Requirement
+                </Link>
+                <Link href="/manufacturing" className="inline-flex items-center justify-center text-[var(--color-brand-white)] text-xs md:text-sm uppercase tracking-[0.2em] font-bold hover:text-emerald-400 transition-colors w-full sm:w-auto text-center group">
+                  <span className="border-b border-transparent group-hover:border-emerald-400 transition-colors pb-1">Explore Manufacturing</span>
+                  <span className="ml-2 transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+                </Link>
+              </div>
+            </div>
           </div>
+
         </div>
       </Section>
 
