@@ -12,9 +12,9 @@ export default function ManufacturingPage() {
       <section className="relative w-full min-h-[75vh] md:min-h-[85vh] lg:min-h-[90vh] flex flex-col">
         {/* Top 75-80% - Full-bleed Image Layer */}
         <div className="w-full flex-1 relative min-h-[45vh] md:min-h-[60vh]">
-          <Placeholder className="absolute inset-0 w-full h-full object-cover" label="[Facility video/image pending]" />
+          <img src="/images/manufacturing/hero_manufacturing.jpg" alt="Manufacturing Facility" className="absolute inset-0 w-full h-full object-cover opacity-90" />
+          <div className="absolute inset-0 bg-[var(--color-brand-graphite)]/10 mix-blend-multiply" />
         </div>
-        
         {/* Premium Engineered Lower-Third Bar */}
         <div className="w-full bg-[var(--color-brand-graphite)] relative shrink-0 border-t border-white/10">
           
@@ -62,7 +62,7 @@ export default function ManufacturingPage() {
                <div className="hidden lg:block absolute -bottom-4 -left-4 w-8 h-8 border-b border-l border-[var(--color-brand-graphite)]/20" />
                
                <div className="p-3 md:p-5 bg-[var(--color-brand-white)] border border-[var(--color-brand-line)] shadow-sm relative z-0">
-                 <Placeholder className="aspect-[16/9] w-full" label="[Facility image pending]" />
+                 <img src="/images/manufacturing/facility_overview.jpg" alt="Facility Overview" className="aspect-[16/9] w-full object-cover" />
                </div>
             </div>
 

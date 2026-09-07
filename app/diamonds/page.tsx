@@ -19,11 +19,21 @@ export default function DiamondsPage() {
       <section className="relative w-full h-[85vh] lg:h-[90vh] flex flex-col justify-end bg-black overflow-hidden">
         
         {/* Full-bleed background */}
-        <div className="absolute inset-0 w-full h-full z-0">
-          <Placeholder isHero className="w-full h-full" label="[Macro diamond image/video pending]" />
+        <div className="absolute inset-0 w-full h-full z-0 bg-black">
+          <video 
+            autoPlay 
+            muted 
+            loop 
+            playsInline
+            poster="/images/diamonds/hero_diamond_wide.jpg"
+            className="absolute inset-0 w-full h-full object-cover object-center opacity-80"
+          >
+            {/* User can drop diamond-video.mp4 here later */}
+            <source src="/diamond-video.mp4" type="video/mp4" />
+          </video>
           {/* Subtle gradient for text legibility at bottom left */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-transparent lg:w-2/3 pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-transparent lg:w-2/3 pointer-events-none" />
         </div>
 
         {/* The Loupe Element (Desktop: Top Right, Mobile: Omitted for clarity) */}
