@@ -4,11 +4,11 @@ import Link from "next/link";
 
 export default function DiamondsPage() {
   const matrixData = [
-    { label: "Size / Carat Range", value: "[pending client confirmation]" },
-    { label: "Colour Range", value: "[pending client confirmation]" },
-    { label: "Clarity Range", value: "[pending client confirmation]" },
-    { label: "Make / Cut Standard", value: "[pending client confirmation]" },
-    { label: "Certification (certified / non-certified)", value: "[pending client confirmation]" },
+    { label: "Size / Carat Range", value: "120–140 pieces per carat (Polished)" },
+    { label: "Colour Range", value: "D to K" },
+    { label: "Clarity Range", value: "VVS to I3" },
+    { label: "Make / Cut Standard", value: "Very Good to Excellent" },
+    { label: "Certification (certified / non-certified)", value: "Non-certified" },
     { label: "Assortment Type", value: "[pending client confirmation]" }
   ];
 
@@ -138,10 +138,19 @@ export default function DiamondsPage() {
           {/* 3-Column Architectural Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-3 border-y border-white/10 divide-y lg:divide-y-0 lg:divide-x divide-white/10">
             {[
-              "Standard Assortment",
-              "Calibrated Assortment",
-              "Client-Specific Assortment"
-            ].map((title, idx) => (
+              {
+                title: "Standard Assortment",
+                desc: "Regular production assortment supplied within predefined ranges of size, colour, clarity and cut quality. Typical range: 120–140 pcs/carat, D–K colour, VVS–I3 clarity, Very Good to Excellent make."
+              },
+              {
+                title: "Calibrated Assortment",
+                desc: "Diamonds sorted to a specific and consistent size/mm range with controlled tolerance, suitable for jewellery manufacturing where uniformity is required. Colour, clarity and make can also be matched as per requirement."
+              },
+              {
+                title: "Client-Specific Assortment",
+                desc: "Custom assortment prepared according to the client’s required size, colour, clarity, cut/make, quantity and tolerance specifications. Sorting and packing can be customised as per the client’s production requirements."
+              }
+            ].map((item, idx) => (
               <div key={idx} className="group relative w-full h-[350px] lg:h-[450px] flex flex-col justify-between p-8 md:p-12 overflow-hidden bg-[var(--color-brand-graphite)] hover:bg-[#1a1a1a] transition-colors duration-700 cursor-default">
                 
                 {/* Background glow effect on hover */}
@@ -163,14 +172,14 @@ export default function DiamondsPage() {
                 {/* Content */}
                 <div className="relative z-10 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]">
                   <h3 className="text-3xl lg:text-4xl font-light text-white mb-6 group-hover:text-white transition-colors">
-                    {title.replace(" Assortment", "")}
+                    {item.title.replace(" Assortment", "")}
                     <span className="block text-xl lg:text-2xl text-white/50 mt-1">Assortment</span>
                   </h3>
                   
                   <div className="h-[1px] w-0 group-hover:w-full bg-gradient-to-r from-white/30 to-transparent transition-all duration-1000 ease-out mb-6" />
                   
                   <p className="text-base md:text-lg text-white/50 leading-relaxed font-light opacity-80 group-hover:opacity-100 transition-opacity duration-700 delay-100">
-                    [Definition and parameters — pending client confirmation]
+                    {item.desc}
                   </p>
                 </div>
               </div>

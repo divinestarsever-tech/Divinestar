@@ -61,7 +61,7 @@ export default function AboutPage() {
             <span className="md:hidden">D</span>ivine Star manufactures and supplies natural round diamonds for jewellery manufacturers, brands and wholesalers worldwide.
           </div>
           <p className="text-sm md:text-base text-[var(--color-brand-text-secondary)] font-medium">
-            [Founding year and company history — pending client confirmation]
+            Founded in Bhavnagar in 2009, Divine Star began with a singular focus on excellence in melee diamond manufacturing. Over the years, our expertise in -2 to +2 melee diamonds, strong manufacturing capabilities and milestones including RJC Membership and ALROSA Spot Contract Client status have helped us build trusted relationships across global markets. With a presence in Hong Kong, Dubai and Belgium, Divine Star continues to move forward with precision, consistency and trust at the heart of everything we do.
           </p>
         </div>
       </Section>
@@ -78,7 +78,13 @@ export default function AboutPage() {
             {/* Continuous horizontal rail */}
             <div className="absolute top-1/2 left-0 right-0 h-[1px] bg-[var(--color-brand-line)] -translate-y-1/2" />
             
-            {[1, 2, 3, 4, 5].map((_, idx) => {
+            {[
+              { year: "2018", title: "Diamond Manufacturing Excellence", desc: "Established as a leading manufacturer of -2 to +2 melee diamonds, built on precision, consistency, and quality." },
+              { year: "2020", title: "Built for Our People", desc: "Strengthened our operations with modern, employee-friendly infrastructure designed for efficiency and growth." },
+              { year: "2021-2022", title: "RJC Membership", desc: "Achieved RJC Membership, reinforcing our commitment to responsible, ethical, and transparent business practices." },
+              { year: "2023", title: "Entered Jewellery Manufacturing", desc: "Expanded into jewellery manufacturing, bringing our diamond expertise into complete fine jewellery production." },
+              { year: "2024", title: "ALROSA Spot Contract Client", desc: "Selected as an ALROSA Spot Contract Client, marking an important milestone in our global sourcing capabilities." }
+            ].map((milestone, idx) => {
               const isAbove = idx % 2 === 0;
               return (
                 <div key={idx} className="flex flex-col relative h-[280px] xl:h-[320px]">
@@ -86,12 +92,15 @@ export default function AboutPage() {
                   <div className={`flex-1 flex flex-col justify-end px-4 pb-6 lg:pb-8 text-center items-center ${isAbove ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
                     {isAbove && (
                       <>
-                        <span className="block text-xl xl:text-2xl font-bold tracking-tight text-[var(--color-brand-graphite)] mb-2">
-                          [Pending]
+                        <span className="block text-xl xl:text-2xl font-bold tracking-tight text-[var(--color-brand-graphite)] mb-1">
+                          {milestone.year}
                         </span>
-                        <h3 className="text-sm xl:text-base font-medium text-[var(--color-brand-text-secondary)] leading-relaxed max-w-[200px]">
-                          [Milestone — pending client confirmation]
+                        <h3 className="text-sm xl:text-base font-bold text-[var(--color-brand-graphite)] leading-snug mb-2 max-w-[200px]">
+                          {milestone.title}
                         </h3>
+                        <p className="text-xs xl:text-sm font-medium text-[var(--color-brand-text-secondary)] leading-relaxed max-w-[200px]">
+                          {milestone.desc}
+                        </p>
                       </>
                     )}
                   </div>
@@ -105,12 +114,15 @@ export default function AboutPage() {
                   <div className={`flex-1 flex flex-col justify-start px-4 pt-6 lg:pt-8 text-center items-center ${!isAbove ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
                     {!isAbove && (
                       <>
-                        <span className="block text-xl xl:text-2xl font-bold tracking-tight text-[var(--color-brand-graphite)] mb-2">
-                          [Pending]
+                        <span className="block text-xl xl:text-2xl font-bold tracking-tight text-[var(--color-brand-graphite)] mb-1">
+                          {milestone.year}
                         </span>
-                        <h3 className="text-sm xl:text-base font-medium text-[var(--color-brand-text-secondary)] leading-relaxed max-w-[200px]">
-                          [Milestone — pending client confirmation]
+                        <h3 className="text-sm xl:text-base font-bold text-[var(--color-brand-graphite)] leading-snug mb-2 max-w-[200px]">
+                          {milestone.title}
                         </h3>
+                        <p className="text-xs xl:text-sm font-medium text-[var(--color-brand-text-secondary)] leading-relaxed max-w-[200px]">
+                          {milestone.desc}
+                        </p>
                       </>
                     )}
                   </div>
@@ -124,17 +136,26 @@ export default function AboutPage() {
             {/* Continuous vertical rail */}
             <div className="absolute top-2 bottom-4 left-4 sm:left-8 w-[1px] bg-[var(--color-brand-line)]" />
 
-            {[1, 2, 3, 4, 5].map((_, idx) => (
+            {[
+              { year: "2018", title: "Diamond Manufacturing Excellence", desc: "Established as a leading manufacturer of -2 to +2 melee diamonds, built on precision, consistency, and quality." },
+              { year: "2020", title: "Built for Our People", desc: "Strengthened our operations with modern, employee-friendly infrastructure designed for efficiency and growth." },
+              { year: "2021-2022", title: "RJC Membership", desc: "Achieved RJC Membership, reinforcing our commitment to responsible, ethical, and transparent business practices." },
+              { year: "2023", title: "Entered Jewellery Manufacturing", desc: "Expanded into jewellery manufacturing, bringing our diamond expertise into complete fine jewellery production." },
+              { year: "2024", title: "ALROSA Spot Contract Client", desc: "Selected as an ALROSA Spot Contract Client, marking an important milestone in our global sourcing capabilities." }
+            ].map((milestone, idx) => (
               <div key={idx} className="relative pb-10 last:pb-0 pl-8 sm:pl-10">
                 {/* Horizontal Tick mark */}
                 <div className="absolute top-2.5 left-0 w-4 h-[1px] bg-[var(--color-brand-graphite)]" />
                 
                 <span className="block text-lg font-bold tracking-tight text-[var(--color-brand-graphite)] mb-1">
-                  [Pending]
+                  {milestone.year}
                 </span>
-                <h3 className="text-base font-medium text-[var(--color-brand-text-secondary)] leading-relaxed">
-                  [Milestone — pending client confirmation]
+                <h3 className="text-base font-bold text-[var(--color-brand-graphite)] leading-snug mb-1">
+                  {milestone.title}
                 </h3>
+                <p className="text-sm font-medium text-[var(--color-brand-text-secondary)] leading-relaxed">
+                  {milestone.desc}
+                </p>
               </div>
             ))}
           </div>
@@ -274,7 +295,7 @@ export default function AboutPage() {
           </h2>
           <div className="bg-[var(--color-brand-panel)] px-8 py-6 border border-[var(--color-brand-line)] w-full md:w-auto">
             <p className="text-lg font-medium text-[var(--color-brand-graphite)]">
-              [Certifications and memberships — pending client confirmation]
+              RJC, SMETA
             </p>
           </div>
         </div>

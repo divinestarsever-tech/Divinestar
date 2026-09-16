@@ -1,11 +1,47 @@
+"use client";
+
+import { useRef, useEffect } from "react";
 import { Section } from "@/components/layout/Section";
 import { Placeholder } from "@/components/ui/Placeholder";
 import Link from "next/link";
 import InteractiveDiamondGraphic from "@/components/ui/InteractiveDiamondGraphic";
 
+const leadersData = [
+  { name: "Nayan Golakiya", title: "Director - rough diamond management", bio: "Nayan Golakiya is one of the founding directors of Divine Star and plays a key role in the company’s rough diamond management and sourcing strategy. With a strong understanding of diamond planning, yield, quality and procurement, he helps ensure that every stage of production begins with the right raw material. His disciplined approach to sourcing and inventory management supports Divine Star’s ability to maintain consistency, efficiency and dependable supply. Over the years, his contribution has helped strengthen the company’s manufacturing foundation and build long-term relationships across the diamond value chain." },
+  { name: "Kirti Ghori", title: "Director - rough diamond management", bio: "Kirti Ghori is a founding director of Divine Star and oversees key aspects of rough diamond management and operational planning. His expertise lies in evaluating rough diamonds, maintaining sourcing discipline and supporting efficient production planning across the organisation. With a strong focus on quality, consistency and responsible business practices, he contributes to the company’s ability to meet demanding manufacturing standards. His practical industry knowledge and long-term approach have played an important role in strengthening Divine Star’s position as a dependable melee diamond manufacturer serving clients across domestic and international markets." },
+  { name: "Dharmesh Gabani", title: "Director facility", bio: "Dharmesh Gabani is a founding director of Divine Star and leads the company’s manufacturing facilities and production environment. He focuses on building efficient processes, maintaining infrastructure standards and supporting the teams responsible for precision diamond manufacturing. Under his direction, the company continues to strengthen its production capabilities through technology, organised workflows and a strong focus on quality control. His emphasis on operational discipline, workplace efficiency and continuous improvement helps Divine Star maintain consistent output while supporting the scale and reliability expected by its global clients." },
+  { name: "Bharat Ghori", title: "Director management", bio: "Bharat Ghori is a founding director of Divine Star and plays a central role in overall management, operations and organisational development. His focus is on building strong systems, improving coordination between departments and ensuring that the company’s growth remains structured and sustainable. With a long-term approach to leadership, he helps align manufacturing, people, processes and business strategy around common objectives. His contribution has been instrumental in developing Divine Star into a professionally managed organisation built on consistency, accountability and trust, while supporting its continued expansion across international markets." },
+  { name: "Ramesh Mandani", title: "Director Sales", bio: "Ramesh Mandani is a founding director of Divine Star and leads the company’s sales, client relationships and business development initiatives. With a strong understanding of customer requirements and global diamond markets, he focuses on building long-term partnerships based on trust, consistency and dependable service. His role includes strengthening existing relationships, developing new markets and ensuring close coordination between customer needs and manufacturing capabilities. His relationship-driven approach has supported Divine Star’s international growth and helped establish the company as a reliable partner for clients across markets including Hong Kong, Dubai, Belgium and beyond." }
+];
+
 export default function LeadershipPage() {
+  const containerRef = useRef<HTMLElement>(null);
+  const trackRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!containerRef.current || !trackRef.current) return;
+      const container = containerRef.current;
+      const track = trackRef.current;
+      
+      const { top, height } = container.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      
+      // Calculate scroll progress through the container (0 to 1)
+      let progress = -top / (height - windowHeight);
+      progress = Math.max(0, Math.min(1, progress));
+      
+      // Translate the horizontal track based on progress
+      const maxTranslateX = track.scrollWidth - window.innerWidth;
+      track.style.transform = `translateX(-${progress * maxTranslateX}px)`;
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll(); // initialize on load
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
   return (
-    <div className="flex flex-col w-full overflow-x-hidden">
+    <div className="flex flex-col w-full">
       
       {/* 1. PAGE HERO (Intricate Technical Dashboard) */}
       <section className="w-full min-h-[75vh] md:min-h-[80vh] lg:min-h-[90vh] bg-[var(--color-brand-white)] p-4 md:p-6 lg:p-8 flex flex-col">
@@ -89,56 +125,52 @@ export default function LeadershipPage() {
         </div>
       </section>
 
-      {/* 2. LEADERSHIP DIRECTORY (Premium Cinematic Cards) */}
-      <section className="w-full bg-[var(--color-brand-graphite)] pt-[var(--fluid-py)] pb-0">
-        <div className="w-full max-w-[1920px] mx-auto px-4 md:px-8">
+      {/* 2. LEADERSHIP DIRECTORY (Horizontal Scroll-Jack Gallery) */}
+      <section ref={containerRef} className="relative w-full h-[500vh] bg-[var(--color-brand-graphite)] border-t border-[var(--color-brand-line)]">
+        
+        {/* Sticky viewport */}
+        <div className="sticky top-0 w-full h-screen overflow-hidden flex items-center bg-black">
           
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-6">
-            {[1, 2, 3, 4].map((idx) => (
-              <div key={idx} className="group relative w-full aspect-[3/4] overflow-hidden cursor-crosshair bg-neutral-900 shadow-2xl">
+          {/* Horizontal Track */}
+          <div ref={trackRef} className="flex h-full will-change-transform">
+            
+            {leadersData.map((leader, idx) => (
+              <div key={idx} className="w-screen h-screen flex-shrink-0 flex items-center justify-center p-4 md:p-12 lg:p-24 relative overflow-hidden group">
                 
-                {/* Full-Bleed Portrait Background */}
+                {/* Background Image / Portrait */}
                 <div className="absolute inset-0 w-full h-full">
-                  <Placeholder className="w-full h-full object-cover transition-transform duration-[2s] ease-out group-hover:scale-110 opacity-70 group-hover:opacity-100 grayscale group-hover:grayscale-0" label={`[Portrait 0${idx}]`} />
+                  <Placeholder className="w-full h-full object-cover grayscale opacity-40 transition-opacity duration-1000 group-hover:opacity-60" label={`[Portrait 0${idx + 1}]`} />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-brand-graphite)] via-transparent to-transparent opacity-80" />
+                  <div className="absolute inset-0 bg-black/40" />
                 </div>
 
-                {/* Always-on subtle gradient to ensure text readability even before hover */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-700"></div>
-
-                {/* Index Marker */}
-                <div className="absolute top-6 left-6 z-10 overflow-hidden">
-                  <span className="block font-mono text-[10px] tracking-[0.3em] uppercase text-white/50 transform transition-transform duration-700 group-hover:-translate-y-[200%] opacity-100 group-hover:opacity-0">
-                    0{idx}
-                  </span>
-                </div>
-
-                {/* Premium Glass Reveal Panel at Bottom */}
-                <div className="absolute bottom-4 left-4 right-4 bg-black/40 backdrop-blur-md border border-white/10 p-6 lg:p-8 flex flex-col transform transition-all duration-700 group-hover:bg-black/70 group-hover:border-white/20">
+                {/* Content Overlay */}
+                <div className="relative z-10 w-full max-w-[1920px] mx-auto flex flex-col md:flex-row gap-8 lg:gap-16 items-center">
                   
-                  {/* Name & Title (Always Visible) */}
-                  <div className="flex flex-col">
-                    <h2 className="text-2xl lg:text-3xl font-light tracking-tighter uppercase text-white mb-2 drop-shadow-md">
-                      [Name Pending]
+                  <div className="w-full md:w-1/2 flex flex-col items-start px-4 md:px-8">
+                    <span className="font-mono text-xs tracking-[0.5em] text-[var(--color-brand-warm-white)] uppercase mb-6 flex items-center">
+                       0{idx + 1}
+                       <span className="w-16 h-[1px] bg-[var(--color-brand-warm-white)] ml-4 opacity-50"></span>
+                    </span>
+                    <h2 className="text-4xl sm:text-5xl lg:text-7xl font-light text-white uppercase tracking-tighter mb-4 leading-none drop-shadow-lg">
+                      {leader.name}
                     </h2>
-                    <p className="font-mono text-[9px] tracking-[0.3em] uppercase text-[var(--color-brand-warm-white)]/80">
-                      [Title &mdash; pending]
-                    </p>
+                    <h3 className="text-sm lg:text-base font-mono uppercase tracking-[0.2em] text-[var(--color-brand-text-secondary)] mb-8">
+                      {leader.title}
+                    </h3>
                   </div>
 
-                  {/* Expandable Bio & Link (Revealed on Hover) */}
-                  <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]">
-                    <div className="overflow-hidden">
-                      <div className="pt-6 flex flex-col gap-6 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-700 delay-100">
-                        <p className="text-xs lg:text-sm text-white/80 leading-relaxed font-light">
-                          [Bio &mdash; pending client confirmation. Final bio will be 80-140 words focused on expertise and functional responsibility.]
-                        </p>
-                        <Link href="#" className="inline-flex items-center gap-3 text-[9px] font-mono uppercase tracking-[0.2em] text-white hover:text-[var(--color-brand-warm-white)] border border-white/20 px-5 py-3 transition-colors hover:bg-white/10 w-max">
-                          LinkedIn Profile
-                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="w-3 h-3">
-                            <path d="M7 17L17 7M17 7H7M17 7V17" />
-                          </svg>
-                        </Link>
-                      </div>
+                  <div className="w-full md:w-1/2 flex flex-col px-4 md:px-8">
+                    <div className="bg-black/30 backdrop-blur-md border border-white/10 p-8 lg:p-12">
+                      <p className="text-sm sm:text-base lg:text-lg text-white/80 leading-[1.8] font-light mb-10">
+                        {leader.bio}
+                      </p>
+                      <Link href="#" className="inline-flex items-center gap-4 text-[10px] font-mono uppercase tracking-[0.2em] text-white hover:text-[var(--color-brand-graphite)] hover:bg-[var(--color-brand-warm-white)] border border-white/20 px-8 py-5 transition-all duration-300 w-max">
+                        LinkedIn Profile
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="w-4 h-4">
+                          <path d="M7 17L17 7M17 7H7M17 7V17" />
+                        </svg>
+                      </Link>
                     </div>
                   </div>
 
@@ -146,18 +178,7 @@ export default function LeadershipPage() {
 
               </div>
             ))}
-          </div>
 
-        </div>
-
-        {/* Section Boundary Divider (Touches bottom edge) */}
-        <div className="w-full mt-[var(--fluid-py)] relative z-20">
-          <div className="w-full max-w-[1920px] mx-auto flex items-center gap-4 px-4 md:px-8 opacity-20">
-            <div className="h-[1px] flex-grow bg-white"></div>
-            <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1" className="w-3 h-3 flex-shrink-0">
-              <rect x="3" y="3" width="18" height="18" transform="rotate(45 12 12)" />
-            </svg>
-            <div className="h-[1px] flex-grow bg-white"></div>
           </div>
         </div>
       </section>
@@ -194,4 +215,7 @@ export default function LeadershipPage() {
     </div>
   );
 }
+
+
+
 

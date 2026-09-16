@@ -55,7 +55,7 @@ export default function GlobalReachPage() {
             Where We Operate
           </h2>
           <p className="text-lg md:text-xl text-[var(--color-brand-text-secondary)] leading-relaxed font-light">
-            [Office locations, representative markets, and export regions — pending client confirmation]
+            Hongkong, Dubai, Belgium
           </p>
         </div>
 

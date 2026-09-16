@@ -77,9 +77,13 @@ export default function ManufacturingPage() {
                    </span>
                  </div>
 
-                 <p className="text-lg md:text-xl text-[var(--color-brand-white)] leading-relaxed font-light">
-                   [Facility location, floor area, workforce, equipment and production capability — pending client confirmation]
-                 </p>
+                 <div className="flex flex-col gap-3 text-sm md:text-base text-[var(--color-brand-white)] font-light">
+                   <div><strong className="font-medium opacity-80">Location:</strong> Plot 1718-A, Sarita Society, Street No. 2, Bhavnagar, Gujarat</div>
+                   <div><strong className="font-medium opacity-80">Area:</strong> Approx. 6,500 sq. ft.</div>
+                   <div><strong className="font-medium opacity-80">Workforce:</strong> 1,400+ skilled professionals</div>
+                   <div><strong className="font-medium opacity-80">Capacity:</strong> Approx. 20,000 carats per month</div>
+                   <div><strong className="font-medium opacity-80">Specialisation:</strong> Precision manufacturing of -2 to +2 melee diamonds</div>
+                 </div>
 
                </div>
             </div>
@@ -118,7 +122,7 @@ export default function ManufacturingPage() {
                 <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] group-active:grid-rows-[1fr] group-focus:grid-rows-[1fr] transition-[grid-template-rows] duration-[1000ms] ease-[cubic-bezier(0.22,1,0.36,1)]">
                   <div className="overflow-hidden">
                     <p className="text-lg md:text-xl text-[var(--color-brand-text-secondary)] leading-relaxed font-light pt-4 lg:pt-6">
-                      [Machinery and technology details - pending client confirmation]
+                      Our manufacturing facility is equipped with advanced machinery, including 4-process machines, laser cutting machines, planning/planner machines, and other precision diamond-processing equipment to ensure accuracy, consistency, and efficient production.
                     </p>
                   </div>
                 </div>
@@ -219,7 +223,7 @@ export default function ManufacturingPage() {
             Resource Efficiency
           </h2>
           <p className="text-lg text-[var(--color-brand-text-secondary)] leading-relaxed">
-            [Resource efficiency and waste reduction details — pending client confirmation]
+            We operate a 75 kW captive solar power plant, helping reduce conventional energy consumption and supporting more efficient and responsible manufacturing practices.
           </p>
         </div>
       </Section>

@@ -13,7 +13,7 @@ export function Footer() {
               Divine Star
             </h3>
             <p className="text-sm text-[var(--color-brand-text-secondary)] leading-relaxed max-w-xs">
-              [Company tagline — pending client copy]
+              Beyond the Trust
             </p>
           </div>
 
@@ -71,15 +71,15 @@ export function Footer() {
               Contact
             </h4>
             <address className="not-italic space-y-3 text-sm text-[var(--color-brand-text-secondary)]">
-              <p>[Address — pending client confirmation]</p>
+              <p>DC-3090/B, BHARAT DIAMOND BOURSE,<br/>BANDRA KURLA COMPLEX,<br/>BANDRA EAST, MUMBAI, 4000 051</p>
               <p>
-                <a href="#" className="hover:text-[var(--color-brand-graphite)] transition-colors">
-                  [Phone — pending client confirmation]
+                <a href="tel:02782443838" className="hover:text-[var(--color-brand-graphite)] transition-colors">
+                  02782443838
                 </a>
               </p>
               <p>
-                <a href="#" className="hover:text-[var(--color-brand-graphite)] transition-colors">
-                  [Email — pending client confirmation]
+                <a href="mailto:divinekkdb@gmail.com" className="hover:text-[var(--color-brand-graphite)] transition-colors">
+                  divinekkdb@gmail.com
                 </a>
               </p>
             </address>
