@@ -3,15 +3,16 @@
 import { useRef, useEffect } from "react";
 import { Section } from "@/components/layout/Section";
 import { Placeholder } from "@/components/ui/Placeholder";
+import Image from "next/image";
 import Link from "next/link";
 import InteractiveDiamondGraphic from "@/components/ui/InteractiveDiamondGraphic";
 
 const leadersData = [
-  { name: "Nayan Golakiya", title: "Director - rough diamond management", bio: "Nayan Golakiya is one of the founding directors of Divine Star and plays a key role in the company’s rough diamond management and sourcing strategy. With a strong understanding of diamond planning, yield, quality and procurement, he helps ensure that every stage of production begins with the right raw material. His disciplined approach to sourcing and inventory management supports Divine Star’s ability to maintain consistency, efficiency and dependable supply. Over the years, his contribution has helped strengthen the company’s manufacturing foundation and build long-term relationships across the diamond value chain." },
-  { name: "Kirti Ghori", title: "Director - rough diamond management", bio: "Kirti Ghori is a founding director of Divine Star and oversees key aspects of rough diamond management and operational planning. His expertise lies in evaluating rough diamonds, maintaining sourcing discipline and supporting efficient production planning across the organisation. With a strong focus on quality, consistency and responsible business practices, he contributes to the company’s ability to meet demanding manufacturing standards. His practical industry knowledge and long-term approach have played an important role in strengthening Divine Star’s position as a dependable melee diamond manufacturer serving clients across domestic and international markets." },
-  { name: "Dharmesh Gabani", title: "Director facility", bio: "Dharmesh Gabani is a founding director of Divine Star and leads the company’s manufacturing facilities and production environment. He focuses on building efficient processes, maintaining infrastructure standards and supporting the teams responsible for precision diamond manufacturing. Under his direction, the company continues to strengthen its production capabilities through technology, organised workflows and a strong focus on quality control. His emphasis on operational discipline, workplace efficiency and continuous improvement helps Divine Star maintain consistent output while supporting the scale and reliability expected by its global clients." },
-  { name: "Bharat Ghori", title: "Director management", bio: "Bharat Ghori is a founding director of Divine Star and plays a central role in overall management, operations and organisational development. His focus is on building strong systems, improving coordination between departments and ensuring that the company’s growth remains structured and sustainable. With a long-term approach to leadership, he helps align manufacturing, people, processes and business strategy around common objectives. His contribution has been instrumental in developing Divine Star into a professionally managed organisation built on consistency, accountability and trust, while supporting its continued expansion across international markets." },
-  { name: "Ramesh Mandani", title: "Director Sales", bio: "Ramesh Mandani is a founding director of Divine Star and leads the company’s sales, client relationships and business development initiatives. With a strong understanding of customer requirements and global diamond markets, he focuses on building long-term partnerships based on trust, consistency and dependable service. His role includes strengthening existing relationships, developing new markets and ensuring close coordination between customer needs and manufacturing capabilities. His relationship-driven approach has supported Divine Star’s international growth and helped establish the company as a reliable partner for clients across markets including Hong Kong, Dubai, Belgium and beyond." }
+  { name: "Nayan Golakiya", title: "Director - rough diamond management", bio: "Nayan Golakiya is one of the founding directors of Divine Star and plays a key role in the company’s rough diamond management and sourcing strategy. With a strong understanding of diamond planning, yield, quality and procurement, he helps ensure that every stage of production begins with the right raw material. His disciplined approach to sourcing and inventory management supports Divine Star’s ability to maintain consistency, efficiency and dependable supply. Over the years, his contribution has helped strengthen the company’s manufacturing foundation and build long-term relationships across the diamond value chain.", image: "/images/leadership/nayan.png" },
+  { name: "Kirti Ghori", title: "Director - rough diamond management", bio: "Kirti Ghori is a founding director of Divine Star and oversees key aspects of rough diamond management and operational planning. His expertise lies in evaluating rough diamonds, maintaining sourcing discipline and supporting efficient production planning across the organisation. With a strong focus on quality, consistency and responsible business practices, he contributes to the company’s ability to meet demanding manufacturing standards. His practical industry knowledge and long-term approach have played an important role in strengthening Divine Star’s position as a dependable melee diamond manufacturer serving clients across domestic and international markets.", image: "/images/leadership/kirti.png" },
+  { name: "Dharmesh Gabani", title: "Director facility", bio: "Dharmesh Gabani is a founding director of Divine Star and leads the company’s manufacturing facilities and production environment. He focuses on building efficient processes, maintaining infrastructure standards and supporting the teams responsible for precision diamond manufacturing. Under his direction, the company continues to strengthen its production capabilities through technology, organised workflows and a strong focus on quality control. His emphasis on operational discipline, workplace efficiency and continuous improvement helps Divine Star maintain consistent output while supporting the scale and reliability expected by its global clients.", image: "/images/leadership/dharmesh.png" },
+  { name: "Bharat Ghori", title: "Director management", bio: "Bharat Ghori is a founding director of Divine Star and plays a central role in overall management, operations and organisational development. His focus is on building strong systems, improving coordination between departments and ensuring that the company’s growth remains structured and sustainable. With a long-term approach to leadership, he helps align manufacturing, people, processes and business strategy around common objectives. His contribution has been instrumental in developing Divine Star into a professionally managed organisation built on consistency, accountability and trust, while supporting its continued expansion across international markets.", image: "/images/leadership/bharat.png" },
+  { name: "Ramesh Mandani", title: "Director Sales", bio: "Ramesh Mandani is a founding director of Divine Star and leads the company’s sales, client relationships and business development initiatives. With a strong understanding of customer requirements and global diamond markets, he focuses on building long-term partnerships based on trust, consistency and dependable service. His role includes strengthening existing relationships, developing new markets and ensuring close coordination between customer needs and manufacturing capabilities. His relationship-driven approach has supported Divine Star’s international growth and helped establish the company as a reliable partner for clients across markets including Hong Kong, Dubai, Belgium and beyond.", image: "/images/leadership/ramesh.png" }
 ];
 
 export default function LeadershipPage() {
@@ -135,43 +136,46 @@ export default function LeadershipPage() {
           <div ref={trackRef} className="flex h-full will-change-transform">
             
             {leadersData.map((leader, idx) => (
-              <div key={idx} className="w-screen h-screen flex-shrink-0 flex items-center justify-center p-4 md:p-12 lg:p-24 relative overflow-hidden group">
+              <div key={idx} className="w-screen h-screen flex-shrink-0 flex items-center justify-center p-4 md:p-12 lg:p-24 relative overflow-hidden group bg-[var(--color-brand-graphite)]">
                 
-                {/* Background Image / Portrait */}
-                <div className="absolute inset-0 w-full h-full">
-                  <Placeholder className="w-full h-full object-cover grayscale opacity-40 transition-opacity duration-1000 group-hover:opacity-60" label={`[Portrait 0${idx + 1}]`} />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-brand-graphite)] via-transparent to-transparent opacity-80" />
-                  <div className="absolute inset-0 bg-black/40" />
-                </div>
-
-                {/* Content Overlay */}
-                <div className="relative z-10 w-full max-w-[1920px] mx-auto flex flex-col md:flex-row gap-8 lg:gap-16 items-center">
+                {/* Content Container */}
+                <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col md:flex-row gap-12 lg:gap-24 items-center">
                   
-                  <div className="w-full md:w-1/2 flex flex-col items-start px-4 md:px-8">
-                    <span className="font-mono text-xs tracking-[0.5em] text-[var(--color-brand-warm-white)] uppercase mb-6 flex items-center">
+                  {/* Left Column: Photo & Name */}
+                  <div className="w-full md:w-1/2 flex flex-col items-center md:items-start px-4 md:px-8">
+                    <div className="relative w-full max-w-md aspect-[3/4] mb-8 bg-black overflow-hidden border border-white/10 group">
+                      <Image 
+                        src={leader.image}
+                        alt={leader.name}
+                        fill
+                        className="object-cover object-top grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                      />
+                    </div>
+                    
+                    <span className="font-mono text-xs tracking-[0.5em] text-[var(--color-brand-warm-white)] uppercase mb-4 flex items-center">
                        0{idx + 1}
                        <span className="w-16 h-[1px] bg-[var(--color-brand-warm-white)] ml-4 opacity-50"></span>
                     </span>
-                    <h2 className="text-4xl sm:text-5xl lg:text-7xl font-light text-white uppercase tracking-tighter mb-4 leading-none drop-shadow-lg">
+                    <h2 className="text-4xl sm:text-5xl lg:text-6xl font-light text-white uppercase tracking-tighter mb-2 leading-none">
                       {leader.name}
                     </h2>
-                    <h3 className="text-sm lg:text-base font-mono uppercase tracking-[0.2em] text-[var(--color-brand-text-secondary)] mb-8">
+                    <h3 className="text-sm lg:text-base font-mono uppercase tracking-[0.2em] text-[var(--color-brand-text-secondary)]">
                       {leader.title}
                     </h3>
                   </div>
 
+                  {/* Right Column: Bio */}
                   <div className="w-full md:w-1/2 flex flex-col px-4 md:px-8">
-                    <div className="bg-black/30 backdrop-blur-md border border-white/10 p-8 lg:p-12">
-                      <p className="text-sm sm:text-base lg:text-lg text-white/80 leading-[1.8] font-light mb-10">
-                        {leader.bio}
-                      </p>
-                      <Link href="#" className="inline-flex items-center gap-4 text-[10px] font-mono uppercase tracking-[0.2em] text-white hover:text-[var(--color-brand-graphite)] hover:bg-[var(--color-brand-warm-white)] border border-white/20 px-8 py-5 transition-all duration-300 w-max">
-                        LinkedIn Profile
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="w-4 h-4">
-                          <path d="M7 17L17 7M17 7H7M17 7V17" />
-                        </svg>
-                      </Link>
-                    </div>
+                    <p className="text-sm sm:text-base lg:text-lg text-white/80 leading-[1.8] font-light mb-10">
+                      {leader.bio}
+                    </p>
+                    <Link href="#" className="inline-flex items-center gap-4 text-[10px] font-mono uppercase tracking-[0.2em] text-white hover:text-[var(--color-brand-graphite)] hover:bg-[var(--color-brand-warm-white)] border border-white/20 px-8 py-5 transition-all duration-300 w-max">
+                      LinkedIn Profile
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="w-4 h-4">
+                        <path d="M7 17L17 7M17 7H7M17 7V17" />
+                      </svg>
+                    </Link>
                   </div>
 
                 </div>
