@@ -62,7 +62,7 @@ export default function ManufacturingPage() {
                <div className="hidden lg:block absolute -bottom-4 -left-4 w-8 h-8 border-b border-l border-[var(--color-brand-graphite)]/20" />
                
                <div className="p-3 md:p-5 bg-[var(--color-brand-white)] border border-[var(--color-brand-line)] shadow-sm relative z-0">
-                 <img src="/images/manufacturing/facility_overview.jpg" alt="Facility Overview" className="aspect-[16/9] w-full object-cover" />
+                 <img src="/images/facility-building.jpg" alt="Facility Overview" className="aspect-[16/9] w-full object-cover object-top" />
                </div>
             </div>
 
