@@ -130,47 +130,47 @@ export default function LeadershipPage() {
       <section ref={containerRef} className="relative w-full h-[500vh] bg-[var(--color-brand-graphite)] border-t border-[var(--color-brand-line)]">
         
         {/* Sticky viewport */}
-        <div className="sticky top-0 w-full h-screen overflow-hidden flex items-center bg-black">
+        <div className="sticky top-0 w-full h-[100dvh] overflow-hidden flex items-center bg-black">
           
           {/* Horizontal Track */}
           <div ref={trackRef} className="flex h-full will-change-transform">
             
             {leadersData.map((leader, idx) => (
-              <div key={idx} className="w-screen h-screen flex-shrink-0 flex items-center justify-center p-4 md:p-12 lg:p-24 relative overflow-hidden group bg-[var(--color-brand-graphite)]">
+              <div key={idx} className="w-screen h-[100dvh] flex-shrink-0 flex items-center justify-center p-4 pt-20 pb-4 md:p-12 lg:p-24 relative overflow-hidden group bg-[var(--color-brand-graphite)]">
                 
                 {/* Content Container */}
-                <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col md:flex-row gap-12 lg:gap-24 items-center">
+                <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col md:flex-row gap-4 lg:gap-24 items-center md:items-start lg:items-center">
                   
                   {/* Left Column: Photo & Name */}
-                  <div className="w-full md:w-1/2 flex flex-col items-center md:items-start px-4 md:px-8">
-                    <div className="relative w-full max-w-md aspect-[3/4] mb-8 bg-black overflow-hidden border border-white/10 group">
+                  <div className="w-full md:w-1/2 flex flex-col items-center md:items-start px-2 md:px-8">
+                    <div className="relative h-[35dvh] sm:h-[40dvh] md:h-auto md:w-full max-w-md aspect-[3/4] mb-4 md:mb-8 bg-black overflow-hidden border border-white/10 group">
                       <Image 
                         src={leader.image}
                         alt={leader.name}
                         fill
-                        className="object-cover object-top grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
-                        sizes="(max-width: 768px) 100vw, 50vw"
+                        className="object-cover object-top group-hover:scale-105 transition-all duration-700"
+                        sizes="(max-width: 768px) 50vw, 50vw"
                       />
                     </div>
                     
-                    <span className="font-mono text-xs tracking-[0.5em] text-[var(--color-brand-warm-white)] uppercase mb-4 flex items-center">
+                    <span className="font-mono text-[10px] md:text-xs tracking-[0.5em] text-[var(--color-brand-warm-white)] uppercase mb-2 md:mb-4 flex items-center">
                        0{idx + 1}
-                       <span className="w-16 h-[1px] bg-[var(--color-brand-warm-white)] ml-4 opacity-50"></span>
+                       <span className="w-8 md:w-16 h-[1px] bg-[var(--color-brand-warm-white)] ml-2 md:ml-4 opacity-50"></span>
                     </span>
-                    <h2 className="text-4xl sm:text-5xl lg:text-6xl font-light text-white uppercase tracking-tighter mb-2 leading-none">
+                    <h2 className="text-3xl sm:text-4xl lg:text-6xl font-light text-white uppercase tracking-tighter mb-1 md:mb-2 leading-none text-center md:text-left">
                       {leader.name}
                     </h2>
-                    <h3 className="text-sm lg:text-base font-mono uppercase tracking-[0.2em] text-[var(--color-brand-text-secondary)]">
+                    <h3 className="text-[10px] sm:text-xs lg:text-base font-mono uppercase tracking-[0.2em] text-[var(--color-brand-text-secondary)] text-center md:text-left">
                       {leader.title}
                     </h3>
                   </div>
 
                   {/* Right Column: Bio */}
-                  <div className="w-full md:w-1/2 flex flex-col px-4 md:px-8">
-                    <p className="text-sm sm:text-base lg:text-lg text-white/80 leading-[1.8] font-light mb-10">
+                  <div className="w-full md:w-1/2 flex flex-col items-center md:items-start px-2 md:px-8">
+                    <p className="text-xs sm:text-sm lg:text-lg text-white/80 leading-[1.6] lg:leading-[1.8] font-light mb-6 md:mb-10 text-center md:text-left">
                       {leader.bio}
                     </p>
-                    <Link href="#" className="inline-flex items-center gap-4 text-[10px] font-mono uppercase tracking-[0.2em] text-white hover:text-[var(--color-brand-graphite)] hover:bg-[var(--color-brand-warm-white)] border border-white/20 px-8 py-5 transition-all duration-300 w-max">
+                    <Link href="#" className="inline-flex items-center gap-4 text-[10px] font-mono uppercase tracking-[0.2em] text-white hover:text-[var(--color-brand-graphite)] hover:bg-[var(--color-brand-warm-white)] border border-white/20 px-6 py-3 md:px-8 md:py-5 transition-all duration-300 w-max">
                       LinkedIn Profile
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="w-4 h-4">
                         <path d="M7 17L17 7M17 7H7M17 7V17" />

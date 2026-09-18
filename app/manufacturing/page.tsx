@@ -12,7 +12,7 @@ export default function ManufacturingPage() {
       <section className="relative w-full min-h-[75vh] md:min-h-[85vh] lg:min-h-[90vh] flex flex-col">
         {/* Top 75-80% - Full-bleed Image Layer */}
         <div className="w-full flex-1 relative min-h-[45vh] md:min-h-[60vh]">
-          <img src="/images/manufacturing/hero_manufacturing.jpg" alt="Manufacturing Facility" className="absolute inset-0 w-full h-full object-cover opacity-90" />
+          <img src="/images/manufacturing-hero.jpg" alt="Manufacturing Facility" className="absolute inset-0 w-full h-full object-cover opacity-90" />
           <div className="absolute inset-0 bg-[var(--color-brand-graphite)]/10 mix-blend-multiply" />
         </div>
         {/* Premium Engineered Lower-Third Bar */}
