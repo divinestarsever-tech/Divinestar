@@ -1,12 +1,23 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { Section } from "@/components/layout/Section";
 
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isMobileMenuOpen]);
 
   const navLinks = [
     { name: "About", href: "/about" },
@@ -17,9 +28,13 @@ export function Header() {
     { name: "Contact", href: "/contact" },
   ];
 
+  const closeMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
+
   return (
     <>
-      <Section as="header" className="sticky top-0 z-50 border-b border-[var(--color-brand-line)] bg-[var(--color-brand-white)] py-0">
+      <Section as="header" className="sticky top-0 z-40 border-b border-[var(--color-brand-line)] bg-[var(--color-brand-white)] py-0">
         <div className="flex h-16 items-center justify-between w-full">
           {/* Logo */}
           <div className="flex-shrink-0">
@@ -66,49 +81,53 @@ export function Header() {
         </div>
       </Section>
 
-      {/* Mobile Menu (Full Screen) */}
+      {/* Mobile Menu Backdrop */}
       {isMobileMenuOpen && (
-        <div className="fixed inset-0 z-[100] bg-[var(--color-brand-white)] lg:hidden flex flex-col overflow-y-auto">
-          <div className="flex h-16 items-center justify-between px-[var(--fluid-px)] border-b border-[var(--color-brand-line)] shrink-0">
-            <Link 
-              href="/" 
-              className="text-xl font-bold tracking-tight text-[var(--color-brand-graphite)] font-sans"
-              onClick={() => setIsMobileMenuOpen(false)}
+        <div 
+          className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm lg:hidden transition-opacity"
+          onClick={closeMenu}
+          aria-hidden="true"
+        />
+      )}
+
+      {/* Mobile Menu Drawer */}
+      <div 
+        className={`fixed inset-y-0 right-0 z-[60] w-[75vw] sm:w-[50vw] md:w-[33vw] bg-[var(--color-brand-white)] lg:hidden flex flex-col shadow-2xl transition-transform duration-300 ease-in-out ${
+          isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
+        }`}
+      >
+        <div className="flex h-16 items-center justify-end px-[var(--fluid-px)] border-b border-[var(--color-brand-line)] shrink-0">
+          <button
+            type="button"
+            className="inline-flex items-center justify-center rounded-md p-2 text-[var(--color-brand-graphite)] hover:bg-[var(--color-brand-warm-white)] hover:text-black focus:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2"
+            onClick={closeMenu}
+          >
+            <span className="sr-only">Close menu</span>
+            <X className="block h-6 w-6 pointer-events-none" aria-hidden="true" />
+          </button>
+        </div>
+        <div className="px-6 py-8 space-y-8 flex flex-col flex-grow overflow-y-auto">
+          {navLinks.map((link) => (
+            <Link
+              key={link.name}
+              href={link.href}
+              className="block text-xl font-medium text-[var(--color-brand-graphite)] hover:text-[var(--color-brand-text-secondary)] transition-colors"
+              onClick={closeMenu}
             >
-              Divine Star
+              {link.name}
             </Link>
-            <button
-              type="button"
-              className="inline-flex items-center justify-center rounded-md p-2 text-[var(--color-brand-graphite)] hover:bg-[var(--color-brand-warm-white)] hover:text-black focus:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2"
-              onClick={() => setIsMobileMenuOpen(false)}
+          ))}
+          <div className="pt-8 border-t border-[var(--color-brand-line)] mt-auto">
+            <Link
+              href="/contact"
+              className="flex w-full items-center justify-center rounded-none bg-[var(--color-brand-graphite)] px-5 py-4 text-sm font-medium text-[var(--color-brand-white)] hover:bg-black transition-colors"
+              onClick={closeMenu}
             >
-              <span className="sr-only">Close menu</span>
-              <X className="block h-6 w-6 pointer-events-none" aria-hidden="true" />
-            </button>
-          </div>
-          <div className="px-[var(--fluid-px)] py-6 space-y-6 flex flex-col flex-grow">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                className="block text-lg font-medium text-[var(--color-brand-graphite)] hover:text-[var(--color-brand-text-secondary)]"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                {link.name}
-              </Link>
-            ))}
-            <div className="pt-6 border-t border-[var(--color-brand-line)]">
-              <Link
-                href="/contact"
-                className="flex w-full items-center justify-center rounded-none bg-[var(--color-brand-graphite)] px-5 py-3 text-base font-medium text-[var(--color-brand-white)] hover:bg-black transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Discuss Your Requirement
-              </Link>
-            </div>
+              Discuss Your Requirement
+            </Link>
           </div>
         </div>
-      )}
+      </div>
     </>
   );
 }
