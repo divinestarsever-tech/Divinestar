@@ -244,10 +244,12 @@ export default function ContactPage() {
                     <div className="flex flex-col transform transition-transform duration-1000 md:group-hover:-translate-y-2">
                       <h3 className="font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--color-brand-warm-white)] opacity-60 mb-6 flex items-center gap-4">
                         <span className="w-6 h-px bg-white/40"></span>
-                        Global Offices
+                        Head Office
                       </h3>
                       <div className="text-lg md:text-xl text-white font-light leading-relaxed whitespace-pre-line">
-                        [Addresses — pending client confirmation]
+                        DC-3090/B, Bharat Diamond Bourse<br/>
+                        Bandra Kurla Complex, Bandra East<br/>
+                        Mumbai, 4000051
                       </div>
                     </div>
                     
@@ -258,29 +260,28 @@ export default function ContactPage() {
                         Direct Contact
                       </h3>
                       <div className="text-lg md:text-xl text-white font-light leading-relaxed whitespace-pre-line">
-                        [Phone, email, WhatsApp — pending client confirmation]
+                        Phone: 0278 244 3838<br/>
+                        Email: divinekkdb@gmail.com
                       </div>
                     </div>
 
                   </div>
 
-                  {/* High-Tech Map Placeholder */}
-                  <div className="mt-16 md:mt-24 relative w-full aspect-[4/3] border border-white/10 bg-white/5 overflow-hidden group/map cursor-crosshair transform transition-transform duration-1000 delay-200 md:group-hover:-translate-y-2">
-                    {/* Map scanline effect */}
-                    <div className="absolute inset-0 bg-[linear-gradient(to_bottom,transparent_50%,rgba(255,255,255,0.02)_50%)] bg-[length:100%_4px] pointer-events-none" />
+                  {/* Interactive Map */}
+                  <div className="mt-16 md:mt-24 relative w-full aspect-[4/3] border border-white/10 overflow-hidden group/map transform transition-transform duration-1000 delay-200 md:group-hover:-translate-y-2 grayscale hover:grayscale-0 transition-all duration-700">
+                    <iframe 
+                      src="https://maps.google.com/maps?q=Bharat+Diamond+Bourse,Mumbai&t=m&z=15&output=embed&iwloc=near"
+                      width="100%" 
+                      height="100%" 
+                      style={{ border: 0 }} 
+                      allowFullScreen 
+                      loading="lazy" 
+                      referrerPolicy="no-referrer-when-downgrade"
+                      className="absolute inset-0 w-full h-full"
+                    ></iframe>
                     
-                    <div className="absolute inset-0 flex items-center justify-center flex-col gap-4">
-                      {/* Radar Ping Node */}
-                      <div className="relative flex items-center justify-center">
-                        <div className="w-12 h-12 rounded-full border border-white/20 absolute animate-[ping_3s_cubic-bezier(0,0,0.2,1)_infinite]" />
-                        <div className="w-12 h-12 rounded-full border border-white/30 flex items-center justify-center">
-                          <div className="w-2 h-2 rounded-full bg-white shadow-[0_0_10px_rgba(255,255,255,0.8)]" />
-                        </div>
-                      </div>
-                      <span className="font-mono text-[10px] uppercase tracking-widest text-white/50 group-hover/map:text-white transition-colors duration-500">
-                        Interactive Map Asset Pending
-                      </span>
-                    </div>
+                    {/* Dark Mode Overlay for resting state */}
+                    <div className="absolute inset-0 bg-[var(--color-brand-graphite)]/30 pointer-events-none group-hover/map:opacity-0 transition-opacity duration-700" />
                   </div>
                 </div>
 
