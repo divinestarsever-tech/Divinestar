@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { Section } from "@/components/layout/Section";
@@ -42,11 +43,17 @@ export function Header() {
   return (
     <>
       <Section as="header" className="sticky top-0 z-40 border-b border-[var(--color-brand-line)] bg-[var(--color-brand-white)] py-0">
-        <div className="flex h-16 items-center justify-between w-full">
+        <div className="flex h-16 sm:h-20 items-center justify-between w-full">
           {/* Logo */}
-          <div className="flex-shrink-0">
-            <Link href="/" className="text-xl font-bold tracking-tight text-[var(--color-brand-graphite)] font-sans">
-              Divine Star
+          <div className="flex-shrink-0 flex items-center h-full py-2">
+            <Link href="/" className="relative block h-full w-[140px] sm:w-[180px]">
+              <Image 
+                src="/images/logo.png" 
+                alt="Divine Star Logo" 
+                fill 
+                className="object-contain object-left" 
+                priority 
+              />
             </Link>
           </div>
 
@@ -103,7 +110,17 @@ export function Header() {
           isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
-        <div className="flex h-16 items-center justify-end px-[var(--fluid-px)] border-b border-[var(--color-brand-line)] shrink-0">
+        <div className="flex h-16 sm:h-20 items-center justify-between px-[var(--fluid-px)] border-b border-[var(--color-brand-line)] shrink-0">
+          {/* Logo in Drawer */}
+          <Link href="/" className="relative block h-full w-[120px] py-2" onClick={closeMenu}>
+            <Image 
+              src="/images/logo.png" 
+              alt="Divine Star Logo" 
+              fill 
+              className="object-contain object-left" 
+            />
+          </Link>
+          
           <button
             type="button"
             className="inline-flex items-center justify-center rounded-md p-2 text-[var(--color-brand-graphite)] hover:bg-[var(--color-brand-warm-white)] hover:text-black focus:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2"

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Section } from "@/components/layout/Section";
 
 export function Footer() {
@@ -9,9 +10,14 @@ export function Footer() {
           
           {/* Column 1: Company */}
           <div className="space-y-4">
-            <h3 className="text-lg font-bold tracking-tight text-[var(--color-brand-graphite)] font-sans">
-              Divine Star
-            </h3>
+            <Link href="/" className="relative block h-16 w-[160px]">
+              <Image 
+                src="/images/logo.png" 
+                alt="Divine Star Logo" 
+                fill 
+                className="object-contain object-left" 
+              />
+            </Link>
             <p className="text-sm text-[var(--color-brand-text-secondary)] leading-relaxed max-w-xs">
               Beyond the Trust
             </p>
