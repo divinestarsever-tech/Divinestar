@@ -37,9 +37,10 @@ export default function AboutPage() {
 
         {/* Right Image Panel */}
         <div className="w-full lg:w-[55%] h-[60vh] lg:h-auto relative bg-[var(--color-brand-panel)]">
-          <Placeholder 
+          <img 
+            src="/images/about-hero.jpg" 
+            alt="Divinestar Facility Operations" 
             className="absolute inset-0 w-full h-full object-cover" 
-            label="[Facility/Building image pending]" 
           />
           
           {/* Floating 'Bridge' Card */}
