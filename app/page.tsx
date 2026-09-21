@@ -19,13 +19,14 @@ export default function Home() {
         
         {/* The Cinematic Video Background */}
         <div className="absolute inset-0 w-full h-full z-0 bg-[var(--color-brand-graphite)]">
+          {/* Previous poster URL (saved just in case): https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=80 */}
           <video 
             autoPlay 
             muted 
             loop 
             playsInline
-            poster="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=80"
-            className="absolute inset-0 w-full h-full object-cover"
+            poster="/images/home-hero-poster.png"
+            className="absolute inset-0 w-full h-full object-cover object-center md:object-cover"
           >
             {/* The user will drop their final video into the public folder as hero-video.mp4 */}
             <source src="/hero-video.mp4" type="video/mp4" />
