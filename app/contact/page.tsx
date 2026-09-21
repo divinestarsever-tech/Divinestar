@@ -14,23 +14,26 @@ export default function ContactPage() {
     
     const formData = new FormData(e.currentTarget);
     
+    // IMPORTANT: Web3Forms Access Key
+    formData.append("access_key", "74ea3f9f-fe0f-4da1-b447-b743856a8a84");
+    
+    // Optional: Web3Forms settings
+    formData.append("subject", "New Requirement from Divinestar Website");
+    formData.append("from_name", "Divinestar Website");
+    
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         body: formData,
       });
       
       const result = await response.json();
       
-      if (response.ok) {
-        setFormStatus(
-          result.simulated 
-            ? "Simulated Success: Please add EMAIL_USER and EMAIL_PASS to your .env file to enable real emails." 
-            : "Requirement sent successfully! Our team will contact you shortly."
-        );
+      if (result.success) {
+        setFormStatus("Requirement sent successfully! Our team will contact you shortly.");
         (e.target as HTMLFormElement).reset();
       } else {
-        setFormStatus(result.error || "Failed to send requirement. Please try again.");
+        setFormStatus(result.message || "Failed to send requirement. Please try again.");
       }
     } catch (error) {
       setFormStatus("A network error occurred. Please try again.");
