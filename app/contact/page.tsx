@@ -8,9 +8,33 @@ import Link from "next/link";
 export default function ContactPage() {
   const [formStatus, setFormStatus] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setFormStatus("This form isn't connected yet â€” real submission will be added in a later phase.");
+    setFormStatus("Sending requirement...");
+    
+    const formData = new FormData(e.currentTarget);
+    
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        body: formData,
+      });
+      
+      const result = await response.json();
+      
+      if (response.ok) {
+        setFormStatus(
+          result.simulated 
+            ? "Simulated Success: Please add EMAIL_USER and EMAIL_PASS to your .env file to enable real emails." 
+            : "Requirement sent successfully! Our team will contact you shortly."
+        );
+        (e.target as HTMLFormElement).reset();
+      } else {
+        setFormStatus(result.error || "Failed to send requirement. Please try again.");
+      }
+    } catch (error) {
+      setFormStatus("A network error occurred. Please try again.");
+    }
   };
 
   return (
