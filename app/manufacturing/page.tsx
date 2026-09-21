@@ -79,7 +79,7 @@ export default function ManufacturingPage() {
 
                  <div className="flex flex-col gap-3 text-sm md:text-base text-[var(--color-brand-white)] font-light">
                    <div><strong className="font-medium opacity-80">Location:</strong> Plot 1718-A, Sarita Society, Street No. 2, Bhavnagar, Gujarat</div>
-                   <div><strong className="font-medium opacity-80">Area:</strong> Approx. 6,500 sq. ft.</div>
+                   <div><strong className="font-medium opacity-80">Area:</strong> Approx. 34,000 Sq. Ft.</div>
                    <div><strong className="font-medium opacity-80">Workforce:</strong> 1,400+ skilled professionals</div>
                    <div><strong className="font-medium opacity-80">Capacity:</strong> Approx. 20,000 carats per month</div>
                    <div><strong className="font-medium opacity-80">Specialisation:</strong> Precision manufacturing of -2 to +2 melee diamonds</div>
