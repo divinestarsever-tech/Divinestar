@@ -128,27 +128,27 @@ export default function ContactPage() {
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-6">
                         <div className="flex flex-col gap-2">
                           <label htmlFor="fullName" className="text-sm font-bold text-[var(--color-brand-graphite)]">Full name *</label>
-                          <input required type="text" id="fullName" name="fullName" className="border border-[var(--color-brand-line)] px-4 py-3 bg-[var(--color-brand-white)] focus:outline-none focus:border-black focus:ring-1 focus:ring-black transition-colors" />
+                          <input required type="text" id="fullName" name="fullName" className="border border-[var(--color-brand-line)] px-4 py-3 bg-[var(--color-brand-white)] text-[var(--color-brand-graphite)] focus:outline-none focus:border-black focus:ring-1 focus:ring-black transition-colors" />
                         </div>
                         <div className="flex flex-col gap-2">
                           <label htmlFor="companyName" className="text-sm font-bold text-[var(--color-brand-graphite)]">Company name *</label>
-                          <input required type="text" id="companyName" name="companyName" className="border border-[var(--color-brand-line)] px-4 py-3 bg-[var(--color-brand-white)] focus:outline-none focus:border-black focus:ring-1 focus:ring-black transition-colors" />
+                          <input required type="text" id="companyName" name="companyName" className="border border-[var(--color-brand-line)] px-4 py-3 bg-[var(--color-brand-white)] text-[var(--color-brand-graphite)] focus:outline-none focus:border-black focus:ring-1 focus:ring-black transition-colors" />
                         </div>
                         <div className="flex flex-col gap-2">
                           <label htmlFor="email" className="text-sm font-bold text-[var(--color-brand-graphite)]">Work email *</label>
-                          <input required type="email" id="email" name="email" className="border border-[var(--color-brand-line)] px-4 py-3 bg-[var(--color-brand-white)] focus:outline-none focus:border-black focus:ring-1 focus:ring-black transition-colors" />
+                          <input required type="email" id="email" name="email" className="border border-[var(--color-brand-line)] px-4 py-3 bg-[var(--color-brand-white)] text-[var(--color-brand-graphite)] focus:outline-none focus:border-black focus:ring-1 focus:ring-black transition-colors" />
                         </div>
                         <div className="flex flex-col gap-2">
                           <label htmlFor="phone" className="text-sm font-bold text-[var(--color-brand-graphite)]">Phone / WhatsApp *</label>
-                          <input required type="text" id="phone" name="phone" placeholder="Include country code" className="border border-[var(--color-brand-line)] px-4 py-3 bg-[var(--color-brand-white)] focus:outline-none focus:border-black focus:ring-1 focus:ring-black transition-colors placeholder:text-gray-400" />
+                          <input required type="text" id="phone" name="phone" placeholder="Include country code" className="border border-[var(--color-brand-line)] px-4 py-3 bg-[var(--color-brand-white)] text-[var(--color-brand-graphite)] focus:outline-none focus:border-black focus:ring-1 focus:ring-black transition-colors placeholder:text-gray-400" />
                         </div>
                         <div className="flex flex-col gap-2">
                           <label htmlFor="country" className="text-sm font-bold text-[var(--color-brand-graphite)]">Country / market *</label>
-                          <input required type="text" id="country" name="country" placeholder="e.g. United States" className="border border-[var(--color-brand-line)] px-4 py-3 bg-[var(--color-brand-white)] focus:outline-none focus:border-black focus:ring-1 focus:ring-black transition-colors placeholder:text-gray-400" />
+                          <input required type="text" id="country" name="country" placeholder="e.g. United States" className="border border-[var(--color-brand-line)] px-4 py-3 bg-[var(--color-brand-white)] text-[var(--color-brand-graphite)] focus:outline-none focus:border-black focus:ring-1 focus:ring-black transition-colors placeholder:text-gray-400" />
                         </div>
                         <div className="flex flex-col gap-2">
                           <label htmlFor="businessType" className="text-sm font-bold text-[var(--color-brand-graphite)]">Business type *</label>
-                          <select required id="businessType" name="businessType" className="border border-[var(--color-brand-line)] px-4 py-3 bg-[var(--color-brand-white)] focus:outline-none focus:border-black focus:ring-1 focus:ring-black transition-colors appearance-none">
+                          <select required id="businessType" name="businessType" className="border border-[var(--color-brand-line)] px-4 py-3 bg-[var(--color-brand-white)] text-[var(--color-brand-graphite)] focus:outline-none focus:border-black focus:ring-1 focus:ring-black transition-colors appearance-none">
                             <option value="">Select...</option>
                             <option value="Manufacturer">Manufacturer</option>
                             <option value="Brand-Retailer">Brand-Retailer</option>
@@ -169,7 +169,7 @@ export default function ContactPage() {
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-6">
                         <div className="flex flex-col gap-2">
                           <label htmlFor="reqType" className="text-sm font-bold text-[var(--color-brand-graphite)]">Requirement type *</label>
-                          <select required id="reqType" name="reqType" className="border border-[var(--color-brand-line)] px-4 py-3 bg-[var(--color-brand-white)] focus:outline-none focus:border-black focus:ring-1 focus:ring-black transition-colors appearance-none">
+                          <select required id="reqType" name="reqType" className="border border-[var(--color-brand-line)] px-4 py-3 bg-[var(--color-brand-white)] text-[var(--color-brand-graphite)] focus:outline-none focus:border-black focus:ring-1 focus:ring-black transition-colors appearance-none">
                             <option value="">Select...</option>
                             <option value="Round diamonds">Round diamonds</option>
                             <option value="Assortment service">Assortment service</option>
@@ -179,30 +179,30 @@ export default function ContactPage() {
                         </div>
                         <div className="flex flex-col gap-2">
                           <label htmlFor="carat" className="text-sm font-bold text-[var(--color-brand-graphite)]">Size/carat range (optional)</label>
-                          <input type="text" id="carat" name="carat" className="border border-[var(--color-brand-line)] px-4 py-3 bg-[var(--color-brand-white)] focus:outline-none focus:border-black focus:ring-1 focus:ring-black transition-colors" />
+                          <input type="text" id="carat" name="carat" className="border border-[var(--color-brand-line)] px-4 py-3 bg-[var(--color-brand-white)] text-[var(--color-brand-graphite)] focus:outline-none focus:border-black focus:ring-1 focus:ring-black transition-colors" />
                         </div>
                         <div className="flex flex-col gap-2">
                           <label htmlFor="colour" className="text-sm font-bold text-[var(--color-brand-graphite)]">Colour range (optional)</label>
-                          <input type="text" id="colour" name="colour" className="border border-[var(--color-brand-line)] px-4 py-3 bg-[var(--color-brand-white)] focus:outline-none focus:border-black focus:ring-1 focus:ring-black transition-colors" />
+                          <input type="text" id="colour" name="colour" className="border border-[var(--color-brand-line)] px-4 py-3 bg-[var(--color-brand-white)] text-[var(--color-brand-graphite)] focus:outline-none focus:border-black focus:ring-1 focus:ring-black transition-colors" />
                         </div>
                         <div className="flex flex-col gap-2">
                           <label htmlFor="clarity" className="text-sm font-bold text-[var(--color-brand-graphite)]">Clarity range (optional)</label>
-                          <input type="text" id="clarity" name="clarity" className="border border-[var(--color-brand-line)] px-4 py-3 bg-[var(--color-brand-white)] focus:outline-none focus:border-black focus:ring-1 focus:ring-black transition-colors" />
+                          <input type="text" id="clarity" name="clarity" className="border border-[var(--color-brand-line)] px-4 py-3 bg-[var(--color-brand-white)] text-[var(--color-brand-graphite)] focus:outline-none focus:border-black focus:ring-1 focus:ring-black transition-colors" />
                         </div>
                         <div className="flex flex-col gap-2">
                           <label htmlFor="quantity" className="text-sm font-bold text-[var(--color-brand-graphite)]">Approx. quantity (optional)</label>
-                          <input type="text" id="quantity" name="quantity" className="border border-[var(--color-brand-line)] px-4 py-3 bg-[var(--color-brand-white)] focus:outline-none focus:border-black focus:ring-1 focus:ring-black transition-colors" />
+                          <input type="text" id="quantity" name="quantity" className="border border-[var(--color-brand-line)] px-4 py-3 bg-[var(--color-brand-white)] text-[var(--color-brand-graphite)] focus:outline-none focus:border-black focus:ring-1 focus:ring-black transition-colors" />
                         </div>
                         <div className="flex flex-col gap-2">
                           <label htmlFor="cert" className="text-sm font-bold text-[var(--color-brand-graphite)]">Certification preference (optional)</label>
-                          <input type="text" id="cert" name="cert" className="border border-[var(--color-brand-line)] px-4 py-3 bg-[var(--color-brand-white)] focus:outline-none focus:border-black focus:ring-1 focus:ring-black transition-colors" />
+                          <input type="text" id="cert" name="cert" className="border border-[var(--color-brand-line)] px-4 py-3 bg-[var(--color-brand-white)] text-[var(--color-brand-graphite)] focus:outline-none focus:border-black focus:ring-1 focus:ring-black transition-colors" />
                         </div>
                         <div className="flex flex-col gap-2 md:col-span-2">
                           <div className="flex justify-between items-end">
                             <label htmlFor="message" className="text-sm font-bold text-[var(--color-brand-graphite)]">Message *</label>
                             <span className="text-xs text-[var(--color-brand-text-secondary)]">minimum 20 characters</span>
                           </div>
-                          <textarea required minLength={20} id="message" name="message" rows={5} className="border border-[var(--color-brand-line)] px-4 py-3 bg-[var(--color-brand-white)] focus:outline-none focus:border-black focus:ring-1 focus:ring-black transition-colors resize-y"></textarea>
+                          <textarea required minLength={20} id="message" name="message" rows={5} className="border border-[var(--color-brand-line)] px-4 py-3 bg-[var(--color-brand-white)] text-[var(--color-brand-graphite)] focus:outline-none focus:border-black focus:ring-1 focus:ring-black transition-colors resize-y"></textarea>
                         </div>
                       </div>
                     </div>
@@ -217,7 +217,7 @@ export default function ContactPage() {
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-6">
                         <div className="flex flex-col gap-2 md:col-span-2">
                           <label htmlFor="file" className="text-sm font-bold text-[var(--color-brand-graphite)]">Requirement file upload (optional)</label>
-                          <input type="file" id="file" name="file" accept=".pdf,.xlsx,.csv,.jpg" className="border border-[var(--color-brand-line)] px-4 py-3 bg-[var(--color-brand-white)] focus:outline-none focus:border-black focus:ring-1 focus:ring-black transition-colors text-sm file:mr-4 file:py-2 file:px-4 file:border-0 file:text-sm file:font-medium file:bg-[var(--color-brand-panel)] file:text-[var(--color-brand-graphite)] hover:file:bg-[var(--color-brand-line)]" />
+                          <input type="file" id="file" name="file" accept=".pdf,.xlsx,.csv,.jpg" className="border border-[var(--color-brand-line)] px-4 py-3 bg-[var(--color-brand-white)] text-[var(--color-brand-graphite)] focus:outline-none focus:border-black focus:ring-1 focus:ring-black transition-colors text-sm file:mr-4 file:py-2 file:px-4 file:border-0 file:text-sm file:font-medium file:bg-[var(--color-brand-panel)] file:text-[var(--color-brand-graphite)] hover:file:bg-[var(--color-brand-line)]" />
                         </div>
                         <div className="flex items-start gap-3 md:col-span-2 mt-2">
                           <div className="flex items-center h-5">
