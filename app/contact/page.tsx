@@ -209,16 +209,12 @@ export default function ContactPage() {
 
                     <div className="w-full h-px bg-[var(--color-brand-line)] mb-8"></div>
 
-                    {/* SECTION 3: Attachments & Consent */}
+                    {/* SECTION 3: Consent */}
                     <div>
                       <h4 className="text-xs font-mono uppercase tracking-widest text-[var(--color-brand-text-secondary)] mb-6">
-                        Attachments &amp; Consent
+                        Consent
                       </h4>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-6">
-                        <div className="flex flex-col gap-2 md:col-span-2">
-                          <label htmlFor="file" className="text-sm font-bold text-[var(--color-brand-graphite)]">Requirement file upload (optional)</label>
-                          <input type="file" id="file" name="file" accept=".pdf,.xlsx,.csv,.jpg" className="border border-[var(--color-brand-line)] px-4 py-3 bg-[var(--color-brand-white)] text-[var(--color-brand-graphite)] focus:outline-none focus:border-black focus:ring-1 focus:ring-black transition-colors text-sm file:mr-4 file:py-2 file:px-4 file:border-0 file:text-sm file:font-medium file:bg-[var(--color-brand-panel)] file:text-[var(--color-brand-graphite)] hover:file:bg-[var(--color-brand-line)]" />
-                        </div>
                         <div className="flex items-start gap-3 md:col-span-2 mt-2">
                           <div className="flex items-center h-5">
                             <input required id="privacy" name="privacy" type="checkbox" className="w-4 h-4 border border-[var(--color-brand-line)] rounded-none bg-[var(--color-brand-white)] accent-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2" />
