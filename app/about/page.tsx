@@ -1,6 +1,7 @@
 import { Placeholder } from "@/components/ui/Placeholder";
 import { Section } from "@/components/layout/Section";
 import Link from "next/link";
+import { JourneyTimeline } from "@/components/ui/JourneyTimeline";
 
 export default function AboutPage() {
   return (
@@ -73,93 +74,7 @@ export default function AboutPage() {
           <h2 className="text-[length:var(--fluid-h2)] font-bold tracking-tight text-[var(--color-brand-graphite)] mb-[var(--fluid-gap)] leading-tight text-center lg:text-left">
             Our Journey
           </h2>
-          
-          {/* DESKTOP (1024px+): Horizontal Alternating Timeline */}
-          <div className="hidden lg:grid grid-cols-5 w-full relative mt-16 xl:mt-24">
-            {/* Continuous horizontal rail */}
-            <div className="absolute top-1/2 left-0 right-0 h-[1px] bg-[var(--color-brand-line)] -translate-y-1/2" />
-            
-            {[
-              { year: "2018", title: "Diamond Manufacturing Excellence", desc: "Established as a leading manufacturer of -2 to +2 melee diamonds, built on precision, consistency, and quality." },
-              { year: "2020", title: "Built for Our People", desc: "Strengthened our operations with modern, employee-friendly infrastructure designed for efficiency and growth." },
-              { year: "2021-2022", title: "RJC Membership", desc: "Achieved RJC Membership, reinforcing our commitment to responsible, ethical, and transparent business practices." },
-              { year: "2023", title: "Entered Jewellery Manufacturing", desc: "Expanded into jewellery manufacturing, bringing our diamond expertise into complete fine jewellery production." },
-              { year: "2024", title: "ALROSA Spot Contract Client", desc: "Selected as an ALROSA Spot Contract Client, marking an important milestone in our global sourcing capabilities." }
-            ].map((milestone, idx) => {
-              const isAbove = idx % 2 === 0;
-              return (
-                <div key={idx} className="flex flex-col relative h-[280px] xl:h-[320px]">
-                  {/* Top Content Area */}
-                  <div className={`flex-1 flex flex-col justify-end px-4 pb-6 lg:pb-8 text-center items-center ${isAbove ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
-                    {isAbove && (
-                      <>
-                        <span className="block text-xl xl:text-2xl font-bold tracking-tight text-[var(--color-brand-graphite)] mb-1">
-                          {milestone.year}
-                        </span>
-                        <h3 className="text-sm xl:text-base font-bold text-[var(--color-brand-graphite)] leading-snug mb-2 max-w-[200px]">
-                          {milestone.title}
-                        </h3>
-                        <p className="text-xs xl:text-sm font-medium text-[var(--color-brand-text-secondary)] leading-relaxed max-w-[200px]">
-                          {milestone.desc}
-                        </p>
-                      </>
-                    )}
-                  </div>
-
-                  {/* Tick mark */}
-                  <div className="relative w-full h-0 flex justify-center items-center">
-                    <div className="w-[1px] h-4 bg-[var(--color-brand-graphite)] absolute -translate-y-1/2 top-0" />
-                  </div>
-
-                  {/* Bottom Content Area */}
-                  <div className={`flex-1 flex flex-col justify-start px-4 pt-6 lg:pt-8 text-center items-center ${!isAbove ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
-                    {!isAbove && (
-                      <>
-                        <span className="block text-xl xl:text-2xl font-bold tracking-tight text-[var(--color-brand-graphite)] mb-1">
-                          {milestone.year}
-                        </span>
-                        <h3 className="text-sm xl:text-base font-bold text-[var(--color-brand-graphite)] leading-snug mb-2 max-w-[200px]">
-                          {milestone.title}
-                        </h3>
-                        <p className="text-xs xl:text-sm font-medium text-[var(--color-brand-text-secondary)] leading-relaxed max-w-[200px]">
-                          {milestone.desc}
-                        </p>
-                      </>
-                    )}
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-
-          {/* MOBILE (Below 1024px): Vertical Stacked Timeline */}
-          <div className="flex flex-col lg:hidden w-full relative mt-8 pl-4 sm:pl-8">
-            {/* Continuous vertical rail */}
-            <div className="absolute top-2 bottom-4 left-4 sm:left-8 w-[1px] bg-[var(--color-brand-line)]" />
-
-            {[
-              { year: "2018", title: "Diamond Manufacturing Excellence", desc: "Established as a leading manufacturer of -2 to +2 melee diamonds, built on precision, consistency, and quality." },
-              { year: "2020", title: "Built for Our People", desc: "Strengthened our operations with modern, employee-friendly infrastructure designed for efficiency and growth." },
-              { year: "2021-2022", title: "RJC Membership", desc: "Achieved RJC Membership, reinforcing our commitment to responsible, ethical, and transparent business practices." },
-              { year: "2023", title: "Entered Jewellery Manufacturing", desc: "Expanded into jewellery manufacturing, bringing our diamond expertise into complete fine jewellery production." },
-              { year: "2024", title: "ALROSA Spot Contract Client", desc: "Selected as an ALROSA Spot Contract Client, marking an important milestone in our global sourcing capabilities." }
-            ].map((milestone, idx) => (
-              <div key={idx} className="relative pb-10 last:pb-0 pl-8 sm:pl-10">
-                {/* Horizontal Tick mark */}
-                <div className="absolute top-2.5 left-0 w-4 h-[1px] bg-[var(--color-brand-graphite)]" />
-                
-                <span className="block text-lg font-bold tracking-tight text-[var(--color-brand-graphite)] mb-1">
-                  {milestone.year}
-                </span>
-                <h3 className="text-base font-bold text-[var(--color-brand-graphite)] leading-snug mb-1">
-                  {milestone.title}
-                </h3>
-                <p className="text-sm font-medium text-[var(--color-brand-text-secondary)] leading-relaxed">
-                  {milestone.desc}
-                </p>
-              </div>
-            ))}
-          </div>
+          <JourneyTimeline />
         </div>
       </Section>
 
